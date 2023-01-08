@@ -167,7 +167,7 @@ visible = false
 position = Vector2( -7, 0 )
 hframes = 3
 vframes = 4
-frame = 3
+frame = 1
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource( 4 )

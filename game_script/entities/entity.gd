@@ -161,6 +161,8 @@ func _on_Movement_toggle(move: bool) -> void:
 	can_move = move
 
 func change_state(new_state_name) -> void:
+	if c_name == "mezuna_ryuji":
+		print(new_state_name)
 	if state != null:
 		if state.s_name == State.DEATH:
 			return
