@@ -9,7 +9,7 @@ onready var _sprite : Sprite = $Sprite
 onready var _aniPlayer : AnimationPlayer = $AnimationPlayer
 
 var SPEED := 250
-var dir := 1
+var dir := -1
 var _texture : Texture
 var dmg : int
 var is_crit: bool
@@ -24,9 +24,6 @@ func setter(dmg: int, is_crit: bool, type: int, is_kb: bool) -> void:
 	self.is_kb = is_kb
 
 func _ready():
-	if is_party:
-		dir = -1
-		scale = Vector2(-1, 1)
 	_hitbox.setter(dmg, is_crit, type, is_kb)
 	_hitbox.init(is_party)
 	_sprite.set_texture(_texture)

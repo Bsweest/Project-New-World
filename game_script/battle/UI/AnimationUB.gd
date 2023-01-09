@@ -1,12 +1,11 @@
 extends Node2D
 
-class_name NodeUB
+class_name AnimationUB
 
 signal finish_ub(is_party, pos)
 
 onready var _aniSprite : AnimatedSprite = $AnimatedSprite
 
-var is_party : bool
 var pos : int
 
 func _ready():
@@ -22,4 +21,4 @@ func start_ub_ani(_position: Vector2) -> void:
 
 func _on_AnimatedSprite_animation_finished() -> void:
 	visible = false
-	emit_signal("finish_ub", is_party, pos)
+	emit_signal("finish_ub", pos)

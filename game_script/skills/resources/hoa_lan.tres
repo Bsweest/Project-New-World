@@ -6,6 +6,11 @@
 script = ExtResource( 1 )
 skill_name = "Tường lửa"
 skill_description = "Gây sát thương toàn bộ kẻ địch"
-base_dmg = 20
+base_dmg = 150
+side_dmg = 30
+percent_hp = 0
+need_choose = false
+need_formation = true
 type = 1
+multipiler_type = 0
 side_effect = 0

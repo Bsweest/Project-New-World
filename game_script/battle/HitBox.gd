@@ -9,8 +9,9 @@ var is_crit : bool = false
 var type : int = 0
 var is_kb : bool = true
 
-func _ready():
-	pass
+func _init():
+	set_collision_layer_bit(1, false)
+	set_collision_mask_bit(1, false)
 
 func setter(dmg: int, is_crit: bool, type: int, is_kb: bool) -> void:
 	self.dmg = dmg
@@ -18,9 +19,8 @@ func setter(dmg: int, is_crit: bool, type: int, is_kb: bool) -> void:
 	self.type = type
 	self.is_kb = is_kb
 
+#! layer của hitbox == layer character
 func init(is_party: bool) -> void:
-	set_collision_layer_bit(1, false)
-	set_collision_mask_bit(1, false)
 	var layer = 2
 	if is_party:
 		layer = 1

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://components/Area/DefaultArea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game_script/battle/UI/UISelectArea.gd" type="Script" id=2]
+
+[node name="SelectArea" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="D_Area" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 275 )

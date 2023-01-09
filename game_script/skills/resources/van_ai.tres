@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://game_script/skills/BaseSkill.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+skill_name = "Truyền máu"
+skill_description = "Gây sát thương và hồi máu cho toàn đồng minh tương đương vói số kẻ địch bị đánh trúng"
+base_dmg = 100
+side_dmg = 70
+percent_hp = 0
+need_choose = true
+need_formation = true
+type = 1
+multipiler_type = 0
+side_effect = 1

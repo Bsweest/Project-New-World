@@ -2,7 +2,7 @@ extends Position2D
 
 class_name DamageNumber
 
-enum DamameType { PHYSIC, MAGIC, TRUE, PIERCE }
+enum DamameType { PHYSIC, MAGIC, TRUE, PIERCE, HEAL }
 
 onready var label: Label = $Label as Label
 onready var tween: Tween = $Tween as Tween
@@ -16,6 +16,7 @@ var _velocity = Vector2(0, 80)
 
 func _ready() -> void:
 	var end = Vector2(1, 1)
+	var pre_fix = "-"
 	if isPartyMember : 
 		scale = Vector2(-0.7, 0.7)
 		end = Vector2(-1, 1)
@@ -28,8 +29,11 @@ func _ready() -> void:
 			label.add_color_override("font_color", Color(210/255.0, 55/255.0, 255/255.0))
 		else:
 			label.add_color_override("font_color", Color(224/255.0, 135/255.0, 255/255.0))
-
-	label.set_text("-" + str(amount))
+	elif type == DamameType.HEAL:
+		label.add_color_override("font_color", Color(15/255.0, 255/255.0, 80/255.0))
+		pre_fix = "+"
+		amount = -amount
+	label.set_text(pre_fix + str(amount))
 	tween.interpolate_property(self, 'scale', scale, end, 0.2, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.7)
 	tween.start()
 

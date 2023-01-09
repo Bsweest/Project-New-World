@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "AnimationUB",
+"language": "GDScript",
+"path": "res://game_script/battle/UI/AnimationUB.gd"
+}, {
 "base": "Area2D",
 "class": "AttackRange",
 "language": "GDScript",
@@ -18,6 +23,11 @@ _global_script_classes=[ {
 "class": "BaseSkill",
 "language": "GDScript",
 "path": "res://game_script/skills/BaseSkill.gd"
+}, {
+"base": "Resource",
+"class": "BaseStats",
+"language": "GDScript",
+"path": "res://game_script/character_stats/BaseStats.gd"
 }, {
 "base": "Node2D",
 "class": "BattleManager",
@@ -92,7 +102,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "NodeUB",
 "language": "GDScript",
-"path": "res://game_script/battle/UI/NodeUB.gd"
+"path": "res://game_script/battle/NodeUB.gd"
 }, {
 "base": "Node2D",
 "class": "Projectile",
@@ -109,11 +119,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game_script/entities/states/ShootState.gd"
 }, {
-"base": "Resource",
-"class": "StartingStats",
-"language": "GDScript",
-"path": "res://game_script/character_stats/StartingStats.gd"
-}, {
 "base": "Node2D",
 "class": "State",
 "language": "GDScript",
@@ -128,10 +133,22 @@ _global_script_classes=[ {
 "class": "UBLayer",
 "language": "GDScript",
 "path": "res://game_script/battle/UI/UBLayer.gd"
+}, {
+"base": "CanvasLayer",
+"class": "UIControl",
+"language": "GDScript",
+"path": "res://game_script/battle/UI/UIControl.gd"
+}, {
+"base": "Node2D",
+"class": "UISelectArea",
+"language": "GDScript",
+"path": "res://game_script/battle/UI/UISelectArea.gd"
 } ]
 _global_script_class_icons={
+"AnimationUB": "",
 "AttackRange": "",
 "BaseSkill": "",
+"BaseStats": "",
 "BattleManager": "",
 "BattleUI": "",
 "ButtonUB": "",
@@ -150,10 +167,11 @@ _global_script_class_icons={
 "Projectile": "",
 "RunningState": "",
 "ShootState": "",
-"StartingStats": "",
 "State": "",
 "StateFactory": "",
-"UBLayer": ""
+"UBLayer": "",
+"UIControl": "",
+"UISelectArea": ""
 }
 
 [application]
@@ -175,6 +193,7 @@ gdscript/warnings/integer_division=false
 window/size/width=640
 window/size/height=360
 window/size/always_on_top=true
+window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
 
 [global]
@@ -234,6 +253,16 @@ ub_pos_4={
 ub_pos_5={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":53,"unicode":0,"echo":false,"script":null)
+ ]
+}
+left_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+right_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 

@@ -9,6 +9,7 @@ onready var _sprite : Sprite = $Sprite as Sprite
 onready var _hitbox : HitBox = $HitBox as HitBox
 
 var stats : CharacterStats
+var skill : CharacterSkill
 var is_party : bool
 
 func _ready():
@@ -17,9 +18,10 @@ func _ready():
 	_hitbox.init(is_party)
 	init_transform()
 
-func setter(is_party: bool, stats: CharacterStats) -> void:
-	self.stats = stats
-	self.is_party = is_party
+func setter(_is_party: bool, _stats: CharacterStats, _skill: CharacterSkill) -> void:
+	self.is_party = _is_party
+	self.stats = _stats
+	self.skill = _skill
 
 func init_transform() -> void:
 	pass

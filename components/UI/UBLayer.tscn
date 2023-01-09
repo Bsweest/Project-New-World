@@ -4,6 +4,7 @@
 
 [node name="UBLayer" type="CanvasLayer"]
 pause_mode = 2
+layer = 2
 visible = false
 script = ExtResource( 1 )
 
@@ -12,6 +13,4 @@ modulate = Color( 0, 0, 0, 0.690196 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Ally" type="Node2D" parent="."]
-
-[node name="Enemy" type="Node2D" parent="."]
+[node name="Members" type="Node2D" parent="."]

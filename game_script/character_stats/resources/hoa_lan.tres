@@ -1,18 +1,18 @@
 [gd_resource type="Resource" load_steps=2 format=2]
 
-[ext_resource path="res://game_script/character_stats/StartingStats.gd" type="Script" id=1]
+[ext_resource path="res://game_script/character_stats/BaseStats.gd" type="Script" id=1]
 
 [resource]
 script = ExtResource( 1 )
-base_name = "hoa_lan"
-max_hp = 100
+base_name = "Hoả Lan"
+max_hp = 594
 physic = 10
-magic = 10
-p_defense = 10
-m_armor = 10
+magic = 29
+p_defense = 19
+m_armor = 30
 crit_c = 10
 crit_dmg = 150
 speed = 150
-attack_range = 150
+attack_range = 180
 base_class = 4
 projectile_texture = "fireball"

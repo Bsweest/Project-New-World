@@ -14,7 +14,7 @@ func initButton(party_member : Array) -> void:
 		button.c_name = party_member[i]["name"]
 		button.skill_icon =  party_member[i]["skill_icon"]
 		button.rect_position = init_point.position
-		button.connect("active_ub", get_parent(), "_active_UB")
+		button.connect("active_ub", get_parent(), "_active_UB_with_button")
 		init_point.replace_by(button)
 
 func set_ui_maxHP(maxHP: int, i: int):

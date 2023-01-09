@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://game_script/character_stats/BaseStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+base_name = "Vạn Ái"
+max_hp = 588
+physic = 10
+magic = 34
+p_defense = 28
+m_armor = 30
+crit_c = 10
+crit_dmg = 150
+speed = 150
+attack_range = 80
+base_class = 5
+projectile_texture = "lam_hoa"

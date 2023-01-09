@@ -3,14 +3,14 @@ extends KinematicBody2D
 class_name Entity
 
 enum SideEffect { NONE, BUFF, TRANSFORM }
-enum DamameType { PHYSIC, MAGIC, TRUE, PIERCE }
+enum DamameType { PHYSIC, MAGIC, TRUE, PIERCE, HEAL }
 enum BaseClass { FIGHTER, DEFENDER, PALADIN, ARCHER, MAGE, HEALER }
 enum State { RUNNING, KNOCKBACKED, LOAD_AA, SHOOT, DEATH }
 
 signal hp_changed(new_hp, pos)
 signal set_max_hp(max_hp, pos)
 signal tp_changed(new_tp, pos)
-signal hp_depleted(is_party)
+signal hp_depleted()
 
 var txt_dmg_number = preload("res://components/battle/DamageNumber.tscn")
 var node_aa_range = preload("res://components/battle/AttackRange.tscn")
@@ -22,12 +22,13 @@ onready var hurtBox : HurtBox = $HurtBox as HurtBox
 onready var battleSprite : Sprite = $InBattle as Sprite
 onready var idleSprite : Sprite = $Idle as Sprite
 onready var animationPlayer : AnimationPlayer = $AnimationPlayer as AnimationPlayer
+onready var ub : NodeUB = $NodeUB
 onready var _col1 := $HurtBox/CollisionShape2D
 onready var _col2 := $CollisionBody
 
 export var c_name: String
 export var is_party : bool = true
-export var level : int
+export var level : int = 1
 
 var attack_range : AttackRange
 
@@ -44,25 +45,24 @@ var dir := -1 # multiply with speed
 #?skill section
 var projectile_texture : Texture
 var ts : CharacterTransform
-var ub #Union Burst : unknown type for future proof
+var ub_position := 0
 
 func _ready() -> void:
 	state_factory = StateFactory.new()
 	set_resource()
-	if !stats.is_ranged:
-		battleSprite.set_vframes(3)
+	ub.ready_set(is_party, stats, skill)
 	hurtBox.init(is_party)
 	animationPlayer.play("idle")
 
 func set_resource() ->  void:
 	if c_name == null :
 		queue_free()
-	var spriteImg = load("res://assets/sprite/" + c_name +"/inbattle.png")
-	var idleImg = load("res://assets/sprite/" + c_name +"/idle.png")
 	var startStats = load("res://game_script/character_stats/resources/" + c_name + ".tres")
 	var baseSkill = load("res://game_script/skills/resources/" + c_name + ".tres")
 
 	stats.init(startStats, level)
+	stats.connect("hp_changed", self, "_on_Stats_hp_changed")
+	stats.connect("hp_depleted", self, "_on_Stats_hp_depleted")
 	dir *= stats.speed
 	emit_signal("set_max_hp", stats.max_hp, pos)
 	if stats.is_ranged:
@@ -73,16 +73,13 @@ func set_resource() ->  void:
 		add_child(attack_range)
 
 	skill.init(baseSkill, level)
+	skill.connect("add_tp", self, "_on_Skill_add_tp")
 	if skill.effect == SideEffect.TRANSFORM:
-		ts = load("res://components/UB/" + c_name + "/ts.tscn").instance()
-		ts.setter(is_party, stats)
+		ts = load("res://components/entity/" + c_name + "/ts.tscn").instance()
+		ts.setter(is_party, stats, skill)
 		ts.connect('end_transfrom', self, '_on_end_Transform')
 		add_child(ts)
-	# ub = load("res://components/UB/" + c_name + "/UB.tscn").instance()
-	# add_child(ub)
 
-	battleSprite.set_texture(spriteImg)
-	idleSprite.set_texture(idleImg)
 	if is_party:
 		scale = Vector2(-1, 1)
 		dir = -dir
@@ -91,19 +88,22 @@ func set_resource() ->  void:
 func activeUB() -> Vector2:
 	if skill.current_tp == 1000:
 		pass
+	if skill.need_choose:
+		return Vector2(-1, -1)
 	battleSprite.visible = false
 	return position
 
 func UB_animation_finish():
+	ub.activeUB(ub_position)
 	if skill.effect == SideEffect.TRANSFORM:
 		ts.activeTransform()
 	else:
 		battleSprite.visible = true
 
 #* Battle Gameplay Mechanic
-
 func normal_hit_enemy(target: Entity) -> void:
-	animationPlayer.play("attack")
+	if !state.s_name == State.DEATH:
+		animationPlayer.play("attack")
 	var is_crit = Utils.isCrit(stats.crit_c)
 	var dmg : int = stats.physic
 	if is_crit: 
@@ -129,18 +129,22 @@ func fire_normal_aa() -> void:
 func take_damage(amount: int, is_crit: bool, type: int) -> void:
 	if amount == 0: 
 		return
+	var mul = stats.defense_multiplier(type)
+	amount *= mul
 	skill.addTP(100)
 	stats.take_dmg(amount, is_crit, type)
 
+func get_heal(amount: int) -> void:
+	stats.take_dmg(-amount, false, DamameType.HEAL)
+
 func _on_Stats_hp_depleted():
-	if ts != null:
-		ts.queue_free()
-	# ub.queue_free()
 	_col1.set_deferred("disabled", true)
 	_col2.set_deferred("disabled", true)
+	if ts != null:
+		ts.endTransform()
 	change_state(State.DEATH)
 	if pos != null:
-		emit_signal("hp_depleted", is_party)
+		emit_signal("hp_depleted")
 
 #* Process each frame
 #! check next move after attack or shoot projectile
@@ -161,8 +165,6 @@ func _on_Movement_toggle(move: bool) -> void:
 	can_move = move
 
 func change_state(new_state_name) -> void:
-	if c_name == "mezuna_ryuji":
-		print(new_state_name)
 	if state != null:
 		if state.s_name == State.DEATH:
 			return

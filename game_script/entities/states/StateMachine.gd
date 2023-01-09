@@ -17,11 +17,11 @@ func _physics_process(_delta) -> void:
 	if s_name == KNOCKBACKED:
 		kb_dur -= 1
 		if kb_dur == 0:
-			_body.change_state(RUNNING)
+			change_state.call_func(RUNNING)
 	if !_body.can_move && s_name == RUNNING:
-		_body.change_state(LOAD_AA)
+		change_state.call_func(LOAD_AA)
 
-func setup(change_state, ani_player, _body) -> void:
-	self.change_state = change_state
-	self.ani_player = ani_player
-	self._body = _body
+func setup(_change_state, _ani_player, body) -> void:
+	self.change_state = _change_state
+	self.ani_player = _ani_player
+	self._body = body
