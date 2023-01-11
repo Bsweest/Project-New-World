@@ -5,8 +5,6 @@ class_name Formation
 signal select_area(pos)
 signal team_out(is_party)
 
-var entityInstance = preload("res://components/battle/character.tscn")
-
 onready var members = $Members
 onready var ubLayer : UBLayer = $UBLayer
 
@@ -49,10 +47,15 @@ func ready_set(is_member: bool, arr: Array) -> Array:
 func get_character(pos: int) -> Entity:
 	return arrChar[pos]
 
+func all_idle() -> void:
+	for each in arrChar:
+		if each.state.s_name != 4:
+			each.state_idle()
+
 func _active_UB(pos: int) -> void:
 	var character : Entity  = get_character(pos)
 	var _position = character.activeUB()
-	if _position == null:
+	if _position == Vector2.ZERO:
 		return
 	if _position == Vector2(-1, -1):
 		emit_signal("select_area", pos)

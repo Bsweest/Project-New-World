@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://game_script/character_stats/BaseStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+base_name = "char_name"
+max_hp = 400
+physic = 20
+magic = 10
+p_defense = 20
+m_armor = 20
+crit_c = 10
+crit_dmg = 150
+speed = 150
+attack_range = 0
+base_class = 0
+projectile_texture = ""

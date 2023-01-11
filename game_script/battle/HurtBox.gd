@@ -22,7 +22,7 @@ func _on_Area_enter(box: HitBox) -> void:
 	if box == null:
 		return
 	if owner.get_class() == "Entity":
-		if box.is_kb:
+		if box.is_kb && !owner.stats.is_ranged:
 			owner.change_state(1)
 		owner.take_damage(box.dmg, box.is_crit, box.type)
 

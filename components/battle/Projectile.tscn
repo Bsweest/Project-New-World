@@ -4,7 +4,7 @@
 [ext_resource path="res://game_script/battle/HitBox.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11.5, 23.25 )
+extents = Vector2( 12, 24 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Shoot"

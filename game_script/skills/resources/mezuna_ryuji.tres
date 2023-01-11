@@ -6,11 +6,11 @@
 script = ExtResource( 1 )
 skill_name = "Một ngàn lưỡi kiếm"
 skill_description = "Xoay lưỡi kiếm liên tục"
-base_dmg = 120
-side_dmg = 30
+base_dmg = 180
+side_dmg = 50
 percent_hp = 0
 need_choose = false
 need_formation = false
 type = 1
 multipiler_type = 0
-side_effect = 0
+side_effect = 2

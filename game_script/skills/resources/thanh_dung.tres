@@ -6,7 +6,7 @@
 script = ExtResource( 1 )
 skill_name = "Dời non lấp bể"
 skill_description = "Gây sát thương lên phía trước và tăng giáp cho bản thân"
-base_dmg = 120
+base_dmg = 180
 side_dmg = 0
 percent_hp = 0
 need_choose = false

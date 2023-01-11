@@ -35,8 +35,10 @@ func set_current_hp(value: int) -> void:
 		modulate = under
 
 func set_current_tp(value: int) -> void:
+	if tpBar.value == 1000 && value == 0:
+		skillRect.modulate = under
 	tpBar.value = value
-	if(value == 1000):
+	if value == 1000 && skillRect.modulate != fully:
 		skillRect.modulate = fully
 
 func _on_Button_pressed():

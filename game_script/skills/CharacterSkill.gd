@@ -31,10 +31,14 @@ func init(skill: BaseSkill, lvl: int) -> void:
 	need_choose = skill.need_choose
 	need_formation = skill.need_formation
 
-
 func addTP(amount: int) -> void:
-	if current_tp == fullUB:
-		return
 	current_tp += amount
 	current_tp = max(0, current_tp)
+	if current_tp > 1000:
+		current_tp = 1000
 	emit_signal("add_tp", current_tp)
+
+func check_ub() -> bool:
+	if current_tp == 1000:
+		return true
+	return false

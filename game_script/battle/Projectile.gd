@@ -2,7 +2,7 @@ extends Node2D
 
 class_name Projectile
 
-enum DamameType { PHYSIC, MAGIC, TRUE, PIERCE }
+enum DamameType { PHYSIC, MAGIC, TRUE, PIERCE, HEAL }
 
 onready var _hitbox : HitBox = $HitBox
 onready var _sprite : Sprite = $Sprite

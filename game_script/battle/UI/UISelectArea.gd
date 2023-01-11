@@ -16,13 +16,13 @@ func _physics_process(_delta) -> void:
 	if !_area.visible:
 		return
 	mouse_pos = get_global_mouse_position()
-	_area.position.x = mouse_pos.x
+	_area.position.x = mouse_pos.x / 2
 
 func _input(event: InputEvent):
 	if !_area.visible || pos == -1:
 		return
 	if event.is_action_pressed("left_click"):
-		emit_signal("choose_done", pos, mouse_pos.x)
+		emit_signal("choose_done", pos, mouse_pos.x / 2)
 		disable_choose_area()
 		return
 	if event.is_action_pressed("right_click"):

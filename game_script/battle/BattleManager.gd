@@ -2,26 +2,31 @@ extends Node2D
 
 class_name BattleManager
 
-var entityInstance = preload("res://components/battle/character.tscn")
+signal end_game(boolean)
 
 onready var battleScene : Node2D = $FormationNode as Node2D
 onready var ui : BattleUI = $UIBattle as BattleUI
 onready var selectArea : UISelectArea = $SelectArea
-onready var uiControl : UIControl = $UIControl
 onready var party_formation = $FormationNode/PartyFormation
 var enemy_formation
-
 
 var arrAlly : Array
 var arrEnemy : Array
 var count_allies := 0
+var is_winning : bool
+
+var timer = Timer.new()
 
 func _ready():
 	var ally = [
-		{ 
-			"name": "mezuna_ryuji", 
-			"skill_icon": 4
+		# { 
+		# 	"name": "mezuna_ryuji", 
+		# 	"skill_icon": 4
 			
+		# },
+		{ 
+			"name": "mob_fighter_1",
+			"skill_icon": 1
 		},
 		{ 
 			"name": "van_ai",
@@ -29,10 +34,10 @@ func _ready():
 		}
 		]
 	var enemy = [
-		{ 
-			"name": "hoa_lan",
-			"skill_icon": 1
-		},
+		# {
+		# 	"name": "hoa_lan",
+		# 	"skill_icon": 1
+		# },
 		{ 
 			"name": "thanh_dung",
 			"skill_icon": 1
@@ -42,6 +47,10 @@ func _ready():
 	ui.initButton(ally)
 	initEnemiesFormation()
 	field_characters(ally, enemy)
+	timer.wait_time = 1
+	timer.one_shot = true
+	timer.connect("timeout", self, "_timer_out")
+	add_child(timer)
 
 func initEnemiesFormation() -> void:
 	enemy_formation = load("res://components/battle/formation/5EnemiesFormation.tscn").instance()
@@ -67,8 +76,14 @@ func return_both_formation(is_party: bool, pos: int) -> void:
 		enemy_formation.get_character(pos).ub.setup_formation(arrEnemy, arrAlly)
 
 #* Battle Result
-func _on_Formation_team_out(is_party):
-	uiControl._on_End_game(!is_party)
+func _on_Formation_team_out(is_party: bool):
+	party_formation.all_idle()
+	enemy_formation.all_idle()
+	is_winning = !is_party
+	timer.start()
+
+func _timer_out() -> void:
+	emit_signal("end_game", is_winning)
 
 #* Show Stat
 func _on_Char_hp_changed(_new_hp: int, pos: int) -> void:

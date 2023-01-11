@@ -6,7 +6,7 @@
 script = ExtResource( 1 )
 base_name = "Thanh Dung"
 max_hp = 610
-physic = 45
+physic = 35
 magic = 10
 p_defense = 34
 m_armor = 32

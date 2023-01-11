@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://game_script/skills/BaseSkill.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+skill_name = "skill_name"
+skill_description = ""
+base_dmg = 150
+side_dmg = 0
+percent_hp = 0
+need_choose = false
+need_formation = false
+type = 0
+multipiler_type = 0
+side_effect = 0

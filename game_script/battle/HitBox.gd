@@ -13,11 +13,11 @@ func _init():
 	set_collision_layer_bit(1, false)
 	set_collision_mask_bit(1, false)
 
-func setter(dmg: int, is_crit: bool, type: int, is_kb: bool) -> void:
-	self.dmg = dmg
-	self.is_crit = is_crit
-	self.type = type
-	self.is_kb = is_kb
+func setter(damage: int, isCrit: bool, _type: int, isKB: bool) -> void:
+	self.dmg = damage
+	self.is_crit = isCrit
+	self.type = _type
+	self.is_kb = isKB
 
 #! layer của hitbox == layer character
 func init(is_party: bool) -> void:

@@ -16,6 +16,7 @@ var members : Array
 var opponents : Array
 
 var first_use : bool = false
+var wait_time : float = 0.1
 var timer = Timer.new()
 
 func ready_set(is_member: bool, c_stats: CharacterStats, c_skill: CharacterSkill) -> void:
@@ -26,9 +27,9 @@ func ready_set(is_member: bool, c_stats: CharacterStats, c_skill: CharacterSkill
 
 func _ready() -> void:
 	_hitbox.disable_collision()
-	timer.wait_time = 0.1
+	timer.wait_time = wait_time
 	timer.one_shot = true
-	timer.connect("timeout", self, "_do_UB_skill")
+	timer.connect("timeout", self, "_timer_out")
 	add_child(timer)
 
 func setup_formation(_members: Array, _opponents: Array) -> void:
@@ -58,5 +59,5 @@ func activeUB(ub_postion: int) -> void:
 	_hitbox.enable_collision()
 	timer.start()
 
-func _do_UB_skill() -> void:
+func _timer_out() -> void:
 	_hitbox.disable_collision()
