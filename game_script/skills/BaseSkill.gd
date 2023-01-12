@@ -13,7 +13,6 @@ export var base_dmg : int = 0
 export var side_dmg : int = 0
 export var percent_hp : int = 0
 export var need_choose : bool = false
-export var need_formation : bool = false
 
 export (DamameType) var type
 export (MultipilerType) var multipiler_type := 0

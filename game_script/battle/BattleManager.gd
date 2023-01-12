@@ -25,11 +25,11 @@ func _ready():
 			
 		# },
 		{ 
-			"name": "mob_fighter_1",
+			"name": "mob_shooter_1",
 			"skill_icon": 1
 		},
 		{ 
-			"name": "van_ai",
+			"name": "mezuna_ryuji",
 			"skill_icon": 1
 		}
 		]
@@ -63,13 +63,11 @@ func field_characters(party_member: Array, enemies: Array) -> void:
 	arrEnemy = enemy_formation.ready_set(false, enemies)
 	count_allies = len(arrAlly)
 	for each in arrAlly:
-		if each.skill.need_formation:
-			return_both_formation(true, each.pos)
+		set_both_formation(true, each.pos)
 	for each in arrEnemy:
-		if each.skill.need_formation:
-			return_both_formation(false, each.pos)
+		set_both_formation(false, each.pos)
 
-func return_both_formation(is_party: bool, pos: int) -> void:
+func set_both_formation(is_party: bool, pos: int) -> void:
 	if is_party:
 		party_formation.get_character(pos).ub.setup_formation(arrAlly, arrEnemy)
 	else:

@@ -1,0 +1,396 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 5
+syntax_version = 2
+raw_text = "~ first_scene_of_game
+
+Trong không gian tĩnh lặng của vũ trụ huyền ảo, có một người đang bay xuyên qua những vì sao.
+Người đó mệt mỏi, đôi mắt đờ đẫn, cố gắng suy nghĩ để gượng dậy bản thân, giữ vững tinh thần và chống lại những tiếng nói đang giày vò trong đầu mình.
+(Bạn - suy nghĩ): Mình đã bắt đầu cuộc hành trình này biết bao nhiêu năm rồi. Liệu sẽ có ngày đôi tay này sẽ có ngày chạm được đích đến mình hằng mong không.
+(giọng nói trong đầu): Bỏ cuộc đi, cho dù có chiến đấu cả cái cuộc đời ngắn ngủi của ngươi thì cũng không bao giờ nhìn thấy được vạch đích.
+(giọng nói trong đầu): Những thử thách đang đợi ngươi ở phía trước sẽ càng ngày càng khó hơn. Sẽ đến một ngày cơ thể ngươi sẽ mục nát mà thôi.
+Bạn: [shake rate=10 level=10][b]Im Hết Đi[/b][/shake]
+(giọng nói trong đầu): Liệu thứ ngươi trông chờ ở cuối con đường có thật sự là thứ ngươi mong muốn. Đừng có quay mặt khỏi hiện tại nữa, ngươi đã luôn nghĩ về nó nhưng ngươi chẳng hiểu gì về nó cả. 
+(giọng nói trong đầu): Ngươi đã có thể sống trọn vẹn với những người ngươi yêu thương, nhưng rồi ngươi ruồng bỏ họ. Người hãy nghĩ lại xem coi nó có đáng không!
+Bạn: Kể cả cơ thể này có hoá thành tro tàn, ý chí của ta sẽ không từ bỏ. Ta mang trong mình hi vọng của tất cả người ta quan trọng. Và rồi lũ tự xưng thần linh các người sẽ bị ta đạp xuống...
+do black_out()
+Tinh thần lẫn thể lực đang dần cạn kiệt, ý thức và mắt của bạn dần lịm đi.
+May thay bạn thấy ánh sáng của cánh cửa dẫn đến trạm dừng tiếp theo của mình. Bạn lấy hết sức lực còn lại của bản thân đưa đôi tay lên và hướng về phía ánh sáng.
+do go_light()
+Bạn: Vậy đây là thế giới tiếp theo sao. Xa kia có một thành phố, mong rằng có thể xin một ít đồ ăn. Nhưng mà, mệttt quá rồi.
+Bạn ngã sập xuống, rên rỉ vì kiệt sức. Đúng lúc đó có một người đánh xe ngựa qua. Người đó cất tiếng.
+do wagon()
+Ông chú: Này cháu ơi, cháu bị sao mà nằm giữa đường thế?
+Bạn - rên rỉ: Đói...bụng...quá...
+Ông chú nhảy xuống và đưa cho một cái bánh mì.
+Ông chú: Ăn tạm đi cháu, làm gì mà để người ngợm thành ra như thế này.
+Bạn nhanh chóng ăn hết cái bánh mì, miệng liếng thoáng cảm ơn ông chú tốt bụng.
+Ông chú: Mà cháu đang tính đi đâu thế, có phải đến thành phố phía trước không?
+Mặc dù cơ thể và trí óc vẫn đang bị dày vò, bạn vẫn cố gắng thả lỏng cơ thể hết mức có thể.
+Bạn: À, thật ra cháu đi du hành khắp nơi ấy mà, thế nên lúc nãy mệt quá nên mới ngã xuống tí.
+Ông chú: Vậy sao, chú đang trên đường đến thành phố trước, cháu có muốn đi cùng không chứ chú thấy cháu khổ quá. 
+Bạn: Được vậy thì tốt quá, cảm ơn chú nhiều lắm luôn.
+Bạn nhảy lên xe ngựa và hai người bắt đầu đi đến thành phố.
+Bạn: Thành phố trước tên gì vậy chú nhỉ? Có gì nổi tiếng không chú?
+Ông chú: Nó tên là Lồng Sét. Nó nổi tiếng lắm đấy, chắc cháu từ lục địa khác nên không biết
+Bạn: Lồng Sét sao, chắc là do sét đánh nơi đó nhiều lắm nhỉ.
+Ông chú: Ha Ha, nó nổi tiếng, nhưng mà là tiếng xấu. Nguồn gốc cái tên đáng sợ hơn nhiều, mà cũng thảm thương lắm. Nơi đây có một đấu trường, nơi mà những nô lệ, tội phạm, những kẻ nợ nần, những đứa trẻ bị ruồng bỏ, nói chung đủ loại người trần đời này bị gom lại, huấn luyện và chiến đấu trong một đấu trường nhằm mua vui cho giới thượng lưu ở lục địa này.
+Ông chú: Và những ai dám cả gan muốn trốn thoát khỏi nó mà bị bắt được thì chỉ có một kết cục, bị các tia sét của các cai ngục đánh chết. Chuyện này hơi nặng nề để lấy ra mà nói chuyện nhỉ.
+Bạn: Dạ, vậy ta nói chuyện khác đi, chú đến đó làm gì thế.
+Ông chú: À, ta vận chuyển lương thực đến thôi, mà nhóc đi du hành thế có chuyện gì vui vui kể coi.
+Hai người tiếp tục nói chuyện cho đến khi đến thành phố.
+Ông chú: Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.
+Bạn: Dạ vâng ạ, chào chú nha.
+Bạn tạm biệt ông chú rồi đi lòng vòng tìm công việc để kiếm chút tiền sống qua ngày."
+errors = [  ]
+titles = {
+"first_scene_of_game": "2"
+}
+lines = {
+"0": {
+"next_id": "2",
+"text": "first_scene_of_game",
+"type": "title"
+},
+"10": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "11",
+"replacements": [  ],
+"text": "Kể cả cơ thể này có hoá thành tro tàn, ý chí của ta sẽ không từ bỏ. Ta mang trong mình hi vọng của tất cả người ta quan trọng. Và rồi lũ tự xưng thần linh các người sẽ bị ta đạp xuống...",
+"translation_key": "Kể cả cơ thể này có hoá thành tro tàn, ý chí của ta sẽ không từ bỏ. Ta mang trong mình hi vọng của tất cả người ta quan trọng. Và rồi lũ tự xưng thần linh các người sẽ bị ta đạp xuống...",
+"type": "dialogue"
+},
+"11": {
+"mutation": {
+"expression": [ {
+"function": "black_out",
+"type": "function",
+"value": [  ]
+} ]
+},
+"next_id": "12",
+"type": "mutation"
+},
+"12": {
+"character": "",
+"next_id": "13",
+"replacements": [  ],
+"text": "Tinh thần lẫn thể lực đang dần cạn kiệt, ý thức và mắt của bạn dần lịm đi.",
+"translation_key": "Tinh thần lẫn thể lực đang dần cạn kiệt, ý thức và mắt của bạn dần lịm đi.",
+"type": "dialogue"
+},
+"13": {
+"character": "",
+"next_id": "14",
+"replacements": [  ],
+"text": "May thay bạn thấy ánh sáng của cánh cửa dẫn đến trạm dừng tiếp theo của mình. Bạn lấy hết sức lực còn lại của bản thân đưa đôi tay lên và hướng về phía ánh sáng.",
+"translation_key": "May thay bạn thấy ánh sáng của cánh cửa dẫn đến trạm dừng tiếp theo của mình. Bạn lấy hết sức lực còn lại của bản thân đưa đôi tay lên và hướng về phía ánh sáng.",
+"type": "dialogue"
+},
+"14": {
+"mutation": {
+"expression": [ {
+"function": "go_light",
+"type": "function",
+"value": [  ]
+} ]
+},
+"next_id": "15",
+"type": "mutation"
+},
+"15": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "16",
+"replacements": [  ],
+"text": "Vậy đây là thế giới tiếp theo sao. Xa kia có một thành phố, mong rằng có thể xin một ít đồ ăn. Nhưng mà, mệttt quá rồi.",
+"translation_key": "Vậy đây là thế giới tiếp theo sao. Xa kia có một thành phố, mong rằng có thể xin một ít đồ ăn. Nhưng mà, mệttt quá rồi.",
+"type": "dialogue"
+},
+"16": {
+"character": "",
+"next_id": "17",
+"replacements": [  ],
+"text": "Bạn ngã sập xuống, rên rỉ vì kiệt sức. Đúng lúc đó có một người đánh xe ngựa qua. Người đó cất tiếng.",
+"translation_key": "Bạn ngã sập xuống, rên rỉ vì kiệt sức. Đúng lúc đó có một người đánh xe ngựa qua. Người đó cất tiếng.",
+"type": "dialogue"
+},
+"17": {
+"mutation": {
+"expression": [ {
+"function": "wagon",
+"type": "function",
+"value": [  ]
+} ]
+},
+"next_id": "18",
+"type": "mutation"
+},
+"18": {
+"character": "Ông chú",
+"character_replacements": [  ],
+"next_id": "19",
+"replacements": [  ],
+"text": "Này cháu ơi, cháu bị sao mà nằm giữa đường thế?",
+"translation_key": "Này cháu ơi, cháu bị sao mà nằm giữa đường thế?",
+"type": "dialogue"
+},
+"19": {
+"character": "Bạn - rên rỉ",
+"character_replacements": [  ],
+"next_id": "20",
+"replacements": [  ],
+"text": "Đói...bụng...quá...",
+"translation_key": "Đói...bụng...quá...",
+"type": "dialogue"
+},
+"2": {
+"character": "",
+"next_id": "3",
+"replacements": [  ],
+"text": "Trong không gian tĩnh lặng của vũ trụ huyền ảo, có một người đang bay xuyên qua những vì sao.",
+"translation_key": "Trong không gian tĩnh lặng của vũ trụ huyền ảo, có một người đang bay xuyên qua những vì sao.",
+"type": "dialogue"
+},
+"20": {
+"character": "",
+"next_id": "21",
+"replacements": [  ],
+"text": "Ông chú nhảy xuống và đưa cho một cái bánh mì.",
+"translation_key": "Ông chú nhảy xuống và đưa cho một cái bánh mì.",
+"type": "dialogue"
+},
+"21": {
+"character": "Ông chú",
+"character_replacements": [  ],
+"next_id": "22",
+"replacements": [  ],
+"text": "Ăn tạm đi cháu, làm gì mà để người ngợm thành ra như thế này.",
+"translation_key": "Ăn tạm đi cháu, làm gì mà để người ngợm thành ra như thế này.",
+"type": "dialogue"
+},
+"22": {
+"character": "",
+"next_id": "23",
+"replacements": [  ],
+"text": "Bạn nhanh chóng ăn hết cái bánh mì, miệng liếng thoáng cảm ơn ông chú tốt bụng.",
+"translation_key": "Bạn nhanh chóng ăn hết cái bánh mì, miệng liếng thoáng cảm ơn ông chú tốt bụng.",
+"type": "dialogue"
+},
+"23": {
+"character": "Ông chú",
+"character_replacements": [  ],
+"next_id": "24",
+"replacements": [  ],
+"text": "Mà cháu đang tính đi đâu thế, có phải đến thành phố phía trước không?",
+"translation_key": "Mà cháu đang tính đi đâu thế, có phải đến thành phố phía trước không?",
+"type": "dialogue"
+},
+"24": {
+"character": "",
+"next_id": "25",
+"replacements": [  ],
+"text": "Mặc dù cơ thể và trí óc vẫn đang bị dày vò, bạn vẫn cố gắng thả lỏng cơ thể hết mức có thể.",
+"translation_key": "Mặc dù cơ thể và trí óc vẫn đang bị dày vò, bạn vẫn cố gắng thả lỏng cơ thể hết mức có thể.",
+"type": "dialogue"
+},
+"25": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "26",
+"replacements": [  ],
+"text": "À, thật ra cháu đi du hành khắp nơi ấy mà, thế nên lúc nãy mệt quá nên mới ngã xuống tí.",
+"translation_key": "À, thật ra cháu đi du hành khắp nơi ấy mà, thế nên lúc nãy mệt quá nên mới ngã xuống tí.",
+"type": "dialogue"
+},
+"26": {
+"character": "Ông chú",
+"character_replacements": [  ],
+"next_id": "27",
+"replacements": [  ],
+"text": "Vậy sao, chú đang trên đường đến thành phố trước, cháu có muốn đi cùng không chứ chú thấy cháu khổ quá.",
+"translation_key": "Vậy sao, chú đang trên đường đến thành phố trước, cháu có muốn đi cùng không chứ chú thấy cháu khổ quá.",
+"type": "dialogue"
+},
+"27": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "28",
+"replacements": [  ],
+"text": "Được vậy thì tốt quá, cảm ơn chú nhiều lắm luôn.",
+"translation_key": "Được vậy thì tốt quá, cảm ơn chú nhiều lắm luôn.",
+"type": "dialogue"
+},
+"28": {
+"character": "",
+"next_id": "29",
+"replacements": [  ],
+"text": "Bạn nhảy lên xe ngựa và hai người bắt đầu đi đến thành phố.",
+"translation_key": "Bạn nhảy lên xe ngựa và hai người bắt đầu đi đến thành phố.",
+"type": "dialogue"
+},
+"29": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "30",
+"replacements": [  ],
+"text": "Thành phố trước tên gì vậy chú nhỉ? Có gì nổi tiếng không chú?",
+"translation_key": "Thành phố trước tên gì vậy chú nhỉ? Có gì nổi tiếng không chú?",
+"type": "dialogue"
+},
+"3": {
+"character": "",
+"next_id": "4",
+"replacements": [  ],
+"text": "Người đó mệt mỏi, đôi mắt đờ đẫn, cố gắng suy nghĩ để gượng dậy bản thân, giữ vững tinh thần và chống lại những tiếng nói đang giày vò trong đầu mình.",
+"translation_key": "Người đó mệt mỏi, đôi mắt đờ đẫn, cố gắng suy nghĩ để gượng dậy bản thân, giữ vững tinh thần và chống lại những tiếng nói đang giày vò trong đầu mình.",
+"type": "dialogue"
+},
+"30": {
+"character": "Ông chú",
+"character_replacements": [  ],
+"next_id": "31",
+"replacements": [  ],
+"text": "Nó tên là Lồng Sét. Nó nổi tiếng lắm đấy, chắc cháu từ lục địa khác nên không biết",
+"translation_key": "Nó tên là Lồng Sét. Nó nổi tiếng lắm đấy, chắc cháu từ lục địa khác nên không biết",
+"type": "dialogue"
+},
+"31": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "32",
+"replacements": [  ],
+"text": "Lồng Sét sao, chắc là do sét đánh nơi đó nhiều lắm nhỉ.",
+"translation_key": "Lồng Sét sao, chắc là do sét đánh nơi đó nhiều lắm nhỉ.",
+"type": "dialogue"
+},
+"32": {
+"character": "Ông chú",
+"character_replacements": [  ],
+"next_id": "33",
+"replacements": [  ],
+"text": "Ha Ha, nó nổi tiếng, nhưng mà là tiếng xấu. Nguồn gốc cái tên đáng sợ hơn nhiều, mà cũng thảm thương lắm. Nơi đây có một đấu trường, nơi mà những nô lệ, tội phạm, những kẻ nợ nần, những đứa trẻ bị ruồng bỏ, nói chung đủ loại người trần đời này bị gom lại, huấn luyện và chiến đấu trong một đấu trường nhằm mua vui cho giới thượng lưu ở lục địa này.",
+"translation_key": "Ha Ha, nó nổi tiếng, nhưng mà là tiếng xấu. Nguồn gốc cái tên đáng sợ hơn nhiều, mà cũng thảm thương lắm. Nơi đây có một đấu trường, nơi mà những nô lệ, tội phạm, những kẻ nợ nần, những đứa trẻ bị ruồng bỏ, nói chung đủ loại người trần đời này bị gom lại, huấn luyện và chiến đấu trong một đấu trường nhằm mua vui cho giới thượng lưu ở lục địa này.",
+"type": "dialogue"
+},
+"33": {
+"character": "Ông chú",
+"character_replacements": [  ],
+"next_id": "34",
+"replacements": [  ],
+"text": "Và những ai dám cả gan muốn trốn thoát khỏi nó mà bị bắt được thì chỉ có một kết cục, bị các tia sét của các cai ngục đánh chết. Chuyện này hơi nặng nề để lấy ra mà nói chuyện nhỉ.",
+"translation_key": "Và những ai dám cả gan muốn trốn thoát khỏi nó mà bị bắt được thì chỉ có một kết cục, bị các tia sét của các cai ngục đánh chết. Chuyện này hơi nặng nề để lấy ra mà nói chuyện nhỉ.",
+"type": "dialogue"
+},
+"34": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "35",
+"replacements": [  ],
+"text": "Dạ, vậy ta nói chuyện khác đi, chú đến đó làm gì thế.",
+"translation_key": "Dạ, vậy ta nói chuyện khác đi, chú đến đó làm gì thế.",
+"type": "dialogue"
+},
+"35": {
+"character": "Ông chú",
+"character_replacements": [  ],
+"next_id": "36",
+"replacements": [  ],
+"text": "À, ta vận chuyển lương thực đến thôi, mà nhóc đi du hành thế có chuyện gì vui vui kể coi.",
+"translation_key": "À, ta vận chuyển lương thực đến thôi, mà nhóc đi du hành thế có chuyện gì vui vui kể coi.",
+"type": "dialogue"
+},
+"36": {
+"character": "",
+"next_id": "37",
+"replacements": [  ],
+"text": "Hai người tiếp tục nói chuyện cho đến khi đến thành phố.",
+"translation_key": "Hai người tiếp tục nói chuyện cho đến khi đến thành phố.",
+"type": "dialogue"
+},
+"37": {
+"character": "Ông chú",
+"character_replacements": [  ],
+"next_id": "38",
+"replacements": [  ],
+"text": "Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.",
+"translation_key": "Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.",
+"type": "dialogue"
+},
+"38": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "39",
+"replacements": [  ],
+"text": "Dạ vâng ạ, chào chú nha.",
+"translation_key": "Dạ vâng ạ, chào chú nha.",
+"type": "dialogue"
+},
+"39": {
+"character": "",
+"next_id": "",
+"replacements": [  ],
+"text": "Bạn tạm biệt ông chú rồi đi lòng vòng tìm công việc để kiếm chút tiền sống qua ngày.",
+"translation_key": "Bạn tạm biệt ông chú rồi đi lòng vòng tìm công việc để kiếm chút tiền sống qua ngày.",
+"type": "dialogue"
+},
+"4": {
+"character": "(Bạn - suy nghĩ)",
+"character_replacements": [  ],
+"next_id": "5",
+"replacements": [  ],
+"text": "Mình đã bắt đầu cuộc hành trình này biết bao nhiêu năm rồi. Liệu sẽ có ngày đôi tay này sẽ có ngày chạm được đích đến mình hằng mong không.",
+"translation_key": "Mình đã bắt đầu cuộc hành trình này biết bao nhiêu năm rồi. Liệu sẽ có ngày đôi tay này sẽ có ngày chạm được đích đến mình hằng mong không.",
+"type": "dialogue"
+},
+"5": {
+"character": "(giọng nói trong đầu)",
+"character_replacements": [  ],
+"next_id": "6",
+"replacements": [  ],
+"text": "Bỏ cuộc đi, cho dù có chiến đấu cả cái cuộc đời ngắn ngủi của ngươi thì cũng không bao giờ nhìn thấy được vạch đích.",
+"translation_key": "Bỏ cuộc đi, cho dù có chiến đấu cả cái cuộc đời ngắn ngủi của ngươi thì cũng không bao giờ nhìn thấy được vạch đích.",
+"type": "dialogue"
+},
+"6": {
+"character": "(giọng nói trong đầu)",
+"character_replacements": [  ],
+"next_id": "7",
+"replacements": [  ],
+"text": "Những thử thách đang đợi ngươi ở phía trước sẽ càng ngày càng khó hơn. Sẽ đến một ngày cơ thể ngươi sẽ mục nát mà thôi.",
+"translation_key": "Những thử thách đang đợi ngươi ở phía trước sẽ càng ngày càng khó hơn. Sẽ đến một ngày cơ thể ngươi sẽ mục nát mà thôi.",
+"type": "dialogue"
+},
+"7": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "8",
+"replacements": [  ],
+"text": "[shake rate=10 level=10][b]Im Hết Đi[/b][/shake]",
+"translation_key": "[shake rate=10 level=10][b]Im Hết Đi[/b][/shake]",
+"type": "dialogue"
+},
+"8": {
+"character": "(giọng nói trong đầu)",
+"character_replacements": [  ],
+"next_id": "9",
+"replacements": [  ],
+"text": "Liệu thứ ngươi trông chờ ở cuối con đường có thật sự là thứ ngươi mong muốn. Đừng có quay mặt khỏi hiện tại nữa, ngươi đã luôn nghĩ về nó nhưng ngươi chẳng hiểu gì về nó cả.",
+"translation_key": "Liệu thứ ngươi trông chờ ở cuối con đường có thật sự là thứ ngươi mong muốn. Đừng có quay mặt khỏi hiện tại nữa, ngươi đã luôn nghĩ về nó nhưng ngươi chẳng hiểu gì về nó cả.",
+"type": "dialogue"
+},
+"9": {
+"character": "(giọng nói trong đầu)",
+"character_replacements": [  ],
+"next_id": "10",
+"replacements": [  ],
+"text": "Ngươi đã có thể sống trọn vẹn với những người ngươi yêu thương, nhưng rồi ngươi ruồng bỏ họ. Người hãy nghĩ lại xem coi nó có đáng không!",
+"translation_key": "Ngươi đã có thể sống trọn vẹn với những người ngươi yêu thương, nhưng rồi ngươi ruồng bỏ họ. Người hãy nghĩ lại xem coi nó có đáng không!",
+"type": "dialogue"
+}
+}

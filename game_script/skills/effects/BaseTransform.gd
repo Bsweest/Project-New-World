@@ -18,7 +18,7 @@ func _ready():
 	_hitbox.init(is_party)
 	init_transform()
 
-func setter(_is_party: bool, _stats: CharacterStats, _skill: CharacterSkill) -> void:
+func setter(_is_party: bool, _stats: CharacterStats, _skill) -> void:
 	self.is_party = _is_party
 	self.stats = _stats
 	self.skill = _skill

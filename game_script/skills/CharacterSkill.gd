@@ -17,7 +17,6 @@ var type : int
 var multipiler_type : int
 var effect : int
 var need_choose : bool
-var need_formation : bool
 
 func init(skill: BaseSkill, lvl: int) -> void:
 	skill_name = skill.skill_name
@@ -29,7 +28,6 @@ func init(skill: BaseSkill, lvl: int) -> void:
 	multipiler_type = skill.multipiler_type
 	effect = skill.side_effect
 	need_choose = skill.need_choose
-	need_formation = skill.need_formation
 
 func addTP(amount: int) -> void:
 	current_tp += amount

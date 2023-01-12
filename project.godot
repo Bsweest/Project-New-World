@@ -189,7 +189,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Project New World"
-run/main_scene="res://Scene/GameScene.tscn"
+run/main_scene="res://Scene/FirstScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -207,7 +207,6 @@ window/size/width=1280
 window/size/height=720
 window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
-window/stretch/aspect="keep"
 
 [editor_plugins]
 

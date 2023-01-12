@@ -52,6 +52,14 @@ var projectile_texture : Texture
 var ts : CharacterTransform
 var ub_position := 0
 
+#Utils
+func isCrit(crit_c: float) -> bool:
+	var thresh = randf()
+	if thresh > 1 - crit_c:
+		return true
+	return false
+
+#! Ready Set GO
 func _ready() -> void:
 	state_factory = StateFactory.new()
 	set_resource()
@@ -118,45 +126,41 @@ func UB_animation_finish():
 	else:
 		battleSprite.visible = true
 
+
 #* Battle Gameplay Mechanic
 func normal_hit_enemy(target: Entity) -> void:
 	skill.addTP(90)
 	if !state.s_name == State.DEATH:
 		animationPlayer.play("attack")
-	var is_crit = Utils.isCrit(stats.crit_c)
+	var is_crit = isCrit(stats.crit_c)
 	var dmg : int = stats.physic
-	if is_crit: 
+	if is_crit:
 		dmg *= stats.crit_dmg
 	target.take_damage(dmg, is_crit, DamageType.PHYSIC)
 
 func fire_normal_aa() -> void:
 	skill.addTP(90)
 	var projectile : Projectile = ins_projectile.instance()
-	projectile._texture =  projectile_texture
-	
+	var damage : int
+	var type : int
 	if stats.c_class == BaseClass.MAGE || stats.c_class == BaseClass.HEALER:
-		projectile.dmg = stats.magic
-		projectile.type = DamageType.MAGIC
+		damage = stats.magic
+		type = DamageType.MAGIC
 	else:
-		projectile.dmg = stats.physic
-		projectile.type = DamageType.PHYSIC
-	projectile.is_crit = Utils.isCrit(stats.crit_c)
-	if projectile.is_crit:
-		projectile.dmg *= stats.crit_dmg
-	projectile.is_party = is_party
-	projectile.is_kb = true
+		damage = stats.physic
+		type = DamageType.PHYSIC
+	var is_crit = isCrit(stats.crit_c)
+	if is_crit:
+		damage *= stats.crit_dmg
+	projectile.projectile_setter(is_party, projectile_texture, damage, is_crit, type, true)
 	add_child(projectile)
 
 func fire_special_projectile(_txt: Texture, damage: int, type: int, isKB: bool) -> void:
 	var projectile : Projectile = ins_projectile.instance()
-	projectile._texture =  _txt
-	projectile.dmg = damage
-	projectile.type = type
-	projectile.is_crit = Utils.isCrit(stats.crit_c)
-	if projectile.is_crit:
-		projectile.dmg *= stats.crit_dmg
-	projectile.is_party = is_party
-	projectile.is_kb = isKB
+	var is_crit = isCrit(stats.crit_c)
+	if is_crit:
+		damage *= stats.crit_dmg
+	projectile.projectile_setter(is_party, _txt, damage, is_crit, type, isKB)
 	add_child(projectile)
 	
 func take_damage(amount: int, is_crit: bool, type: int) -> void:
@@ -170,14 +174,6 @@ func take_damage(amount: int, is_crit: bool, type: int) -> void:
 func get_heal(amount: int) -> void:
 	stats.take_dmg(-amount, false, DamageType.HEAL)
 
-func _on_Stats_hp_depleted():
-	_col1.set_deferred("disabled", true)
-	_col2.set_deferred("disabled", true)
-	if ts != null:
-		ts.endTransform()
-	change_state(State.DEATH)
-	if pos != null:
-		emit_signal("hp_depleted")
 
 #* Process each frame
 #! check next move after attack or shoot projectile
@@ -226,6 +222,7 @@ func _physics_process(_delta):
 			animationPlayer.play("running")
 			change_state(State.RUNNING)
 
+
 #* Signal Management
 func showDamageNumber(amount: int, is_crit: bool, type: int) -> void:
 	var text : DamageNumber = txt_dmg_number.instance()
@@ -234,6 +231,15 @@ func showDamageNumber(amount: int, is_crit: bool, type: int) -> void:
 	text.is_crit = is_crit
 	text.type = type
 	add_child(text)
+
+func _on_Stats_hp_depleted():
+	_col1.set_deferred("disabled", true)
+	_col2.set_deferred("disabled", true)
+	if ts != null:
+		ts.endTransform()
+	change_state(State.DEATH)
+	if pos != null:
+		emit_signal("hp_depleted")
 
 func _on_Stats_hp_changed(_new_hp: int, amount: int, is_crit: bool, type: int):
 	skill.addTP(amount / stats.max_hp * 500)
@@ -247,6 +253,7 @@ func _on_Skill_add_tp(newTP: int):
 		emit_signal("tp_changed", newTP, pos)
 
 func get_class() -> String: return "Entity"
+
 
 #* Skill Side Effect
 func _on_end_Transform() -> void:

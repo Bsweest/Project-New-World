@@ -16,12 +16,19 @@ var is_crit: bool
 var type : int
 var is_party : bool
 var is_kb : bool
+var num_target : int = 1
 
-func setter(dmg: int, is_crit: bool, type: int, is_kb: bool) -> void:
+func projectile_setter(isParty: bool, _txt: Texture, dmg: int, is_crit: bool, type: int, is_kb: bool) -> void:
+	self.is_party = isParty
+	self._texture = _txt
 	self.dmg = dmg
 	self.is_crit = is_crit
 	self.type = type
 	self.is_kb = is_kb
+
+func modify_projectile(mod_speed: float, numTarget: int) -> void:
+	SPEED *= mod_speed
+	num_target = numTarget
 
 func _ready():
 	_hitbox.setter(dmg, is_crit, type, is_kb)
@@ -34,9 +41,10 @@ func _physics_process(_delta: float):
 	position.x += SPEED * dir * _delta
 
 func _on_HitBox_body_entered(body):
-	if is_kb:
-		if body.get_class() == "Entity":
-			queue_free()
+	if body.get_class() == "Entity":
+		num_target -= 1
+		if num_target == 0:
+			queue_free()	
 	if body.get_class() == "StaticBody2D":
 		queue_free()
 

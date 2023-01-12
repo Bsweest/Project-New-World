@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/background/forest.png" type="Texture" id=1]
+[ext_resource path="res://assets/background/forest.jpg" type="Texture" id=1]
 
 [node name="Forest BackGround" type="ParallaxBackground"]
 follow_viewport_enable = true
@@ -9,7 +9,7 @@ follow_viewport_enable = true
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer"]
 show_behind_parent = true
-position = Vector2( 0, -8.47033e-22 )
-scale = Vector2( 0.8, 1.07143 )
+position = Vector2( -140, 0 )
+scale = Vector2( 0.645833, 0.850277 )
 texture = ExtResource( 1 )
 centered = false

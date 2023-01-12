@@ -10,7 +10,6 @@ base_dmg = 210
 side_dmg = 30
 percent_hp = 0
 need_choose = false
-need_formation = true
 type = 1
 multipiler_type = 0
 side_effect = 0

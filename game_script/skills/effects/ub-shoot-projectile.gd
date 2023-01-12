@@ -2,15 +2,12 @@ extends NodeUB
 
 class_name NodeUBShoot
 
-var _texture : String = "res://assets/projectile/spark.png"
+var _texture : String
 var ub_txt : Texture
 var _char
 var is_kb : bool = true
-var num_shoot : = 3
-var _repeat := 0
-
-func _init():
-	wait_time = 0.2
+var num_shoot : = 1
+var have_repeat := 0
 
 func _ready():
 	ub_txt = load(_texture)
@@ -22,9 +19,9 @@ func shoot_ub() -> void:
 
 func activeUB(_ub_postion: int) -> void:
 	shoot_ub()
-	_repeat += 1
-	if _repeat == num_shoot:
-		_repeat = 0
+	have_repeat += 1
+	if have_repeat == num_shoot:
+		have_repeat = 0
 		return
 	else:
 		timer.start()

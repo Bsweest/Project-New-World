@@ -19,7 +19,7 @@ var first_use : bool = false
 var wait_time : float = 0.1
 var timer = Timer.new()
 
-func ready_set(is_member: bool, c_stats: CharacterStats, c_skill: CharacterSkill) -> void:
+func ready_set(is_member: bool, c_stats: CharacterStats, c_skill) -> void:
 	is_party = is_member
 	stats = c_stats
 	skill = c_skill
