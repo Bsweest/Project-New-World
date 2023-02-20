@@ -19,29 +19,26 @@ var timer = Timer.new()
 
 func _ready():
 	var ally = [
-		# { 
-		# 	"name": "mezuna_ryuji", 
-		# 	"skill_icon": 4
-			
-		# },
-		{ 
-			"name": "mob_shooter_1",
-			"skill_icon": 1
+		{
+			"name": "van_ai",
 		},
 		{ 
-			"name": "mezuna_ryuji",
-			"skill_icon": 1
+			"name": "mob_shooter_1",
+		},
+		{ 
+			"name": "thanh_dung",
 		}
 		]
 	var enemy = [
-		# {
-		# 	"name": "hoa_lan",
-		# 	"skill_icon": 1
-		# },
+		{
+			"name": "hoa_lan",
+		},
 		{ 
-			"name": "thanh_dung",
-			"skill_icon": 1
-		}
+			"name": "mezuna_ryuji",
+		},
+		{ 
+			"name": "mob_fighter_1",
+		},
 		]
 	
 	ui.initButton(ally)
@@ -63,11 +60,11 @@ func field_characters(party_member: Array, enemies: Array) -> void:
 	arrEnemy = enemy_formation.ready_set(false, enemies)
 	count_allies = len(arrAlly)
 	for each in arrAlly:
-		set_both_formation(true, each.pos)
+		set_both_formation_references(true, each.pos)
 	for each in arrEnemy:
-		set_both_formation(false, each.pos)
+		set_both_formation_references(false, each.pos)
 
-func set_both_formation(is_party: bool, pos: int) -> void:
+func set_both_formation_references(is_party: bool, pos: int) -> void:
 	if is_party:
 		party_formation.get_character(pos).ub.setup_formation(arrAlly, arrEnemy)
 	else:

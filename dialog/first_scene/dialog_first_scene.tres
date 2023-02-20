@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 5
+resource_version = 7
 syntax_version = 2
 raw_text = "~ first_scene_of_game
 
@@ -16,7 +16,7 @@ Người đó mệt mỏi, đôi mắt đờ đẫn, cố gắng suy nghĩ để
 Bạn: [shake rate=10 level=10][b]Im Hết Đi[/b][/shake]
 (giọng nói trong đầu): Liệu thứ ngươi trông chờ ở cuối con đường có thật sự là thứ ngươi mong muốn. Đừng có quay mặt khỏi hiện tại nữa, ngươi đã luôn nghĩ về nó nhưng ngươi chẳng hiểu gì về nó cả. 
 (giọng nói trong đầu): Ngươi đã có thể sống trọn vẹn với những người ngươi yêu thương, nhưng rồi ngươi ruồng bỏ họ. Người hãy nghĩ lại xem coi nó có đáng không!
-Bạn: Kể cả cơ thể này có hoá thành tro tàn, ý chí của ta sẽ không từ bỏ. Ta mang trong mình hi vọng của tất cả người ta quan trọng. Và rồi lũ tự xưng thần linh các người sẽ bị ta đạp xuống...
+Bạn: Kể cả cơ thể này có hoá thành tro tàn, ý chí của ta sẽ không từ bỏ. Ta mang trong mình hi vọng của tất cả người ta quan trọng. Và rồi đám thần linh các người sẽ bị ta đạp xuống...
 do black_out()
 Tinh thần lẫn thể lực đang dần cạn kiệt, ý thức và mắt của bạn dần lịm đi.
 May thay bạn thấy ánh sáng của cánh cửa dẫn đến trạm dừng tiếp theo của mình. Bạn lấy hết sức lực còn lại của bản thân đưa đôi tay lên và hướng về phía ánh sáng.
@@ -42,10 +42,7 @@ Bạn: Lồng Sét sao, chắc là do sét đánh nơi đó nhiều lắm nhỉ.
 Ông chú: Và những ai dám cả gan muốn trốn thoát khỏi nó mà bị bắt được thì chỉ có một kết cục, bị các tia sét của các cai ngục đánh chết. Chuyện này hơi nặng nề để lấy ra mà nói chuyện nhỉ.
 Bạn: Dạ, vậy ta nói chuyện khác đi, chú đến đó làm gì thế.
 Ông chú: À, ta vận chuyển lương thực đến thôi, mà nhóc đi du hành thế có chuyện gì vui vui kể coi.
-Hai người tiếp tục nói chuyện cho đến khi đến thành phố.
-Ông chú: Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.
-Bạn: Dạ vâng ạ, chào chú nha.
-Bạn tạm biệt ông chú rồi đi lòng vòng tìm công việc để kiếm chút tiền sống qua ngày."
+Hai người tiếp tục nói chuyện cho đến khi đến thành phố."
 errors = [  ]
 titles = {
 "first_scene_of_game": "2"
@@ -61,8 +58,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "11",
 "replacements": [  ],
-"text": "Kể cả cơ thể này có hoá thành tro tàn, ý chí của ta sẽ không từ bỏ. Ta mang trong mình hi vọng của tất cả người ta quan trọng. Và rồi lũ tự xưng thần linh các người sẽ bị ta đạp xuống...",
-"translation_key": "Kể cả cơ thể này có hoá thành tro tàn, ý chí của ta sẽ không từ bỏ. Ta mang trong mình hi vọng của tất cả người ta quan trọng. Và rồi lũ tự xưng thần linh các người sẽ bị ta đạp xuống...",
+"text": "Kể cả cơ thể này có hoá thành tro tàn, ý chí của ta sẽ không từ bỏ. Ta mang trong mình hi vọng của tất cả người ta quan trọng. Và rồi đám thần linh các người sẽ bị ta đạp xuống...",
+"translation_key": "Kể cả cơ thể này có hoá thành tro tàn, ý chí của ta sẽ không từ bỏ. Ta mang trong mình hi vọng của tất cả người ta quan trọng. Và rồi đám thần linh các người sẽ bị ta đạp xuống...",
 "type": "dialogue"
 },
 "11": {
@@ -307,36 +304,10 @@ lines = {
 },
 "36": {
 "character": "",
-"next_id": "37",
+"next_id": "",
 "replacements": [  ],
 "text": "Hai người tiếp tục nói chuyện cho đến khi đến thành phố.",
 "translation_key": "Hai người tiếp tục nói chuyện cho đến khi đến thành phố.",
-"type": "dialogue"
-},
-"37": {
-"character": "Ông chú",
-"character_replacements": [  ],
-"next_id": "38",
-"replacements": [  ],
-"text": "Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.",
-"translation_key": "Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.",
-"type": "dialogue"
-},
-"38": {
-"character": "Bạn",
-"character_replacements": [  ],
-"next_id": "39",
-"replacements": [  ],
-"text": "Dạ vâng ạ, chào chú nha.",
-"translation_key": "Dạ vâng ạ, chào chú nha.",
-"type": "dialogue"
-},
-"39": {
-"character": "",
-"next_id": "",
-"replacements": [  ],
-"text": "Bạn tạm biệt ông chú rồi đi lòng vòng tìm công việc để kiếm chút tiền sống qua ngày.",
-"translation_key": "Bạn tạm biệt ông chú rồi đi lòng vòng tìm công việc để kiếm chút tiền sống qua ngày.",
 "type": "dialogue"
 },
 "4": {

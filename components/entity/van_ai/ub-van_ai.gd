@@ -1,4 +1,4 @@
-extends NodeUB
+extends NodeUBArea
 
 var num_enemy := 0
 
@@ -10,8 +10,9 @@ func activeUB(ub_postion: int) -> void:
 	num_enemy = 0
 	.activeUB(ub_postion)
 
-func _do_UB_skill() -> void:
-	_hitbox.disable_collision()
-	var amount : int = int(skill.side_dmg * stats.magic * (1 + 0.3 * num_enemy) / 100)
+func after_ub_effect() -> void:
+	var amount : int = - int(skill.side_dmg * stats.magic * (1 + 0.3 * num_enemy) / 100)
+	var healMachine = DamageMachine.new()
+	healMachine.setter(owner, amount, 4, false)
 	for each in members:
-		each.get_heal(amount)
+		healMachine.heal_received(each)

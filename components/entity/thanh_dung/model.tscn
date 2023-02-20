@@ -1,34 +1,19 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://components/entity/BaseModel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://components/Area/UBAreaDefault.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/sprite/thanh_dung/idle.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprite/thanh_dung/inbattle.png" type="Texture" id=6]
-[ext_resource path="res://game_script/battle/NodeUB.gd" type="Script" id=7]
-[ext_resource path="res://game_script/battle/HitBox.gd" type="Script" id=8]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 66, 30 )
 
 [node name="Entity" instance=ExtResource( 1 )]
+c_name = ""
+is_party = true
+level = 1
 
 [node name="Idle" parent="." index="3"]
-visible = false
 texture = ExtResource( 5 )
 
 [node name="InBattle" parent="." index="4"]
-visible = true
 texture = ExtResource( 6 )
 
-[node name="NodeUB" type="Node2D" parent="." index="8"]
-script = ExtResource( 7 )
-
-[node name="HitBox" type="Area2D" parent="NodeUB" index="0"]
-scale = Vector2( -1, 1 )
-collision_layer = 0
-collision_mask = 0
-script = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NodeUB/HitBox" index="0"]
-position = Vector2( -81, 0 )
-shape = SubResource( 1 )
-disabled = true
+[node name="NodeUB" parent="." index="8" instance=ExtResource( 2 )]

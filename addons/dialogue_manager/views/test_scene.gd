@@ -14,7 +14,7 @@ func _ready():
 	
 	var title = settings.get_user_value("run_title")
 	var dialogue_resource = load(settings.get_user_value("run_resource_path"))
-	DialogueManager.show_example_dialogue_balloon(title, dialogue_resource)
+	DialogueManager.show_dialogue(title, dialogue_resource)
 
 
 ### Signals

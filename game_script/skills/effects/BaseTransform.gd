@@ -11,11 +11,12 @@ onready var _hitbox : HitBox = $HitBox as HitBox
 var stats : CharacterStats
 var skill : CharacterSkill
 var is_party : bool
+var is_active := false
 
 func _ready():
 	visible = false
 	_hitbox.disable_collision()
-	_hitbox.init(is_party)
+	_hitbox.initHitbox(is_party)
 	init_transform()
 
 func setter(_is_party: bool, _stats: CharacterStats, _skill) -> void:
@@ -28,10 +29,12 @@ func init_transform() -> void:
 		
 func activeTransform() -> void:
 	visible = true
+	is_active = true
 	_aniPlayer.play("transform")
 
 func endTransform() -> void:
 	visible = false
+	is_active = false
 	_hitbox.disable_collision()
 	emit_signal("end_transfrom")
 

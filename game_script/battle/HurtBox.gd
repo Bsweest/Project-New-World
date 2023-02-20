@@ -19,16 +19,11 @@ func init(is_party: bool) -> void:
 	set_collision_mask_bit(mask, true)
 
 func _on_Area_enter(box: HitBox) -> void:
-	if box == null:
-		return
-	if owner.get_class() == "Entity":
-		if box.is_kb && !owner.stats.is_ranged:
-			owner.change_state(1)
-		owner.take_damage(box.dmg, box.is_crit, box.type)
+	owner.change_state(1)
+	box.dmgMachine.attack_received(owner)
 
 func _on_Body_enter(body) -> void:
 	if body.get_class() != "Entity":
 		return
-	if owner.get_class() == "Entity":
-		owner.change_state(1)
-		body.normal_hit_enemy(owner)
+	owner.change_state(1)
+	body.normal_hit_enemy(owner)

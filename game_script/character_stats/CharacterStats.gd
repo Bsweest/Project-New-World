@@ -5,7 +5,7 @@ class_name CharacterStats
 enum BaseClass { FIGHTER, DEFENDER, PALADIN, ARCHER, MAGE, HEALER }
 enum DamameType { PHYSIC, MAGIC, TRUE, PIERCE }
 
-signal hp_changed(new_hp, amount, is_crit, type)
+signal hp_changed(new_hp, damage)
 signal hp_depleted()
 
 var max_hp : int
@@ -39,6 +39,12 @@ func init(stats: BaseStats, lvl: int) -> void:
 	if c_class == BaseClass.ARCHER || c_class == BaseClass.MAGE || c_class == BaseClass.HEALER:
 		is_ranged = true
 
+func isCrit() -> bool:
+	var thresh = randf()
+	if thresh > 1 - crit_c:
+		return true
+	return false
+
 func defense_multiplier(type: int) -> float:
 	var mul = 0
 	if type == DamameType.PHYSIC:
@@ -47,11 +53,11 @@ func defense_multiplier(type: int) -> float:
 		mul = magic
 	return 100.0 / (100 + mul)
 
-func take_dmg(amount: int, is_crit: bool, type: int) -> void:
-	current_hp -= amount
+func take_calculated_dmg(damage: Dictionary) -> void:
+	current_hp -= damage.cal_damage
 	current_hp = max(0, current_hp)
 	if current_hp > max_hp:
 		current_hp = max_hp
-	emit_signal("hp_changed", current_hp, amount, is_crit, type)
+	emit_signal("hp_changed", current_hp, damage)
 	if current_hp == 0:
 		emit_signal("hp_depleted")

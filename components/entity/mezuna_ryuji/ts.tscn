@@ -33,47 +33,6 @@ tracks/1/keys = {
 "method": "endTransform"
 } ]
 }
-tracks/2/type = "method"
-tracks/2/path = NodePath("HitBox")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"values": [ {
-"args": [  ],
-"method": "enable_collision"
-}, {
-"args": [  ],
-"method": "disable_collision"
-}, {
-"args": [  ],
-"method": "enable_collision"
-}, {
-"args": [  ],
-"method": "disable_collision"
-}, {
-"args": [  ],
-"method": "enable_collision"
-}, {
-"args": [  ],
-"method": "disable_collision"
-}, {
-"args": [  ],
-"method": "enable_collision"
-}, {
-"args": [  ],
-"method": "disable_collision"
-}, {
-"args": [  ],
-"method": "enable_collision"
-}, {
-"args": [  ],
-"method": "disable_collision"
-} ]
-}
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 54.6563, 50 )

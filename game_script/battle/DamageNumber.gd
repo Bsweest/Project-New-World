@@ -7,8 +7,9 @@ enum DamageType { PHYSIC, MAGIC, TRUE, PIERCE, HEAL }
 onready var label: Label = $Label as Label
 onready var tween: Tween = $Tween as Tween
 
-var amount = 0
+var damage: Dictionary
 var isPartyMember : bool
+var amount := 0
 var is_crit : bool = false
 var type : int
 
@@ -17,6 +18,9 @@ var _velocity = Vector2(0, 80)
 func _ready() -> void:
 	var end = Vector2(1, 1)
 	var pre_fix = "-"
+	amount = damage.cal_damage
+	is_crit = damage.is_crit
+	type = damage.type
 	if isPartyMember : 
 		scale = Vector2(-0.7, 0.7)
 		end = Vector2(-1, 1)

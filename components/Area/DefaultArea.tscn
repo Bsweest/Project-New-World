@@ -4,6 +4,6 @@
 
 [node name="D_Area" type="Sprite"]
 modulate = Color( 1, 1, 1, 0.509804 )
-position = Vector2( -68, 24 )
-scale = Vector2( 2.26667, 1 )
+position = Vector2( -72, 24 )
+scale = Vector2( 2.4, 1 )
 texture = ExtResource( 1 )

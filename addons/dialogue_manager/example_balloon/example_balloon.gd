@@ -28,7 +28,7 @@ func _ready() -> void:
 	margin.rect_size.x = viewport_size.x * 0.9
 	
 	character_label.visible = dialogue_line.character != ""
-	character_label.bbcode_text = dialogue_line.character
+	character_label.bbcode_text = "[b]" +dialogue_line.character+ "[/b]"
 	
 	dialogue_label.rect_size.x = margin.rect_size.x - margin.get("custom_constants/margin_left") - margin.get("custom_constants/margin_right")
 	dialogue_label.dialogue_line = dialogue_line

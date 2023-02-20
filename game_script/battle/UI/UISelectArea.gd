@@ -12,7 +12,7 @@ var mouse_pos : Vector2
 func _ready():
 	_area.visible = false
 
-func _physics_process(_delta) -> void:
+func _process(_delta) -> void:
 	if !_area.visible:
 		return
 	mouse_pos = get_global_mouse_position()

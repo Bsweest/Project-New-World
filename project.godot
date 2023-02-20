@@ -59,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game_script/skills/effects/BaseTransform.gd"
 }, {
+"base": "Reference",
+"class": "DamageMachine",
+"language": "GDScript",
+"path": "res://game_script/battle/DamageMachine.gd"
+}, {
 "base": "Position2D",
 "class": "DamageNumber",
 "language": "GDScript",
@@ -108,6 +113,11 @@ _global_script_classes=[ {
 "class": "NodeUB",
 "language": "GDScript",
 "path": "res://game_script/battle/NodeUB.gd"
+}, {
+"base": "NodeUB",
+"class": "NodeUBArea",
+"language": "GDScript",
+"path": "res://game_script/skills/effects/ub-area-based.gd"
 }, {
 "base": "NodeUB",
 "class": "NodeUBShoot",
@@ -165,6 +175,7 @@ _global_script_class_icons={
 "CharacterSkill": "",
 "CharacterStats": "",
 "CharacterTransform": "",
+"DamageMachine": "",
 "DamageNumber": "",
 "DeathState": "",
 "DialogueResource": "",
@@ -175,6 +186,7 @@ _global_script_class_icons={
 "KnockBackState": "",
 "LoadingState": "",
 "NodeUB": "",
+"NodeUBArea": "",
 "NodeUBShoot": "",
 "Projectile": "",
 "RunningState": "",
@@ -189,7 +201,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Project New World"
-run/main_scene="res://Scene/FirstScene.tscn"
+run/main_scene="res://Scene/GameScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]

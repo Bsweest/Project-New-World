@@ -13,6 +13,6 @@ m_armor = 30
 crit_c = 10
 crit_dmg = 150
 speed = 150
-attack_range = 100
+attack_range = 120
 base_class = 5
 projectile_texture = "lam_hoa"

@@ -201,6 +201,9 @@ tracks/0/keys = {
 collision_layer = 0
 collision_mask = 16
 script = ExtResource( 6 )
+c_name = null
+is_party = null
+level = null
 
 [node name="HPBar" type="ProgressBar" parent="."]
 anchor_top = 1.0

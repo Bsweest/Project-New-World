@@ -12,7 +12,8 @@ func initButton(party_member : Array) -> void:
 		var button = charButton.instance()
 		button.pos = i
 		button.c_name = party_member[i]["name"]
-		button.skill_icon =  party_member[i]["skill_icon"]
+		# skill icon
+		button.skill_icon =  1
 		button.rect_position = init_point.position
 		button.connect("active_ub", get_parent(), "_active_UB_with_button")
 		init_point.replace_by(button)

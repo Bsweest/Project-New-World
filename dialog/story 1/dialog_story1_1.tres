@@ -1,0 +1,239 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/dialogue_manager/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+resource_version = 4
+syntax_version = 2
+raw_text = "~ story_begin
+Ông chú: Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.
+Bạn: Dạ vâng ạ, chào chú nha.
+Bạn tạm biệt ông chú rồi đi lòng vòng tìm công việc để kiếm chút tiền sống qua ngày.
+# di den guild
+Bạn: Ở thế giới này cũng có bang hội sao, nếu chỉ là săn mấy con quái vật thì chắc ez.
+# an vao npc
+Hàn Ngọc: Xin chào bạn, bạn đến bang hội Trống Sét để làm gì, treo tiền thưởng, sử dụng ngân hàng hay gì khác.
+Bạn: À, mình muốn xin làm người giải quyết mấy cái nhiệm vụ ấy, không biết có được không...?
+Hàn Ngoc: Ồ, tức là đăng ký làm \"Gáp Phai\". Đúng lúc bang hội chúng tôi đang thiếu người. Chắc bạn là người từ lục địa khác nhỉ, thủ tục cũng đơn giản thôi. Nhưng mà...
+Bạn: Ừ, cũng dạng dạng đó, mà sao vậy bạn?
+Hàn Ngọc: Không biết bạn có đủ tiền để làm thủ tục không, số tiền để đăng ký cũng khá lớn, khoảng 10.000 đồng. Và hiện tại bên mình cũng không nhận tiền của lục địa khác.
+(Bạn - hoảng loạn): [color=#A5B4B1]Chết con đĩ mẹ, một cắc bẻ đôi mình cũng không có.[/color]
+Bạn: Vậy sao, Mình tưởng như ở chỗ mình cứ đăng ký là được, hay có gì thì thể hiện sức mạnh.
+Hàn Ngọc: Xin lỗi nhưng bên mình không chấp nhận bất kì phương thức đăng ký nào khác. Điều này là để đảm bảo chất lượng đầu vào của các Gáp Phai, giúp thảm thiểu tai nạn không đáng có. Kể cho dù nếu họ không chiến đấu tốt đi chăng nữa thì cũng có thể cung cấp trang bị và vật phẩm cho các Gáp Phai khác.
+Bạn: Ây dà, nói thật thì hiện tại mình không có nhiều tiền. Bang hội làm cả ngân hàng nữa mà đúng không, bạn có thể cho mình thế chấp một vài món đồ được không.
+Hàn Ngọc: Mình phải xin lỗi bạn thêm lần nữa nhưng bạn chỉ có thể vay tiền nếu bạn có thẻ nhận dạng của lục địa Thăng Long này. Kể cả không tính đến thẻ, bạn cần một mục đích chính đáng để vay tiền, và làm Gáp Phai không thuộc vào hạng mục đó.
+Bạn - cố gắng xin sự thương hại : Thực sự không còn cách nào khác sao?
+Đôi mắt của cô tiếp tân bỗng trở nên đáng sợ, bạn cảm nhận được ý đồ mờ ám từ cô. Cô ấy đưa ra một tờ giấy.
+Hàn Ngọc: Vậy sao bạn không thử tìm cách kiếm tiền khác. Hiện tại khu đấu trường đang thiếu chiến binh tự nguyện. Bạn không cần phải bỏ tiền để tham gia, chỉ cần đánh hết sức mình là có tiền, nếu thua cũng không mất gì, thắng còn được thưởng lớn nữa chứ.
+Bạn cầm tờ giấy lên và nhìn thẳng vào mắt của cô. Suy nghĩ một chút cùng lúc nghe ngóng xung quanh.
+\"Gáp Phai 1\" : Chậc, hết nhiệm vụ dễ ăn rồi, hay là đánh liều đi giết bấy sói dạ tuyết đi.
+\"Gáp Phai 2\": Mày điên à, vài con còn được chứ cả bầy nó bu lại thì có mà ăn cám cả lũ.
+\"Gáp Phai 1\": Phải làm liều thì mới có tiền mà ăn chơi chứ, tổ đội của ta cũng toàn mấy thằng kinh nhiệm đầy mình, chơi đi sợ gì. 
+Bạn: Thế thì chịu rồi, mình không có giỏi đánh nhau với người, đa phần mình toàn giết quái vật để kiếm cơm à."
+errors = [  ]
+titles = {
+"story_begin": "1"
+}
+lines = {
+"0": {
+"next_id": "1",
+"text": "story_begin",
+"type": "title"
+},
+"1": {
+"character": "Ông chú",
+"character_replacements": [  ],
+"next_id": "2",
+"replacements": [  ],
+"text": "Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.",
+"translation_key": "Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.",
+"type": "dialogue"
+},
+"10": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "11",
+"replacements": [  ],
+"text": "Ừ, cũng dạng dạng đó, mà sao vậy bạn?",
+"translation_key": "Ừ, cũng dạng dạng đó, mà sao vậy bạn?",
+"type": "dialogue"
+},
+"11": {
+"character": "Hàn Ngọc",
+"character_replacements": [  ],
+"next_id": "12",
+"replacements": [  ],
+"text": "Không biết bạn có đủ tiền để làm thủ tục không, số tiền để đăng ký cũng khá lớn, khoảng 10.000 đồng. Và hiện tại bên mình cũng không nhận tiền của lục địa khác.",
+"translation_key": "Không biết bạn có đủ tiền để làm thủ tục không, số tiền để đăng ký cũng khá lớn, khoảng 10.000 đồng. Và hiện tại bên mình cũng không nhận tiền của lục địa khác.",
+"type": "dialogue"
+},
+"12": {
+"character": "(Bạn - hoảng loạn)",
+"character_replacements": [  ],
+"next_id": "13",
+"replacements": [  ],
+"text": "[color=#A5B4B1]Chết con đĩ mẹ, một cắc bẻ đôi mình cũng không có.[/color]",
+"translation_key": "[color=#A5B4B1]Chết con đĩ mẹ, một cắc bẻ đôi mình cũng không có.[/color]",
+"type": "dialogue"
+},
+"13": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "14",
+"replacements": [  ],
+"text": "Vậy sao, Mình tưởng như ở chỗ mình cứ đăng ký là được, hay có gì thì thể hiện sức mạnh.",
+"translation_key": "Vậy sao, Mình tưởng như ở chỗ mình cứ đăng ký là được, hay có gì thì thể hiện sức mạnh.",
+"type": "dialogue"
+},
+"14": {
+"character": "Hàn Ngọc",
+"character_replacements": [  ],
+"next_id": "15",
+"replacements": [  ],
+"text": "Xin lỗi nhưng bên mình không chấp nhận bất kì phương thức đăng ký nào khác. Điều này là để đảm bảo chất lượng đầu vào của các Gáp Phai, giúp thảm thiểu tai nạn không đáng có. Kể cho dù nếu họ không chiến đấu tốt đi chăng nữa thì cũng có thể cung cấp trang bị và vật phẩm cho các Gáp Phai khác.",
+"translation_key": "Xin lỗi nhưng bên mình không chấp nhận bất kì phương thức đăng ký nào khác. Điều này là để đảm bảo chất lượng đầu vào của các Gáp Phai, giúp thảm thiểu tai nạn không đáng có. Kể cho dù nếu họ không chiến đấu tốt đi chăng nữa thì cũng có thể cung cấp trang bị và vật phẩm cho các Gáp Phai khác.",
+"type": "dialogue"
+},
+"15": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "16",
+"replacements": [  ],
+"text": "Ây dà, nói thật thì hiện tại mình không có nhiều tiền. Bang hội làm cả ngân hàng nữa mà đúng không, bạn có thể cho mình thế chấp một vài món đồ được không.",
+"translation_key": "Ây dà, nói thật thì hiện tại mình không có nhiều tiền. Bang hội làm cả ngân hàng nữa mà đúng không, bạn có thể cho mình thế chấp một vài món đồ được không.",
+"type": "dialogue"
+},
+"16": {
+"character": "Hàn Ngọc",
+"character_replacements": [  ],
+"next_id": "17",
+"replacements": [  ],
+"text": "Mình phải xin lỗi bạn thêm lần nữa nhưng bạn chỉ có thể vay tiền nếu bạn có thẻ nhận dạng của lục địa Thăng Long này. Kể cả không tính đến thẻ, bạn cần một mục đích chính đáng để vay tiền, và làm Gáp Phai không thuộc vào hạng mục đó.",
+"translation_key": "Mình phải xin lỗi bạn thêm lần nữa nhưng bạn chỉ có thể vay tiền nếu bạn có thẻ nhận dạng của lục địa Thăng Long này. Kể cả không tính đến thẻ, bạn cần một mục đích chính đáng để vay tiền, và làm Gáp Phai không thuộc vào hạng mục đó.",
+"type": "dialogue"
+},
+"17": {
+"character": "Bạn - cố gắng xin sự thương hại ",
+"character_replacements": [  ],
+"next_id": "18",
+"replacements": [  ],
+"text": "Thực sự không còn cách nào khác sao?",
+"translation_key": "Thực sự không còn cách nào khác sao?",
+"type": "dialogue"
+},
+"18": {
+"character": "",
+"next_id": "19",
+"replacements": [  ],
+"text": "Đôi mắt của cô tiếp tân bỗng trở nên đáng sợ, bạn cảm nhận được ý đồ mờ ám từ cô. Cô ấy đưa ra một tờ giấy.",
+"translation_key": "Đôi mắt của cô tiếp tân bỗng trở nên đáng sợ, bạn cảm nhận được ý đồ mờ ám từ cô. Cô ấy đưa ra một tờ giấy.",
+"type": "dialogue"
+},
+"19": {
+"character": "Hàn Ngọc",
+"character_replacements": [  ],
+"next_id": "20",
+"replacements": [  ],
+"text": "Vậy sao bạn không thử tìm cách kiếm tiền khác. Hiện tại khu đấu trường đang thiếu chiến binh tự nguyện. Bạn không cần phải bỏ tiền để tham gia, chỉ cần đánh hết sức mình là có tiền, nếu thua cũng không mất gì, thắng còn được thưởng lớn nữa chứ.",
+"translation_key": "Vậy sao bạn không thử tìm cách kiếm tiền khác. Hiện tại khu đấu trường đang thiếu chiến binh tự nguyện. Bạn không cần phải bỏ tiền để tham gia, chỉ cần đánh hết sức mình là có tiền, nếu thua cũng không mất gì, thắng còn được thưởng lớn nữa chứ.",
+"type": "dialogue"
+},
+"2": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "3",
+"replacements": [  ],
+"text": "Dạ vâng ạ, chào chú nha.",
+"translation_key": "Dạ vâng ạ, chào chú nha.",
+"type": "dialogue"
+},
+"20": {
+"character": "",
+"next_id": "21",
+"replacements": [  ],
+"text": "Bạn cầm tờ giấy lên và nhìn thẳng vào mắt của cô. Suy nghĩ một chút cùng lúc nghe ngóng xung quanh.",
+"translation_key": "Bạn cầm tờ giấy lên và nhìn thẳng vào mắt của cô. Suy nghĩ một chút cùng lúc nghe ngóng xung quanh.",
+"type": "dialogue"
+},
+"21": {
+"character": "\"Gáp Phai 1\" ",
+"character_replacements": [  ],
+"next_id": "22",
+"replacements": [  ],
+"text": "Chậc, hết nhiệm vụ dễ ăn rồi, hay là đánh liều đi giết bấy sói dạ tuyết đi.",
+"translation_key": "Chậc, hết nhiệm vụ dễ ăn rồi, hay là đánh liều đi giết bấy sói dạ tuyết đi.",
+"type": "dialogue"
+},
+"22": {
+"character": "\"Gáp Phai 2\"",
+"character_replacements": [  ],
+"next_id": "23",
+"replacements": [  ],
+"text": "Mày điên à, vài con còn được chứ cả bầy nó bu lại thì có mà ăn cám cả lũ.",
+"translation_key": "Mày điên à, vài con còn được chứ cả bầy nó bu lại thì có mà ăn cám cả lũ.",
+"type": "dialogue"
+},
+"23": {
+"character": "\"Gáp Phai 1\"",
+"character_replacements": [  ],
+"next_id": "24",
+"replacements": [  ],
+"text": "Phải làm liều thì mới có tiền mà ăn chơi chứ, tổ đội của ta cũng toàn mấy thằng kinh nhiệm đầy mình, chơi đi sợ gì.",
+"translation_key": "Phải làm liều thì mới có tiền mà ăn chơi chứ, tổ đội của ta cũng toàn mấy thằng kinh nhiệm đầy mình, chơi đi sợ gì.",
+"type": "dialogue"
+},
+"24": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "",
+"replacements": [  ],
+"text": "Thế thì chịu rồi, mình không có giỏi đánh nhau với người, đa phần mình toàn giết quái vật để kiếm cơm à.",
+"translation_key": "Thế thì chịu rồi, mình không có giỏi đánh nhau với người, đa phần mình toàn giết quái vật để kiếm cơm à.",
+"type": "dialogue"
+},
+"3": {
+"character": "",
+"next_id": "5",
+"replacements": [  ],
+"text": "Bạn tạm biệt ông chú rồi đi lòng vòng tìm công việc để kiếm chút tiền sống qua ngày.",
+"translation_key": "Bạn tạm biệt ông chú rồi đi lòng vòng tìm công việc để kiếm chút tiền sống qua ngày.",
+"type": "dialogue"
+},
+"5": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "7",
+"replacements": [  ],
+"text": "Ở thế giới này cũng có bang hội sao, nếu chỉ là săn mấy con quái vật thì chắc ez.",
+"translation_key": "Ở thế giới này cũng có bang hội sao, nếu chỉ là săn mấy con quái vật thì chắc ez.",
+"type": "dialogue"
+},
+"7": {
+"character": "Hàn Ngọc",
+"character_replacements": [  ],
+"next_id": "8",
+"replacements": [  ],
+"text": "Xin chào bạn, bạn đến bang hội Trống Sét để làm gì, treo tiền thưởng, sử dụng ngân hàng hay gì khác.",
+"translation_key": "Xin chào bạn, bạn đến bang hội Trống Sét để làm gì, treo tiền thưởng, sử dụng ngân hàng hay gì khác.",
+"type": "dialogue"
+},
+"8": {
+"character": "Bạn",
+"character_replacements": [  ],
+"next_id": "9",
+"replacements": [  ],
+"text": "À, mình muốn xin làm người giải quyết mấy cái nhiệm vụ ấy, không biết có được không...?",
+"translation_key": "À, mình muốn xin làm người giải quyết mấy cái nhiệm vụ ấy, không biết có được không...?",
+"type": "dialogue"
+},
+"9": {
+"character": "Hàn Ngoc",
+"character_replacements": [  ],
+"next_id": "10",
+"replacements": [  ],
+"text": "Ồ, tức là đăng ký làm \"Gáp Phai\". Đúng lúc bang hội chúng tôi đang thiếu người. Chắc bạn là người từ lục địa khác nhỉ, thủ tục cũng đơn giản thôi. Nhưng mà...",
+"translation_key": "Ồ, tức là đăng ký làm \"Gáp Phai\". Đúng lúc bang hội chúng tôi đang thiếu người. Chắc bạn là người từ lục địa khác nhỉ, thủ tục cũng đơn giản thôi. Nhưng mà...",
+"type": "dialogue"
+}
+}

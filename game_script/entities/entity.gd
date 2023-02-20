@@ -32,6 +32,7 @@ export var c_name: String
 export var is_party : bool = true
 export var level : int = 1
 
+var collisionDamage : DamageMachine
 var attack_range : AttackRange
 
 #?gameplay section
@@ -52,20 +53,16 @@ var projectile_texture : Texture
 var ts : CharacterTransform
 var ub_position := 0
 
-#Utils
-func isCrit(crit_c: float) -> bool:
-	var thresh = randf()
-	if thresh > 1 - crit_c:
-		return true
-	return false
-
 #! Ready Set GO
 func _ready() -> void:
 	state_factory = StateFactory.new()
+	
 	set_resource()
 	if !stats.is_ranged:
 		battleSprite.vframes = 3
-	ub.ready_set(is_party, stats, skill)
+	collisionDamage = DamageMachine.new()
+	collisionDamage.setter(self, stats.physic, DamageType.PHYSIC, true)
+	ub.ub_set(is_party, stats, skill, self)
 	hurtBox.init(is_party)
 	state_idle()
 	_hpBar.visible = false
@@ -79,8 +76,6 @@ func state_idle() -> void:
 	animationPlayer.play("idle")
 
 func set_resource() ->  void:
-	if c_name == null :
-		queue_free()
 	var startStats = load("res://game_script/character_stats/resources/" + c_name + ".tres")
 	var baseSkill = load("res://game_script/skills/resources/" + c_name + ".tres")
 
@@ -119,61 +114,50 @@ func activeUB() -> Vector2:
 	return position
 
 func UB_animation_finish():
-	ub.activeUB(ub_position)
 	skill.addTP(-1000)
+	ub.activeUB(ub_position)
 	if skill.effect == SideEffect.TRANSFORM:
 		ts.activeTransform()
 	else:
 		battleSprite.visible = true
-
 
 #* Battle Gameplay Mechanic
 func normal_hit_enemy(target: Entity) -> void:
 	skill.addTP(90)
 	if !state.s_name == State.DEATH:
 		animationPlayer.play("attack")
-	var is_crit = isCrit(stats.crit_c)
-	var dmg : int = stats.physic
-	if is_crit:
-		dmg *= stats.crit_dmg
-	target.take_damage(dmg, is_crit, DamageType.PHYSIC)
+	collisionDamage.modify(stats.physic)
+	collisionDamage.attack_received(target)
 
 func fire_normal_aa() -> void:
 	skill.addTP(90)
 	var projectile : Projectile = ins_projectile.instance()
-	var damage : int
+	var dmgMachine = DamageMachine.new()
+	var raw_damage : int
 	var type : int
 	if stats.c_class == BaseClass.MAGE || stats.c_class == BaseClass.HEALER:
-		damage = stats.magic
+		raw_damage = stats.magic
 		type = DamageType.MAGIC
 	else:
-		damage = stats.physic
+		raw_damage = stats.physic
 		type = DamageType.PHYSIC
-	var is_crit = isCrit(stats.crit_c)
-	if is_crit:
-		damage *= stats.crit_dmg
-	projectile.projectile_setter(is_party, projectile_texture, damage, is_crit, type, true)
+	dmgMachine.setter(self, raw_damage, type, true)
+	projectile.projectile_setter(is_party, projectile_texture, dmgMachine, true)
 	add_child(projectile)
 
-func fire_special_projectile(_txt: Texture, damage: int, type: int, isKB: bool) -> void:
+func fire_special_projectile(_txt: Texture, dmgMachine: DamageMachine, isKB: bool) -> void:
 	var projectile : Projectile = ins_projectile.instance()
-	var is_crit = isCrit(stats.crit_c)
-	if is_crit:
-		damage *= stats.crit_dmg
-	projectile.projectile_setter(is_party, _txt, damage, is_crit, type, isKB)
+	projectile.projectile_setter(is_party, _txt, dmgMachine, isKB)
 	add_child(projectile)
 	
-func take_damage(amount: int, is_crit: bool, type: int) -> void:
-	if amount == 0: 
+func take_damage(damage: Dictionary) -> void:
+	if damage.cal_damage == 0: 
 		return
 	show_health_bar = max_show_time - 1
-	var mul = stats.defense_multiplier(type)
-	amount *= mul
-	stats.take_dmg(amount, is_crit, type)
+	stats.take_calculated_dmg(damage)
 
-func get_heal(amount: int) -> void:
-	stats.take_dmg(-amount, false, DamageType.HEAL)
-
+func get_heal(heal: Dictionary) -> void:
+	stats.take_calculated_dmg(heal)
 
 #* Process each frame
 #! check next move after attack or shoot projectile
@@ -222,14 +206,11 @@ func _physics_process(_delta):
 			animationPlayer.play("running")
 			change_state(State.RUNNING)
 
-
 #* Signal Management
-func showDamageNumber(amount: int, is_crit: bool, type: int) -> void:
+func showDamageNumber(damage: Dictionary) -> void:
 	var text : DamageNumber = txt_dmg_number.instance()
-	text.amount = amount
 	text.isPartyMember = is_party
-	text.is_crit = is_crit
-	text.type = type
+	text.damage = damage
 	add_child(text)
 
 func _on_Stats_hp_depleted():
@@ -241,10 +222,11 @@ func _on_Stats_hp_depleted():
 	if pos != null:
 		emit_signal("hp_depleted")
 
-func _on_Stats_hp_changed(_new_hp: int, amount: int, is_crit: bool, type: int):
-	skill.addTP(amount / stats.max_hp * 500)
+func _on_Stats_hp_changed(_new_hp: int, damage: Dictionary):
+	if damage.type != DamageType.HEAL:
+		skill.addTP(damage.cal_damage / stats.max_hp * 500)
 	_hpBar.value = _new_hp
-	showDamageNumber(amount, is_crit, type)
+	showDamageNumber(damage)
 	if is_party:
 		emit_signal("hp_changed", _new_hp, pos)
 
@@ -253,7 +235,6 @@ func _on_Skill_add_tp(newTP: int):
 		emit_signal("tp_changed", newTP, pos)
 
 func get_class() -> String: return "Entity"
-
 
 #* Skill Side Effect
 func _on_end_Transform() -> void:
