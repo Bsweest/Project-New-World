@@ -13,19 +13,15 @@ var skill : CharacterSkill
 var is_party : bool
 var is_active := false
 
+func setter(isParty: bool, _stats: CharacterStats, _skill) -> void:
+	self.is_party = isParty
+	self.stats = _stats
+	self.skill = _skill
+
 func _ready():
 	visible = false
 	_hitbox.disable_collision()
 	_hitbox.initHitbox(is_party)
-	init_transform()
-
-func setter(_is_party: bool, _stats: CharacterStats, _skill) -> void:
-	self.is_party = _is_party
-	self.stats = _stats
-	self.skill = _skill
-
-func init_transform() -> void:
-	pass
 		
 func activeTransform() -> void:
 	visible = true

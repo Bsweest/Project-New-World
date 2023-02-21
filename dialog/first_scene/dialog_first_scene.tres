@@ -4,13 +4,13 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 7
+resource_version = 8
 syntax_version = 2
 raw_text = "~ first_scene_of_game
 
 Trong không gian tĩnh lặng của vũ trụ huyền ảo, có một người đang bay xuyên qua những vì sao.
 Người đó mệt mỏi, đôi mắt đờ đẫn, cố gắng suy nghĩ để gượng dậy bản thân, giữ vững tinh thần và chống lại những tiếng nói đang giày vò trong đầu mình.
-(Bạn - suy nghĩ): Mình đã bắt đầu cuộc hành trình này biết bao nhiêu năm rồi. Liệu sẽ có ngày đôi tay này sẽ có ngày chạm được đích đến mình hằng mong không.
+({{player_name}} - suy nghĩ): Mình đã bắt đầu cuộc hành trình này biết bao nhiêu năm rồi. Liệu sẽ có ngày đôi tay này sẽ có ngày chạm được đích đến mình hằng mong không.
 (giọng nói trong đầu): Bỏ cuộc đi, cho dù có chiến đấu cả cái cuộc đời ngắn ngủi của ngươi thì cũng không bao giờ nhìn thấy được vạch đích.
 (giọng nói trong đầu): Những thử thách đang đợi ngươi ở phía trước sẽ càng ngày càng khó hơn. Sẽ đến một ngày cơ thể ngươi sẽ mục nát mà thôi.
 Bạn: [shake rate=10 level=10][b]Im Hết Đi[/b][/shake]
@@ -21,11 +21,11 @@ do black_out()
 Tinh thần lẫn thể lực đang dần cạn kiệt, ý thức và mắt của bạn dần lịm đi.
 May thay bạn thấy ánh sáng của cánh cửa dẫn đến trạm dừng tiếp theo của mình. Bạn lấy hết sức lực còn lại của bản thân đưa đôi tay lên và hướng về phía ánh sáng.
 do go_light()
-Bạn: Vậy đây là thế giới tiếp theo sao. Xa kia có một thành phố, mong rằng có thể xin một ít đồ ăn. Nhưng mà, mệttt quá rồi.
+{{player_name}}: Vậy đây là thế giới tiếp theo sao. Xa kia có một thành phố, mong rằng có thể xin một ít đồ ăn. Nhưng mà, mệttt quá rồi.
 Bạn ngã sập xuống, rên rỉ vì kiệt sức. Đúng lúc đó có một người đánh xe ngựa qua. Người đó cất tiếng.
 do wagon()
 Ông chú: Này cháu ơi, cháu bị sao mà nằm giữa đường thế?
-Bạn - rên rỉ: Đói...bụng...quá...
+{{player_name}} - rên rỉ: Đói...bụng...quá...
 Ông chú nhảy xuống và đưa cho một cái bánh mì.
 Ông chú: Ăn tạm đi cháu, làm gì mà để người ngợm thành ra như thế này.
 Bạn nhanh chóng ăn hết cái bánh mì, miệng liếng thoáng cảm ơn ông chú tốt bụng.
@@ -33,14 +33,14 @@ Bạn nhanh chóng ăn hết cái bánh mì, miệng liếng thoáng cảm ơn �
 Mặc dù cơ thể và trí óc vẫn đang bị dày vò, bạn vẫn cố gắng thả lỏng cơ thể hết mức có thể.
 Bạn: À, thật ra cháu đi du hành khắp nơi ấy mà, thế nên lúc nãy mệt quá nên mới ngã xuống tí.
 Ông chú: Vậy sao, chú đang trên đường đến thành phố trước, cháu có muốn đi cùng không chứ chú thấy cháu khổ quá. 
-Bạn: Được vậy thì tốt quá, cảm ơn chú nhiều lắm luôn.
+{{player_name}}: Được vậy thì tốt quá, cảm ơn chú nhiều lắm luôn.
 Bạn nhảy lên xe ngựa và hai người bắt đầu đi đến thành phố.
-Bạn: Thành phố trước tên gì vậy chú nhỉ? Có gì nổi tiếng không chú?
+{{player_name}}: Thành phố trước tên gì vậy chú nhỉ? Có gì nổi tiếng không chú?
 Ông chú: Nó tên là Lồng Sét. Nó nổi tiếng lắm đấy, chắc cháu từ lục địa khác nên không biết
-Bạn: Lồng Sét sao, chắc là do sét đánh nơi đó nhiều lắm nhỉ.
+{{player_name}}: Lồng Sét sao, chắc là do sét đánh nơi đó nhiều lắm nhỉ.
 Ông chú: Ha Ha, nó nổi tiếng, nhưng mà là tiếng xấu. Nguồn gốc cái tên đáng sợ hơn nhiều, mà cũng thảm thương lắm. Nơi đây có một đấu trường, nơi mà những nô lệ, tội phạm, những kẻ nợ nần, những đứa trẻ bị ruồng bỏ, nói chung đủ loại người trần đời này bị gom lại, huấn luyện và chiến đấu trong một đấu trường nhằm mua vui cho giới thượng lưu ở lục địa này.
 Ông chú: Và những ai dám cả gan muốn trốn thoát khỏi nó mà bị bắt được thì chỉ có một kết cục, bị các tia sét của các cai ngục đánh chết. Chuyện này hơi nặng nề để lấy ra mà nói chuyện nhỉ.
-Bạn: Dạ, vậy ta nói chuyện khác đi, chú đến đó làm gì thế.
+{{player_name}}: Dạ, vậy ta nói chuyện khác đi, chú đến đó làm gì thế.
 Ông chú: À, ta vận chuyển lương thực đến thôi, mà nhóc đi du hành thế có chuyện gì vui vui kể coi.
 Hai người tiếp tục nói chuyện cho đến khi đến thành phố."
 errors = [  ]
@@ -101,8 +101,14 @@ lines = {
 "type": "mutation"
 },
 "15": {
-"character": "Bạn",
-"character_replacements": [  ],
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
 "next_id": "16",
 "replacements": [  ],
 "text": "Vậy đây là thế giới tiếp theo sao. Xa kia có một thành phố, mong rằng có thể xin một ít đồ ăn. Nhưng mà, mệttt quá rồi.",
@@ -138,8 +144,14 @@ lines = {
 "type": "dialogue"
 },
 "19": {
-"character": "Bạn - rên rỉ",
-"character_replacements": [  ],
+"character": "{{player_name}} - rên rỉ",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
 "next_id": "20",
 "replacements": [  ],
 "text": "Đói...bụng...quá...",
@@ -215,8 +227,14 @@ lines = {
 "type": "dialogue"
 },
 "27": {
-"character": "Bạn",
-"character_replacements": [  ],
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
 "next_id": "28",
 "replacements": [  ],
 "text": "Được vậy thì tốt quá, cảm ơn chú nhiều lắm luôn.",
@@ -232,8 +250,14 @@ lines = {
 "type": "dialogue"
 },
 "29": {
-"character": "Bạn",
-"character_replacements": [  ],
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
 "next_id": "30",
 "replacements": [  ],
 "text": "Thành phố trước tên gì vậy chú nhỉ? Có gì nổi tiếng không chú?",
@@ -258,8 +282,14 @@ lines = {
 "type": "dialogue"
 },
 "31": {
-"character": "Bạn",
-"character_replacements": [  ],
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
 "next_id": "32",
 "replacements": [  ],
 "text": "Lồng Sét sao, chắc là do sét đánh nơi đó nhiều lắm nhỉ.",
@@ -285,8 +315,14 @@ lines = {
 "type": "dialogue"
 },
 "34": {
-"character": "Bạn",
-"character_replacements": [  ],
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
 "next_id": "35",
 "replacements": [  ],
 "text": "Dạ, vậy ta nói chuyện khác đi, chú đến đó làm gì thế.",
@@ -311,8 +347,14 @@ lines = {
 "type": "dialogue"
 },
 "4": {
-"character": "(Bạn - suy nghĩ)",
-"character_replacements": [  ],
+"character": "({{player_name}} - suy nghĩ)",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
 "next_id": "5",
 "replacements": [  ],
 "text": "Mình đã bắt đầu cuộc hành trình này biết bao nhiêu năm rồi. Liệu sẽ có ngày đôi tay này sẽ có ngày chạm được đích đến mình hằng mong không.",

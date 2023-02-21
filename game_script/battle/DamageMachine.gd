@@ -19,7 +19,6 @@ func modify(newDmg: int) -> void:
 	raw_damage = newDmg
 
 func attack_received(receiver) -> void:
-	var received_damage = {}
 	var cal_damage = raw_damage
 	var is_crit := false
 	if set_crit:
@@ -28,18 +27,17 @@ func attack_received(receiver) -> void:
 		raw_damage = int(raw_damage * attacker.stats.crit_dmg)
 	var mul = receiver.stats.defense_multiplier(type)
 	cal_damage *= mul
-	received_damage.receiver = receiver
-	received_damage.is_crit = is_crit
-	received_damage.cal_damage = cal_damage
-	received_damage.type = type
+	var received_damage = create_damage_dictionary(receiver, cal_damage, is_crit)
 	receiver.take_damage(received_damage)
 
 func heal_received(receiver) -> void:
-	var received_heal = {}
-	received_heal.receiver = receiver
-	received_heal.cal_damage = raw_damage
-	received_heal.type = 4
-	received_heal.is_crit = false
+	var received_heal = create_damage_dictionary(receiver, raw_damage, false)
 	receiver.get_heal(received_heal)
 
-	
+func create_damage_dictionary(receiver, cal_damage: int, isCrit: bool) -> Dictionary:
+	var dmg_dict = {}
+	dmg_dict.receiver = receiver
+	dmg_dict.cal_damage = cal_damage
+	dmg_dict.type = type
+	dmg_dict.is_crit = isCrit
+	return dmg_dict

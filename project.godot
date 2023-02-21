@@ -82,7 +82,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Entity",
 "language": "GDScript",
-"path": "res://game_script/entities/entity.gd"
+"path": "res://game_script/entities/Entity.gd"
 }, {
 "base": "Node2D",
 "class": "Formation",
@@ -117,12 +117,12 @@ _global_script_classes=[ {
 "base": "NodeUB",
 "class": "NodeUBArea",
 "language": "GDScript",
-"path": "res://game_script/skills/effects/ub-area-based.gd"
+"path": "res://game_script/skills/effects/NodeUBArea.gd"
 }, {
 "base": "NodeUB",
 "class": "NodeUBShoot",
 "language": "GDScript",
-"path": "res://game_script/skills/effects/ub-shoot-projectile.gd"
+"path": "res://game_script/skills/effects/NodeUbShoot.gd"
 }, {
 "base": "Node2D",
 "class": "Projectile",
@@ -208,6 +208,7 @@ config/icon="res://icon.png"
 
 Utils="*res://game_script/global/Utils.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+DialogState="*res://game_script/global/DialogState.gd"
 
 [debug]
 

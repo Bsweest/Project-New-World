@@ -71,9 +71,14 @@ func _ready() -> void:
 func state_idle() -> void:
 	is_over = true
 	velocity.x = 0
+	_col1.set_deferred("disabled", true)
+	_col2.set_deferred("disabled", true)
 	battleSprite.visible = false
 	idleSprite.visible = true
 	animationPlayer.play("idle")
+
+func check_death_status() -> bool:
+	return state.s_name == State.DEATH
 
 func set_resource() ->  void:
 	var startStats = load("res://game_script/character_stats/resources/" + c_name + ".tres")
@@ -124,7 +129,7 @@ func UB_animation_finish():
 #* Battle Gameplay Mechanic
 func normal_hit_enemy(target: Entity) -> void:
 	skill.addTP(90)
-	if !state.s_name == State.DEATH:
+	if not check_death_status():
 		animationPlayer.play("attack")
 	collisionDamage.modify(stats.physic)
 	collisionDamage.attack_received(target)
@@ -145,9 +150,10 @@ func fire_normal_aa() -> void:
 	projectile.projectile_setter(is_party, projectile_texture, dmgMachine, true)
 	add_child(projectile)
 
-func fire_special_projectile(_txt: Texture, dmgMachine: DamageMachine, isKB: bool) -> void:
+func fire_special_projectile(_txt: Texture, dmgMachine: DamageMachine, isKB: bool, modSpeed: float, numTarget: int) -> void:
 	var projectile : Projectile = ins_projectile.instance()
 	projectile.projectile_setter(is_party, _txt, dmgMachine, isKB)
+	projectile.modify_projectile(modSpeed, numTarget)
 	add_child(projectile)
 	
 func take_damage(damage: Dictionary) -> void:
@@ -181,7 +187,7 @@ func change_state(new_state_name) -> void:
 	if is_over:
 		return
 	if state != null:
-		if state.s_name == State.DEATH:
+		if check_death_status():
 			return
 		state.queue_free()
 	state = state_factory.get_state(new_state_name).new()
@@ -197,10 +203,11 @@ func _physics_process(_delta):
 		if show_health_bar == 0:
 			show_health_bar = max_show_time
 			_hpBar.visible = false
-
 	if idle_time > 0:
 		idle_time -= 1
 		if idle_time == 0:
+			_col1.set_deferred("disabled", false)
+			_col2.set_deferred("disabled", false)
 			idleSprite.visible = false
 			battleSprite.visible = true
 			animationPlayer.play("running")
@@ -219,8 +226,7 @@ func _on_Stats_hp_depleted():
 	if ts != null:
 		ts.endTransform()
 	change_state(State.DEATH)
-	if pos != null:
-		emit_signal("hp_depleted")
+	emit_signal("hp_depleted")
 
 func _on_Stats_hp_changed(_new_hp: int, damage: Dictionary):
 	if damage.type != DamageType.HEAL:
@@ -239,4 +245,3 @@ func get_class() -> String: return "Entity"
 #* Skill Side Effect
 func _on_end_Transform() -> void:
 	battleSprite.visible = true
-

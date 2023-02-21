@@ -52,8 +52,10 @@ func all_idle() -> void:
 		if each.state.s_name != 4:
 			each.state_idle()
 
-func _active_UB(pos: int) -> void:
+func press_UB_button(pos: int) -> void:
 	var character : Entity  = get_character(pos)
+	if character.check_death_status():
+		return
 	var _position = character.activeUB()
 	if _position == Vector2.ZERO:
 		return
@@ -66,6 +68,8 @@ func _active_UB(pos: int) -> void:
 func _on_SelectArea_choose_done(pos, _position):
 	ubLayer.visible = true
 	var character : Entity = get_character(pos)
+	if character.check_death_status():
+		return
 	character.ub_position = _position
 	character.battleSprite.visible = false
 	ubLayer.run_ub_ani(pos, character.position)

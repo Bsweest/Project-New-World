@@ -14,6 +14,7 @@ var arrAlly : Array
 var arrEnemy : Array
 var count_allies := 0
 var is_winning : bool
+var is_over := false
 
 var timer = Timer.new()
 
@@ -22,23 +23,23 @@ func _ready():
 		{
 			"name": "van_ai",
 		},
-		{ 
-			"name": "mob_shooter_1",
-		},
-		{ 
-			"name": "thanh_dung",
-		}
+		# { 
+		# 	"name": "mob_shooter_1",
+		# },
+		# { 
+		# 	"name": "thanh_dung",
+		# }
 		]
 	var enemy = [
 		{
 			"name": "hoa_lan",
 		},
-		{ 
-			"name": "mezuna_ryuji",
-		},
-		{ 
-			"name": "mob_fighter_1",
-		},
+		# { 
+		# 	"name": "mezuna_ryuji",
+		# },
+		# { 
+		# 	"name": "mob_fighter_1",
+		# },
 		]
 	
 	ui.initButton(ally)
@@ -72,6 +73,9 @@ func set_both_formation_references(is_party: bool, pos: int) -> void:
 
 #* Battle Result
 func _on_Formation_team_out(is_party: bool):
+	if is_over:
+		return
+	is_over = true
 	party_formation.all_idle()
 	enemy_formation.all_idle()
 	is_winning = !is_party
@@ -92,21 +96,21 @@ func _on_set_MAX_HP(_max_hp: int, pos: int) -> void:
 
 #* Input event
 func _active_UB_with_button(pos: int) -> void:
-	party_formation._active_UB(pos)
+	party_formation.press_UB_button(pos)
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("ub_pos_1"):
 		if count_allies > 0:
-			party_formation._active_UB(0)
+			party_formation.press_UB_button(0)
 	if event.is_action_pressed("ub_pos_2"):
 		if count_allies > 1:
-			party_formation._active_UB(1)
+			party_formation.press_UB_button(1)
 	if event.is_action_pressed("ub_pos_3"):
 		if count_allies > 2:
-			party_formation._active_UB(2)
+			party_formation.press_UB_button(2)
 	if event.is_action_pressed("ub_pos_4"):
 		if count_allies > 3:
-			party_formation._active_UB(3)
+			party_formation.press_UB_button(3)
 	if event.is_action_pressed("ub_pos_5"):
 		if count_allies > 4:
-			party_formation._active_UB(4)
+			party_formation.press_UB_button(4)
