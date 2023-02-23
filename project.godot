@@ -79,6 +79,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/dialogue_manager/dialogue_resource.gd"
 }, {
+"base": "Node",
+"class": "Effect",
+"language": "GDScript",
+"path": "res://game_script/entities/effect/Effect.gd"
+}, {
+"base": "Node",
+"class": "EffectMachine",
+"language": "GDScript",
+"path": "res://game_script/entities/effect/EffectMachine.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Entity",
 "language": "GDScript",
@@ -179,6 +189,8 @@ _global_script_class_icons={
 "DamageNumber": "",
 "DeathState": "",
 "DialogueResource": "",
+"Effect": "",
+"EffectMachine": "",
 "Entity": "",
 "Formation": "",
 "HitBox": "",

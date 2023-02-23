@@ -18,7 +18,7 @@ func _physics_process(_delta) -> void:
 		kb_dur -= 1
 		if kb_dur == 0:
 			change_state.call_func(RUNNING)
-	if !_body.can_move && s_name == RUNNING:
+	if !_body.can_range_move && s_name == RUNNING:
 		change_state.call_func(LOAD_AA)
 
 func setup(_change_state, _ani_player, body) -> void:

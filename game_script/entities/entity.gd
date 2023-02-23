@@ -7,6 +7,7 @@ enum DamageType { PHYSIC, MAGIC, TRUE, PIERCE, HEAL }
 enum BaseClass { FIGHTER, DEFENDER, PALADIN, ARCHER, MAGE, HEALER }
 enum State { RUNNING, KNOCKBACKED, LOAD_AA, SHOOT, DEATH }
 enum MultipilerType { SAME, PHYSIC, MAGIC, HP }
+enum StatChange { PHYSIC, MAGIC, P_DEFENSE, M_ARMOR, CRIT_C, CRIT_DMG, SPEED, DMG_MOD, TP_MOD }
 
 signal hp_changed(new_hp, pos)
 signal set_max_hp(max_hp, pos)
@@ -19,6 +20,7 @@ var ins_projectile = preload("res://components/battle/Projectile.tscn")
 
 onready var stats : CharacterStats = $Stats as CharacterStats
 onready var skill : CharacterSkill = $Skill as CharacterSkill
+onready var effects : EffectMachine = $Effect as EffectMachine
 onready var _hpBar : ProgressBar = $HPBar
 onready var hurtBox : HurtBox = $HurtBox as HurtBox
 onready var battleSprite : Sprite = $InBattle as Sprite
@@ -36,7 +38,7 @@ var collisionDamage : DamageMachine
 var attack_range : AttackRange
 
 #?gameplay section
-var can_move := true
+var can_range_move := true
 var idle_time := 80
 
 var state : State
@@ -45,8 +47,8 @@ var pos : int
 var velocity := Vector2.ZERO
 var dir := -1 # multiply with speed
 var is_over := false
-var max_show_time := 50
-var show_health_bar := max_show_time
+const MAX_BAR_SHOW_TIME := 50
+var show_health_bar := MAX_BAR_SHOW_TIME
 
 #?skill section
 var projectile_texture : Texture
@@ -61,7 +63,7 @@ func _ready() -> void:
 	if !stats.is_ranged:
 		battleSprite.vframes = 3
 	collisionDamage = DamageMachine.new()
-	collisionDamage.setter(self, stats.physic, DamageType.PHYSIC, true)
+	collisionDamage.setter(self, stats.get_physic(), DamageType.PHYSIC, true)
 	ub.ub_set(is_party, stats, skill, self)
 	hurtBox.init(is_party)
 	state_idle()
@@ -85,17 +87,11 @@ func set_resource() ->  void:
 	var baseSkill = load("res://game_script/skills/resources/" + c_name + ".tres")
 
 	stats.init(startStats, level)
-	dir *= stats.speed
+	dir *= stats.get_speed()
 	emit_signal("set_max_hp", stats.max_hp, pos)
 	_hpBar.max_value = stats.max_hp
 	_hpBar.value = stats.max_hp
-
-	if stats.is_ranged:
-		projectile_texture = load("res://assets/projectile/" + stats.projectile + ".png")
-		attack_range = node_aa_range.instance()
-		attack_range.init(is_party, stats.c_range)
-		attack_range.connect("toggle_movement", self, "_on_Movement_toggle")
-		add_child(attack_range)
+	create_attack_range()
 
 	skill.init(baseSkill, level)
 	if skill.effect == SideEffect.TRANSFORM:
@@ -109,7 +105,20 @@ func set_resource() ->  void:
 		_hpBar.rect_scale = Vector2(-1, 1)
 		dir = -dir
 
+func create_attack_range() -> void:
+	if stats.is_ranged:
+		projectile_texture = load("res://assets/projectile/" + stats.projectile + ".png")
+		attack_range = node_aa_range.instance()
+		attack_range.init(is_party, stats.c_range)
+		attack_range.connect("toggle_movement", self, "_on_Movement_toggle")
+		add_child(attack_range)
+
+
 #// UB Layer
+func change_tp(num: int) -> void:
+	num = int(num * stats.get_tp_boost())
+	skill.addTP(num)
+
 func activeUB() -> Vector2:
 	if not skill.check_ub():
 		return Vector2.ZERO
@@ -127,24 +136,27 @@ func UB_animation_finish():
 		battleSprite.visible = true
 
 #* Battle Gameplay Mechanic
+func _on_Stats_stat_changed(name: int):
+	if name == StatChange.PHYSIC:
+		collisionDamage.modify(stats.get_physic())
+
 func normal_hit_enemy(target: Entity) -> void:
-	skill.addTP(90)
+	change_tp(90)
 	if not check_death_status():
 		animationPlayer.play("attack")
-	collisionDamage.modify(stats.physic)
 	collisionDamage.attack_received(target)
 
 func fire_normal_aa() -> void:
-	skill.addTP(90)
+	change_tp(90)
 	var projectile : Projectile = ins_projectile.instance()
 	var dmgMachine = DamageMachine.new()
 	var raw_damage : int
 	var type : int
 	if stats.c_class == BaseClass.MAGE || stats.c_class == BaseClass.HEALER:
-		raw_damage = stats.magic
+		raw_damage = stats.get_magic()
 		type = DamageType.MAGIC
 	else:
-		raw_damage = stats.physic
+		raw_damage = stats.get_physic()
 		type = DamageType.PHYSIC
 	dmgMachine.setter(self, raw_damage, type, true)
 	projectile.projectile_setter(is_party, projectile_texture, dmgMachine, true)
@@ -159,7 +171,7 @@ func fire_special_projectile(_txt: Texture, dmgMachine: DamageMachine, isKB: boo
 func take_damage(damage: Dictionary) -> void:
 	if damage.cal_damage == 0: 
 		return
-	show_health_bar = max_show_time - 1
+	show_health_bar = MAX_BAR_SHOW_TIME - 1
 	stats.take_calculated_dmg(damage)
 
 func get_heal(heal: Dictionary) -> void:
@@ -170,7 +182,7 @@ func get_heal(heal: Dictionary) -> void:
 func check_next_move() -> void:
 	if state.s_name == State.SHOOT:
 		fire_normal_aa()
-	if can_move:
+	if can_range_move:
 		animationPlayer.play("running")
 		if state.s_name != State.RUNNING:
 			change_state(State.RUNNING)
@@ -181,7 +193,7 @@ func shot_normal() -> void:
 	change_state(State.SHOOT)
 
 func _on_Movement_toggle(move: bool) -> void:
-	can_move = move
+	can_range_move = move
 
 func change_state(new_state_name) -> void:
 	if is_over:
@@ -196,12 +208,12 @@ func change_state(new_state_name) -> void:
 	add_child(state)
 
 func _physics_process(_delta):
-	if show_health_bar < max_show_time :
+	if show_health_bar < MAX_BAR_SHOW_TIME :
 		show_health_bar -= 1
 		if _hpBar.visible == false:
 			_hpBar.visible = true
 		if show_health_bar == 0:
-			show_health_bar = max_show_time
+			show_health_bar = MAX_BAR_SHOW_TIME
 			_hpBar.visible = false
 	if idle_time > 0:
 		idle_time -= 1
@@ -230,7 +242,7 @@ func _on_Stats_hp_depleted():
 
 func _on_Stats_hp_changed(_new_hp: int, damage: Dictionary):
 	if damage.type != DamageType.HEAL:
-		skill.addTP(damage.cal_damage / stats.max_hp * 500)
+		change_tp(damage.cal_damage / stats.max_hp * 500 * stats.get_tp_boost())
 	_hpBar.value = _new_hp
 	showDamageNumber(damage)
 	if is_party:
@@ -245,3 +257,4 @@ func get_class() -> String: return "Entity"
 #* Skill Side Effect
 func _on_end_Transform() -> void:
 	battleSprite.visible = true
+

@@ -33,9 +33,9 @@ func setup_formation(_members: Array, _opponents: Array) -> void:
 func calc_skill_damage() -> int:
 	var dmg : int = 0
 	if skill.type == DamameType.PHYSIC:
-		dmg += stats.physic * ( 100 + skill.base_dmg ) / 100
+		dmg += stats.get_physic() * ( 100 + skill.base_dmg ) / 100
 	elif skill.type == DamameType.MAGIC:
-		dmg += stats.magic * ( 100 + skill.base_dmg ) / 100
+		dmg += stats.get_magic() * ( 100 + skill.base_dmg ) / 100
 	return dmg
 
 func activeUB(ub_postion: int) -> void:

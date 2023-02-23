@@ -20,26 +20,26 @@ var timer = Timer.new()
 
 func _ready():
 	var ally = [
-		{
-			"name": "van_ai",
-		},
+		# {
+		# 	"name": "van_ai",
+		# },
 		# { 
 		# 	"name": "mob_shooter_1",
 		# },
-		# { 
-		# 	"name": "thanh_dung",
-		# }
+		{ 
+			"name": "thanh_dung",
+		}
 		]
 	var enemy = [
-		{
-			"name": "hoa_lan",
-		},
+		# {
+		# 	"name": "hoa_lan",
+		# },
 		# { 
 		# 	"name": "mezuna_ryuji",
 		# },
-		# { 
-		# 	"name": "mob_fighter_1",
-		# },
+		{ 
+			"name": "mob_fighter_1",
+		},
 		]
 	
 	ui.initButton(ally)

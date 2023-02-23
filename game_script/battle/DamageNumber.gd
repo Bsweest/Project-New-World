@@ -30,7 +30,7 @@ func _ready() -> void:
 	#Magic
 	if type == DamageType.MAGIC:
 		if is_crit:
-			label.add_color_override("font_color", Color(210/255.0, 55/255.0, 255/255.0))
+			label.add_color_override("font_color", Color(136/255.0, 14/255.0, 212/255.0))
 		else:
 			label.add_color_override("font_color", Color(224/255.0, 135/255.0, 255/255.0))
 	elif type == DamageType.HEAL:

@@ -15,7 +15,7 @@ func _on_HitBox_body_entered(body):
 		num_enemy += 1
 
 func after_ub_effect() -> void:
-	var amount : int = - int(skill.side_dmg * stats.magic * (1 + 0.3 * num_enemy) / 100)
+	var amount : int = - int(skill.side_dmg * stats.get_magic() * (1 + 0.3 * num_enemy) / 100)
 	healMachine.modify(amount)
 	for each in members:
 		healMachine.heal_received(each)
