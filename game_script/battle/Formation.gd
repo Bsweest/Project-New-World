@@ -50,7 +50,7 @@ func get_character(pos: int) -> Entity:
 func all_idle() -> void:
 	for each in arrChar:
 		if each.state.s_name != 4:
-			each.state_idle()
+			each.change_state(0)
 
 func press_UB_button(pos: int) -> void:
 	var character : Entity  = get_character(pos)

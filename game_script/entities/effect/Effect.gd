@@ -7,7 +7,8 @@ enum StatChange  { PHYSIC, MAGIC, P_DEFENSE, M_ARMOR, CRIT_C, CRIT_DMG, SPEED, D
 enum DotName  { BURN, BLEEDING, POISION, DECOMPOSITION }
 enum DamageType { PHYSIC, MAGIC, TRUE, PIERCE, HEAL }
 
-signal effect_aplly(eff_name, flat, percent)
+signal effect_apply(eff_name, flat, percent)
+signal status_apply(status_name, is_increase)
 
 var applier
 
@@ -54,9 +55,9 @@ func _ready():
 
 func signal_effect_start() -> void:
     if status_name >= 0:
-        pass
+        emit_signal("status_apply", status_name, true)
     if stat_name >= 0:
-        emit_signal("effect_aplly", stat_name, flat_value, percent_value)
+        emit_signal("effect_apply", stat_name, flat_value, percent_value)
     if dot_name >= 0:
         damageMachine = DamageMachine.new()
         damageMachine.attacker = applier
@@ -76,7 +77,7 @@ func signal_effect_start() -> void:
             DotName.DECOMPOSITION:
                 damageMachine.percent_damage = percent_value
                 damageMachine.type = DamageType.MAGIC
-                damageMachine.set_crit = true
+                damageMachine.set_crit = false
         
         tick_timer.wait_time = tick_time
         tick_timer.one_shot = false
@@ -98,6 +99,6 @@ func _effect_run_out() -> void:
 func _notification(what):
     if what == NOTIFICATION_PREDELETE:
         if status_name >= 0:
-            pass
+            emit_signal("status_apply", status_name, false)
         if stat_name >= 0:
             emit_signal("effect_aplly", -flat_value, -percent_value)

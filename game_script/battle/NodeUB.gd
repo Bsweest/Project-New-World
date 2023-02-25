@@ -14,6 +14,10 @@ var damageMachine := DamageMachine.new()
 var members : Array 
 var opponents : Array
 
+export (PackedScene) var transform_scene
+var transfrom_node : CharacterTransform
+var has_tranform := false
+
 var character
 
 func ub_set(isParty: bool, c_stats: CharacterStats, c_skill: CharacterSkill, _character) -> void:
@@ -22,6 +26,13 @@ func ub_set(isParty: bool, c_stats: CharacterStats, c_skill: CharacterSkill, _ch
 	skill = c_skill
 	character = _character
 	damageMachine.setter(owner, 0, skill.type, false)
+	if transform_scene != null:
+		has_tranform = true
+		transfrom_node = transform_scene.instance()
+		transfrom_node.setter(is_party, stats, skill)
+		# warning-ignore:return_value_discarded
+		transfrom_node.connect('end_transfrom', character, '_on_end_Transform')
+		character.add_child(transfrom_node)
 
 func _ready() -> void:
 	pass
@@ -38,5 +49,10 @@ func calc_skill_damage() -> int:
 		dmg += stats.get_magic() * ( 100 + skill.base_dmg ) / 100
 	return dmg
 
-func activeUB(ub_postion: int) -> void:
-	pass
+func activeUB(_ub_postion: int) -> void:
+	if has_tranform:
+		transfrom_node.activeTransform()
+
+func _on_character_death() -> void:
+	if has_tranform:
+		transfrom_node.endTransform()

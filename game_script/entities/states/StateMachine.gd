@@ -2,26 +2,27 @@ extends Node2D
 
 class_name State
 
-enum { RUNNING, KNOCKBACKED, LOAD_AA, SHOOT, DEATH }
+enum { IDLE, RUNNING, KNOCKBACKED, LOAD_AA, SHOOT, DEATH, STUN }
 
-var s_name
-var change_state
-var ani_player
+var s_name : int
+var change_state : FuncRef
+var ani_player : AnimationPlayer
 var _body
-var kb_dur := 0
+
+var velocity : Vector2 = Vector2.ZERO
+
+func movement_control() -> void:
+	_body.move_and_slide(velocity)
+
 
 func _physics_process(_delta) -> void:
-	# warning-ignore:return_value_discarded
-	_body.move_and_slide(_body.velocity)
+	movement_control()
 
-	if s_name == KNOCKBACKED:
-		kb_dur -= 1
-		if kb_dur == 0:
-			change_state.call_func(RUNNING)
-	if !_body.can_range_move && s_name == RUNNING:
-		change_state.call_func(LOAD_AA)
 
-func setup(_change_state, _ani_player, body) -> void:
+func set_status_name(_status_name: int) -> void:
+	pass
+
+func setup(_change_state: FuncRef, _ani_player: AnimationPlayer, body) -> void:
 	self.change_state = _change_state
 	self.ani_player = _ani_player
 	self._body = body

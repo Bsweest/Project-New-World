@@ -6,7 +6,7 @@ onready var _hitbox : HitBox = $HitBox
 onready var _coll : CollisionShape2D = $HitBox/CollisionShape2D
 
 var first_use := false
-var is_active := false
+var open_hitbox := false
 var running_time := 6
 
 func ub_set(isParty: bool, c_stats: CharacterStats, c_skill: CharacterSkill, _character) -> void:
@@ -26,17 +26,18 @@ func activeUB(ub_postion: int) -> void:
 	var newDMg = calc_skill_damage()
 	damageMachine.modify(newDMg)
 	_hitbox.enable_collision()
-	is_active = true
+	open_hitbox = true
+	.activeUB(ub_postion)
 
 func after_ub_effect() -> void:
 	pass
 
 func _physics_process(_delta) -> void:
-	if not is_active:
+	if not open_hitbox:
 		return
 	running_time -= 1
 	if running_time == 0:
-		is_active = false
+		open_hitbox = false
 		after_ub_effect()
 		_hitbox.disable_collision()
 		running_time = 6

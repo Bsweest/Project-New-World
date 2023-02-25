@@ -2,10 +2,9 @@ extends KinematicBody2D
 
 class_name Entity
 
-enum SideEffect { NONE, BUFF, TRANSFORM }
 enum DamageType { PHYSIC, MAGIC, TRUE, PIERCE, HEAL }
 enum BaseClass { FIGHTER, DEFENDER, PALADIN, ARCHER, MAGE, HEALER }
-enum State { RUNNING, KNOCKBACKED, LOAD_AA, SHOOT, DEATH }
+enum State { IDLE, RUNNING, KNOCKBACKED, LOAD_AA, SHOOT, DEATH, STUN }
 enum MultipilerType { SAME, PHYSIC, MAGIC, HP }
 enum StatChange { PHYSIC, MAGIC, P_DEFENSE, M_ARMOR, CRIT_C, CRIT_DMG, SPEED, DMG_MOD, TP_MOD }
 
@@ -42,42 +41,44 @@ var can_range_move := true
 var idle_time := 80
 
 var state : State
-var state_factory : StateFactory
+var state_factory : StateFactory = StateFactory.new()
 var pos : int
-var velocity := Vector2.ZERO
-var dir := -1 # multiply with speed
+var is_stunned := 0
+
+var movement_speed : int = 0 setget set_movement ,get_movement
+var party_direction : int = -1
+
 var is_over := false
 const MAX_BAR_SHOW_TIME := 50
 var show_health_bar := MAX_BAR_SHOW_TIME
 
 #?skill section
 var projectile_texture : Texture
-var ts : CharacterTransform
 var ub_position := 0
 
 #! Ready Set GO
 func _ready() -> void:
-	state_factory = StateFactory.new()
-	
 	set_resource()
+	
 	if !stats.is_ranged:
 		battleSprite.vframes = 3
 	collisionDamage = DamageMachine.new()
 	collisionDamage.setter(self, stats.get_physic(), DamageType.PHYSIC, true)
 	ub.ub_set(is_party, stats, skill, self)
 	hurtBox.init(is_party)
-	state_idle()
+	change_state(State.IDLE)
 	_hpBar.visible = false
 	is_over = false
 
-func state_idle() -> void:
+func out_of_game_loop() -> void:
 	is_over = true
-	velocity.x = 0
 	_col1.set_deferred("disabled", true)
 	_col2.set_deferred("disabled", true)
-	battleSprite.visible = false
-	idleSprite.visible = true
 	animationPlayer.play("idle")
+
+func remove_idle_animation() -> void:
+	idleSprite.visible = false
+	battleSprite.visible = true
 
 func check_death_status() -> bool:
 	return state.s_name == State.DEATH
@@ -87,23 +88,18 @@ func set_resource() ->  void:
 	var baseSkill = load("res://game_script/skills/resources/" + c_name + ".tres")
 
 	stats.init(startStats, level)
-	dir *= stats.get_speed()
 	emit_signal("set_max_hp", stats.max_hp, pos)
 	_hpBar.max_value = stats.max_hp
 	_hpBar.value = stats.max_hp
 	create_attack_range()
 
 	skill.init(baseSkill, level)
-	if skill.effect == SideEffect.TRANSFORM:
-		ts = load("res://components/entity/" + c_name + "/ts.tscn").instance()
-		ts.setter(is_party, stats, skill)
-		ts.connect('end_transfrom', self, '_on_end_Transform')
-		add_child(ts)
-
+	
 	if is_party:
 		scale = Vector2(-1, 1)
 		_hpBar.rect_scale = Vector2(-1, 1)
-		dir = -dir
+		party_direction = 1
+	set_movement(stats.get_speed())
 
 func create_attack_range() -> void:
 	if stats.is_ranged:
@@ -130,17 +126,38 @@ func activeUB() -> Vector2:
 func UB_animation_finish():
 	skill.addTP(-1000)
 	ub.activeUB(ub_position)
-	if skill.effect == SideEffect.TRANSFORM:
-		ts.activeTransform()
+	#! comeback
+	battleSprite.visible = true
+
+#* Movement control
+func set_movement(num: int) -> void:
+	movement_speed = party_direction * num
+func get_movement() -> int:
+	return movement_speed
+
+func set_stun_status(value: bool) -> void:
+	if value:
+		is_stunned += 1
 	else:
-		battleSprite.visible = true
+		is_stunned -= 1
+	if is_stunned == 0:
+		remove_idle_animation()
+		if state.s_name != State.KNOCKBACKED:
+			change_state(State.RUNNING)
+
+func get_stun_status() -> bool:
+	return bool(is_stunned)
 
 #* Battle Gameplay Mechanic
 func _on_Stats_stat_changed(name: int):
 	if name == StatChange.PHYSIC:
 		collisionDamage.modify(stats.get_physic())
+	if name == StatChange.SPEED:
+		set_movement(stats.get_speed())
 
 func normal_hit_enemy(target: Entity) -> void:
+	if get_stun_status():
+		return
 	change_tp(90)
 	if not check_death_status():
 		animationPlayer.play("attack")
@@ -195,12 +212,16 @@ func shot_normal() -> void:
 func _on_Movement_toggle(move: bool) -> void:
 	can_range_move = move
 
-func change_state(new_state_name) -> void:
+func change_state(new_state_name: int) -> void:
 	if is_over:
 		return
 	if state != null:
-		if check_death_status():
+		if  state.s_name == State.STUN && ( \
+			new_state_name != State.KNOCKBACKED || \
+			new_state_name != State.DEATH):
 			return
+		if check_death_status():
+			return #// If alive then process to next state
 		state.queue_free()
 	state = state_factory.get_state(new_state_name).new()
 	state.s_name = new_state_name
@@ -220,8 +241,7 @@ func _physics_process(_delta):
 		if idle_time == 0:
 			_col1.set_deferred("disabled", false)
 			_col2.set_deferred("disabled", false)
-			idleSprite.visible = false
-			battleSprite.visible = true
+			remove_idle_animation()
 			animationPlayer.play("running")
 			change_state(State.RUNNING)
 
@@ -232,11 +252,15 @@ func showDamageNumber(damage: Dictionary) -> void:
 	text.damage = damage
 	add_child(text)
 
+func _on_CC_status_applied(status_name: int, is_increase: bool) -> void:
+	set_stun_status(is_increase)
+	change_state(State.STUN)
+	state.set_status_name(status_name)
+
 func _on_Stats_hp_depleted():
 	_col1.set_deferred("disabled", true)
 	_col2.set_deferred("disabled", true)
-	if ts != null:
-		ts.endTransform()
+	ub._on_character_death()
 	change_state(State.DEATH)
 	emit_signal("hp_depleted")
 

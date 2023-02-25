@@ -16,9 +16,10 @@ func add_effect(apllier, time: float, type: int, name: int, flat: int, percent: 
     effect.set_default(apllier, time)
     if type == EffectType.STATUS:
         effect.set_status(name)
+        effect.connect("status_apply", owner, "_on_CC_status_applied")
     elif type == EffectType.EFFECT:
         effect.set_stat(name, flat, percent)
-        effect.connect("effect_aplly", stats, "_modify_stat")
+        effect.connect("effect_apply", stats, "_modify_stat")
     elif type == EffectType.DOT:
         effect.set_dot(name, flat, percent)
     add_child(effect)
