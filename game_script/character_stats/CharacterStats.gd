@@ -19,8 +19,8 @@ var un_modified = {
 	CRIT_C: 0,
 	CRIT_DMG: 0,
 	SPEED: 0,
-	DMG_MOD: 1,
-	TP_MOD: 1
+	DMG_MOD : -1.0,
+	TP_MOD: 1.0,
 }
 
 var current_stat = {
@@ -31,8 +31,8 @@ var current_stat = {
 	CRIT_C: 0,
 	CRIT_DMG: 0,
 	SPEED: 0,
-	DMG_MOD: 1,
-	TP_MOD: 1
+	DMG_MOD: -1.0,
+	TP_MOD: 1.0,
 }
 
 var max_hp : int = 0
@@ -100,7 +100,7 @@ func defense_multiplier(type: int) -> float:
 		mul = current_stat[PHYSIC]
 	elif type == DamameType.MAGIC:
 		mul = current_stat[MAGIC]
-	return 100.0 / (100 + mul) * current_stat[DMG_MOD]
+	return 100.0 / (100 + mul) * - current_stat[DMG_MOD]
 
 
 func take_calculated_dmg(damage: Dictionary) -> void:

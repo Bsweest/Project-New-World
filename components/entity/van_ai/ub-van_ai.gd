@@ -18,4 +18,5 @@ func after_ub_effect() -> void:
 	var amount : int = - int(skill.side_dmg * stats.get_magic() * (1 + 0.3 * num_enemy) / 100)
 	healMachine.modify(amount)
 	for each in members:
-		healMachine.heal_received(each)
+		if not each.check_death_status():
+			healMachine.heal_received(each)

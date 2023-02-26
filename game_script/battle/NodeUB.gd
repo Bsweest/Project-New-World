@@ -33,8 +33,13 @@ func ub_set(isParty: bool, c_stats: CharacterStats, c_skill: CharacterSkill, _ch
 		# warning-ignore:return_value_discarded
 		transfrom_node.connect('end_transfrom', character, '_on_end_Transform')
 		character.add_child(transfrom_node)
+	_set_hitbox()
+	_set_side_effect()
 
-func _ready() -> void:
+func _set_hitbox() -> void:
+	pass
+
+func _set_side_effect() -> void:
 	pass
 
 func setup_formation(_members: Array, _opponents: Array) -> void:

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gui_gradient.png-28c53120d1e744e08d4438fe5069875d.stex"
+path="res://.import/place_holder_sprite.png-5c6978fced4c03c27e9722a72ba89ad5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/gui_gradient.png"
-dest_files=[ "res://.import/gui_gradient.png-28c53120d1e744e08d4438fe5069875d.stex" ]
+source_file="res://assets/sprite/place_holder_sprite.png"
+dest_files=[ "res://.import/place_holder_sprite.png-5c6978fced4c03c27e9722a72ba89ad5.stex" ]
 
 [params]
 

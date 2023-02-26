@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/winlose.png-0eee00279015d5d39f25148de5f7df1a.stex"
+path="res://.import/menu.png-cf771b0103c7f1e6bf493f447c7e04fe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/winlose.png"
-dest_files=[ "res://.import/winlose.png-0eee00279015d5d39f25148de5f7df1a.stex" ]
+source_file="res://assets/ui/menu.png"
+dest_files=[ "res://.import/menu.png-cf771b0103c7f1e6bf493f447c7e04fe.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

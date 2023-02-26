@@ -24,7 +24,6 @@ func init(skill: BaseSkill, lvl: int) -> void:
 	side_dmg = skill.side_dmg
 	type = skill.type
 	multipiler_type = skill.multipiler_type
-	effect = skill.side_effect
 	need_choose = skill.need_choose
 
 func addTP(amount: int) -> void:

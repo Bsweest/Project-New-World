@@ -59,9 +59,6 @@ var ub_position := 0
 #! Ready Set GO
 func _ready() -> void:
 	set_resource()
-	
-	if !stats.is_ranged:
-		battleSprite.vframes = 3
 	collisionDamage = DamageMachine.new()
 	collisionDamage.setter(self, stats.get_physic(), DamageType.PHYSIC, true)
 	ub.ub_set(is_party, stats, skill, self)
@@ -94,6 +91,7 @@ func set_resource() ->  void:
 	create_attack_range()
 
 	skill.init(baseSkill, level)
+	effects.setter(self, is_party, pos, stats)
 	
 	if is_party:
 		scale = Vector2(-1, 1)
@@ -116,8 +114,8 @@ func change_tp(num: int) -> void:
 	skill.addTP(num)
 
 func activeUB() -> Vector2:
-	if not skill.check_ub():
-		return Vector2.ZERO
+	# if not skill.check_ub():
+	# 	return Vector2.ZERO
 	if skill.need_choose:
 		return Vector2(-1, -1)
 	battleSprite.visible = false
@@ -126,7 +124,6 @@ func activeUB() -> Vector2:
 func UB_animation_finish():
 	skill.addTP(-1000)
 	ub.activeUB(ub_position)
-	#! comeback
 	battleSprite.visible = true
 
 #* Movement control
@@ -186,8 +183,6 @@ func fire_special_projectile(_txt: Texture, dmgMachine: DamageMachine, isKB: boo
 	add_child(projectile)
 	
 func take_damage(damage: Dictionary) -> void:
-	if damage.cal_damage == 0: 
-		return
 	show_health_bar = MAX_BAR_SHOW_TIME - 1
 	stats.take_calculated_dmg(damage)
 
@@ -282,3 +277,5 @@ func get_class() -> String: return "Entity"
 func _on_end_Transform() -> void:
 	battleSprite.visible = true
 
+func get_added_effect(new_effect) -> void:
+	effects.add_effect_to_Body(new_effect)

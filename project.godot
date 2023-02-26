@@ -164,6 +164,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game_script/entities/states/StateFactory.gd"
 }, {
+"base": "Control",
+"class": "StatusEffectIcon",
+"language": "GDScript",
+"path": "res://game_script/buff/StatusIcon.gd"
+}, {
 "base": "State",
 "class": "StunState",
 "language": "GDScript",
@@ -216,6 +221,7 @@ _global_script_class_icons={
 "ShootState": "",
 "State": "",
 "StateFactory": "",
+"StatusEffectIcon": "",
 "StunState": "",
 "UBLayer": "",
 "UIControl": "",
@@ -244,6 +250,7 @@ window/size/width=1280
 window/size/height=720
 window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 

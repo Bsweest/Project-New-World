@@ -25,8 +25,6 @@ func ready_set(is_member: bool, arr: Array) -> Array:
 		newEntity.is_party = is_party
 		newEntity.position = init_position.position
 		newEntity.pos = i
-		newEntity.set_collision_layer_bit(1, false)
-		newEntity.set_collision_mask_bit(1, false)
 		if is_party:
 			newEntity.connect("set_max_hp", owner, "_on_set_MAX_HP")
 			newEntity.connect("hp_changed", owner, "_on_Char_hp_changed")
@@ -38,7 +36,7 @@ func ready_set(is_member: bool, arr: Array) -> Array:
 			newEntity.set_collision_mask_bit(1, true)
 		newEntity.connect("hp_depleted", self, "_on_Char_hp_depleted")
 		arrChar.append(newEntity)
-		
+	
 	for each in arrChar:
 		members.add_child(each)
 	count_member = len(arrChar)
@@ -65,14 +63,14 @@ func press_UB_button(pos: int) -> void:
 	ubLayer.visible = true
 	ubLayer.run_ub_ani(pos, _position)
 
-func _on_SelectArea_choose_done(pos, _position):
+func _on_SelectArea_choose_done(pos, ub_hitbox_position):
 	ubLayer.visible = true
 	var character : Entity = get_character(pos)
 	if character.check_death_status():
 		return
-	character.ub_position = _position
+	character.ub_position = ub_hitbox_position
 	character.battleSprite.visible = false
-	ubLayer.run_ub_ani(pos, character.position)
+	ubLayer.run_ub_ani(pos, character.position, ub_hitbox_position)
 
 func _on_UB_animation_finished(pos: int) -> void:
 	get_tree().paused = false

@@ -4,10 +4,12 @@ class_name ButtonUB
 
 signal active_ub(pos)
 
+
 onready var skillRect : TextureRect = $TextureRect as TextureRect
 onready var textureImg : TextureRect = $UImain/Panel/TextureRect as TextureRect
 onready var hpBar : ProgressBar = $HPBar
 onready var tpBar : TextureProgress = $TPBar
+onready var gridEff : GridContainer = $EffectContainer
 
 var pos : int
 var c_name : String
@@ -18,8 +20,9 @@ var under = Color(mold, mold, mold)
 var fully = Color(1, 1, 1)
 
 func _ready() -> void:
-	var spriteImg = load("res://assets/sprite/" + c_name +"/illustration.png")
-	var skillIcon = load("res://assets/skills/skill_icon" + str(skill_icon)  + ".png")
+	Utils.connect("buff_changed", self, "_add_status_effect")
+	var spriteImg = load("res://assets/sprite/" + "thanh_dung" +"/illustration.png")
+	var skillIcon = load("res://assets/skills/skill_icon" + str(1)  + ".png")
 	textureImg.set_texture(spriteImg)
 	skillRect.set_texture(skillIcon)
 	tpBar.max_value = 1000.0
@@ -43,3 +46,7 @@ func set_current_tp(value: int) -> void:
 
 func _on_Button_pressed():
 	emit_signal("active_ub", pos)
+
+func _add_status_effect(index: int, icon: StatusEffectIcon) -> void:
+	if index == pos:
+		gridEff.add_child(icon)

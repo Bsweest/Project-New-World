@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icons_essential_no_outline_full.png-b2b086223f4bf6ba6981644cb39ee174.stex"
+path="res://.import/stat_effect.png-32c2d89014f1a9341374bb57e1729141.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/icons_essential_no_outline_full.png"
-dest_files=[ "res://.import/icons_essential_no_outline_full.png-b2b086223f4bf6ba6981644cb39ee174.stex" ]
+source_file="res://assets/ui/effect_icon/stat_effect.png"
+dest_files=[ "res://.import/stat_effect.png-32c2d89014f1a9341374bb57e1729141.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

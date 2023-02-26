@@ -6,9 +6,6 @@
 [ext_resource path="res://components/entity/mob_shooter_1/ub-mob_shooter_1.gd" type="Script" id=4]
 
 [node name="Entity" instance=ExtResource( 1 )]
-c_name = ""
-is_party = true
-level = 1
 
 [node name="Idle" parent="." index="3"]
 position = Vector2( 1, 2 )

@@ -20,20 +20,20 @@ var timer = Timer.new()
 
 func _ready():
 	var ally = [
-		{
-			"name": "van_ai",
-		},
+		# {
+		# 	"name": "van_ai",
+		# },
 		{ 
-			"name": "mob_shooter_1",
+			"name": "hoa_linh",
 		},
 		{ 
 			"name": "mezuna_ryuji",
 		}
 		]
 	var enemy = [
-		{
-			"name": "hoa_lan",
-		},
+		# {
+		# 	"name": "hoa_lan",
+		# },
 		{ 
 			"name": "thanh_dung",
 		},

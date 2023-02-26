@@ -2,24 +2,22 @@ extends Node
 
 class_name EffectMachine
 
-enum EffectType { STATUS, EFFECT, DOT }
-
 var stats : CharacterStats
-var skill : CharacterSkill
+var _body
+var is_party : bool
+var pos : int
 
-func setter(eStat: CharacterStats, eSkill: CharacterSkill) -> void:
+func setter(body, isParty: bool, index: int, eStat: CharacterStats) -> void:
+    _body = body
+    is_party = isParty
+    pos = index
     stats = eStat
-    skill = eSkill
 
-func add_effect(apllier, time: float, type: int, name: int, flat: int, percent: int) -> void:
-    var effect = Effect.new()
-    effect.set_default(apllier, time)
-    if type == EffectType.STATUS:
-        effect.set_status(name)
-        effect.connect("status_apply", owner, "_on_CC_status_applied")
-    elif type == EffectType.EFFECT:
-        effect.set_stat(name, flat, percent)
+func add_effect_to_Body(effect: Effect) -> void:
+    if effect.type == 0:
+        effect.connect("status_apply", _body, "_on_CC_status_applied")
+    elif effect.type == 1:
         effect.connect("effect_apply", stats, "_modify_stat")
-    elif type == EffectType.DOT:
-        effect.set_dot(name, flat, percent)
     add_child(effect)
+    if is_party:
+        Utils.status_effect_applied(pos, effect.icon)

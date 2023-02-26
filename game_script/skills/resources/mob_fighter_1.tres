@@ -4,13 +4,10 @@
 
 [resource]
 script = ExtResource( 1 )
-skill_name = "skill_name"
+skill_name = "Đấm đá liên hoàn"
 skill_description = ""
 base_dmg = 150
 side_dmg = 0
-percent_hp = 0
 need_choose = false
-need_formation = false
 type = 0
 multipiler_type = 0
-side_effect = 0

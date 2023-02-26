@@ -9,13 +9,12 @@ var first_use := false
 var open_hitbox := false
 var running_time := 6
 
-func ub_set(isParty: bool, c_stats: CharacterStats, c_skill: CharacterSkill, _character) -> void:
-	.ub_set(isParty, c_stats, c_skill, _character)
-	_hitbox.initHitbox(is_party)
-	_hitbox.disable_collision()
-
 func _ready() -> void:
 	_hitbox.setter(damageMachine, true)
+
+func _set_hitbox() -> void:
+	_hitbox.initHitbox(is_party)
+	_hitbox.disable_collision()
 
 func activeUB(ub_postion: int) -> void:
 	if ub_postion != 0:
