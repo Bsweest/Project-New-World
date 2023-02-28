@@ -4,7 +4,6 @@ class_name CharacterStats
 
 enum BaseClass { FIGHTER, DEFENDER, PALADIN, ARCHER, MAGE, HEALER }
 enum DamameType { PHYSIC, MAGIC, TRUE, PIERCE }
-enum StatusName  { IMMUNE, CURSE, STUN, FREEZE, SILENT }
 enum { PHYSIC, MAGIC, P_DEFENSE, M_ARMOR, CRIT_C, CRIT_DMG, SPEED, DMG_MOD, TP_MOD }
 
 signal hp_changed(new_hp, damage)
@@ -43,25 +42,26 @@ var c_class : int
 var projectile : String
 var is_ranged : bool = false
 
-func create_stat_dictionary(dic: Dictionary, stats: BaseStats) -> void:
-	dic[PHYSIC] = stats.physic
-	dic[MAGIC] = stats.magic
-	dic[P_DEFENSE] = stats.p_defense
-	dic[M_ARMOR] = stats.m_armor
+func create_stat_dictionary(dic: Dictionary, stats: BaseStats, lvl: int) -> void:
+	dic[PHYSIC] = int(stats.physic * (1 + (lvl) * 0.15) + lvl * 5)
+	dic[MAGIC] = int(stats.magic * (1 + (lvl) * 0.15) + lvl * 5)
+	dic[P_DEFENSE] = int(stats.p_defense * (1 + (lvl) * 0.15) + lvl * 2.5)
+	dic[M_ARMOR] = int(stats.m_armor * (1 + (lvl) * 0.15) + lvl * 2.5)
 	dic[CRIT_C] = stats.crit_c / 100.0
 	dic[CRIT_DMG] = stats.crit_dmg / 100.0
 	dic[SPEED] = stats.speed
 
 func init(stats: BaseStats, lvl: int) -> void:
-	max_hp = stats.max_hp
-	current_hp = stats.max_hp
+	lvl -= 1
+	max_hp = int(stats.max_hp * (1 + (lvl) * 0.15) + lvl * 50)
+	current_hp = max_hp
 	c_class = stats.base_class
 	c_range = stats.attack_range
 	projectile = stats.projectile_texture
 	if c_class == BaseClass.ARCHER || c_class == BaseClass.MAGE || c_class == BaseClass.HEALER:
 		is_ranged = true
-	create_stat_dictionary(un_modified, stats)
-	create_stat_dictionary(current_stat, stats)
+	create_stat_dictionary(un_modified, stats, lvl)
+	create_stat_dictionary(current_stat, stats, lvl)
 	
 
 func _modify_stat(stat_name: int, flat: int, percent: float) -> void:

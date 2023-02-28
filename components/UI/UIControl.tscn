@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/ui/menu.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/font_menu.tres" type="DynamicFont" id=7]
@@ -193,11 +193,11 @@ region = Rect2( 300, 30, 70, 70 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
-region = Rect2( 500, 30, 70, 70 )
+region = Rect2( 499, 29, 72, 71 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 599, 62, 116, 38 )
+region = Rect2( 750, 62, 115, 40 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
@@ -212,6 +212,10 @@ size = 32
 use_filter = true
 font_data = ExtResource( 10 )
 
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 601, 29, 69, 71 )
+
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
 region = Rect2( 101, 29, 69, 71 )
@@ -219,6 +223,9 @@ region = Rect2( 101, 29, 69, 71 )
 [node name="UIControl" type="CanvasLayer"]
 pause_mode = 2
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 379.0 ]
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 13 )
@@ -295,8 +302,8 @@ size_flags_vertical = 0
 texture = SubResource( 11 )
 patch_margin_left = 10
 patch_margin_top = 10
-patch_margin_right = 11
-patch_margin_bottom = 9
+patch_margin_right = 10
+patch_margin_bottom = 10
 
 [node name="TitleWin" type="TextureRect" parent="MenuBoard/EndGameMenu/TopBar"]
 visible = false
@@ -343,6 +350,15 @@ margin_right = 246.0
 margin_bottom = 177.0
 custom_fonts/font = SubResource( 3 )
 text = "0"
+
+[node name="BtnNext" type="TextureButton" parent="MenuBoard/EndGameMenu"]
+margin_left = 520.0
+margin_top = 145.0
+margin_right = 590.0
+margin_bottom = 215.0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource( 14 )
+expand = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MenuBoard/EndGameMenu"]
 margin_left = 70.0

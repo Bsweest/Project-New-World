@@ -3,12 +3,12 @@ extends Node
 class_name Effect
 
 enum EffectType { STATUS, STAT, DOT }
-enum StatusName  { IMMUNE, CURSE, STUN, FREEZE, SILENT }
+enum StatusName  { IMMUNE, CURSE, SILENT, STUN, FREEZE, SHOCK }
 enum StatChange  { PHYSIC, MAGIC, P_DEFENSE, M_ARMOR, CRIT_C, CRIT_DMG, SPEED, DMG_MOD, TP_MOD }
 enum DotName  { BURN, BLEEDING, POISION, DECOMPOSITION }
 enum DamageType { PHYSIC, MAGIC, TRUE, PIERCE, HEAL }
 
-var icon_stat_eff = preload("res://components/UI/UIEffectIcon.tscn")
+var scene_icon = preload("res://components/UI/UIEffectIcon.tscn")
 
 signal effect_apply(eff_name, flat, percent)
 signal status_apply(status_name, is_increase)
@@ -17,7 +17,7 @@ var applier
 var type : int = 0
 
 var is_debuff := false
-var un_cleanable := false
+var cleanable := false
 
 var status_name : int = -1
 var stat_name : int = -1
@@ -31,7 +31,7 @@ var timer = Timer.new()
 var tick_time : float = 0.5
 var tick_timer = Timer.new()
 
-var icon : StatusEffectIcon
+var icon : StatusEffectIcon = scene_icon.instance()
 
 var damageMachine : DamageMachine
 
@@ -44,7 +44,6 @@ func set_status(name: int) -> void:
 	status_name = name
 	if name > 0:
 		is_debuff = true
-	icon = icon_stat_eff.instance()
 	icon.setter(type, name, is_debuff)
 
 func set_stat(name: int, flat: int, percent: int) -> void:
@@ -54,7 +53,6 @@ func set_stat(name: int, flat: int, percent: int) -> void:
 	percent_value = percent / 100.0
 	if flat_value < 0 || percent_value < 0:
 		is_debuff = true
-	icon = icon_stat_eff.instance()
 	icon.setter(type, name, is_debuff)
 
 func set_dot(name: int, flat: int, percent: int) -> void:
@@ -64,7 +62,6 @@ func set_dot(name: int, flat: int, percent: int) -> void:
 	percent_value = percent / 100.0
 	if flat_value > 0 || percent_value > 0:
 		is_debuff = true
-	icon = icon_stat_eff.instance()
 	icon.setter(type, name, is_debuff)
 
 func _ready():
@@ -72,8 +69,8 @@ func _ready():
 	timer.one_shot = true
 	timer.connect("timeout", self, "_effect_run_out")
 	add_child(timer)
-	signal_effect_start()
 	timer.start()
+	signal_effect_start()
 
 func signal_effect_start() -> void:
 	if type == EffectType.STATUS:
@@ -100,7 +97,6 @@ func signal_effect_start() -> void:
 				damageMachine.percent_damage = percent_value
 				damageMachine.type = DamageType.MAGIC
 				damageMachine.set_crit = false
-		
 		tick_timer.wait_time = tick_time
 		tick_timer.one_shot = false
 		_dot_cycle_run()
@@ -120,8 +116,8 @@ func _effect_run_out() -> void:
 
 func _notification(what):
 	if what == NOTIFICATION_PREDELETE:
-		if status_name >= 0:
+		if type == EffectType.STATUS:
 			emit_signal("status_apply", status_name, false)
-		if stat_name >= 0:
+		if type == EffectType.STAT:
 			emit_signal("effect_apply", stat_name, -flat_value, -percent_value)
 		icon.queue_free()

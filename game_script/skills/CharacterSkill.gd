@@ -4,27 +4,25 @@ class_name CharacterSkill
 
 signal add_tp(newTP)
 
-const fullUB = 1000
+export var has_no_skill := false
+export var need_choose := false
 
+const FULL_UB = 1000
 var current_tp : int = 0
 
 var skill_name : String
-var skill_description : String
 var base_dmg : int
 var side_dmg : int
 var type : int
 var multipiler_type : int
 var effect : int
-var need_choose : bool
 
 func init(skill: BaseSkill, lvl: int) -> void:
 	skill_name = skill.skill_name
-	skill_description = skill.skill_description
 	base_dmg = skill.base_dmg
 	side_dmg = skill.side_dmg
 	type = skill.type
 	multipiler_type = skill.multipiler_type
-	need_choose = skill.need_choose
 
 func addTP(amount: int) -> void:
 	current_tp += amount
@@ -33,6 +31,6 @@ func addTP(amount: int) -> void:
 	emit_signal("add_tp", current_tp)
 
 func check_ub() -> bool:
-	if current_tp == 1000:
+	if current_tp == FULL_UB:
 		return true
 	return false

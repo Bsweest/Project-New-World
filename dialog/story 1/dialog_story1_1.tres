@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 10
+resource_version = 14
 syntax_version = 2
 raw_text = "~ story_begin
 Ông chú: Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.
@@ -59,24 +59,24 @@ Anh ta đưa tay ra, bạn bắt tay lại.
 {{player_name}}: {{player_name}}. À, mà nói trước cho mọi người khỏi phải đắn đo suy nghĩ, nếu mọi người quyết định không chia tiền theo giao kèo thì cứ xác định đi. Tôi sẽ săn mấy anh chị bất kể có trốn đến đâu đi chăng nữa. Giờ đi luôn cho nóng nhỉ ?
 Bạn đe doạ xong liền đi ra khỏi ngõ, tổ đội kia vẫn còn ở lại bàn tán.
 Gáp Phai 3: Này đại ca, em biết mọi quyền quyết định đều ở anh, nhưng anh không thấy đứa này nó không nên dây dưa vào sao?
-Bành Công: Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Đầu anh giờ cứ như được bơm đầy hưng phấn vậy, nó bắt anh phải chấp nhận yêu cầu nhóc ấy.
-Bành Công: Nếu có gì xấu xảy ra thì ta chuồn luôn chứ lo gì!
-Sau một hồi, cả tổ đội cùng với bạn bắt đầu lên đường đến núi Màn Sương Xám bên ngoài thành phố.
+Bành Công: Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Máu nó cứ dồn lên não anh như tăng xông vậy, cái đầu bắt anh chấp nhận yêu cầu nhóc ấy.
+Bành Công: Mà nếu có gì xấu xảy ra thì ta chuồn luôn chứ lo gì!
+Sau một hồi bàn tán, cả tổ đội cùng với bạn bắt đầu lên đường đến núi Màn Sương Xám bên ngoài thành phố.
 ~ below_fog_mountain
-Bành Công: Bình thường thì tụi sói nó ở trên đỉnh nhưng một năm thì có vài ba lần tụi nó xuống núi kiếm thêm đồ ăn, đa phần là quái vật nhưng thật ra thì tụi nó ăn bất kể sinh vật sống nào không khiến tụi nó chết. Cùng với bản năng sát thủ đáng sợ, không ít tai nạn liên quan đến tụi nó đã xảy ra, kể cả những Gáp Phai cũng là nạn nhân.
+Bành Công: Bình thường thì tụi sói nó ở trên đỉnh nhưng một năm thì có vài ba lần tụi nó xuống núi kiếm thêm đồ ăn, đa phần là quái vật nhưng đúng hơn thì tụi nó ăn bất kể sinh vật sống nào không khiến tụi nó chết. Cùng với bản năng sát thủ đáng sợ, không ít tai nạn liên quan đến tụi nó đã xảy ra, kể cả những Gáp Phai cũng là nạn nhân.
 {{player_name}}: Vậy lần này nhiệm vụ đi dọn ổ tụi nói luôn sao.
 Bành Công: Đéo thể nào, cho dù toàn bộ Gáp Phai ở thành phố này có tập trung lại cũng không thể đánh lên đỉnh núi. Chưa kể đến những con quái khác thì địa hình trên núi cũng đã đủ quái dị rồi. Nhiệm vụ của Gáp Phai nơi này chỉ là đánh đuổi lũ quái vật cho tụi nó trở về núi thôi.
 {{player_name}}: Lần này cũng vậy?
 Bành Công: Ừ, nhưng ở số lượng lớn chưa từng thấy, đã xác minh được một bầy đến hơn 30 con. Để đẩy lùi số lượng như này thì cần sự góp lực của ít nhất 4 tổ đội mới đảm bảo chút an toàn. Vừa rồi bọn ta đang tính liên hệ với các tổ đội khác nữa thì gặp đứa nhóc đần độn nào đó tính đánh một mình với cả bầy sói.
-{{player_name}}: Xời, chuẩn bị nhìn bầy sói này biến thành bàn tiệc bảy món này.
+{{player_name}}: Xời, mấy người chuẩn bị nhìn bầy sói này biến thành bàn tiệc bảy món này.
 [i]Tiêu diệt bầy sói dạ tuyết.[/i]
 ~ encounter_with_snow_wolves
 Từ mỏm đá trên đầu, một con sói dạ tuyết lén lút đến gần và nhảy xuống cho một đòn tấn công bất ngờ. Nhưng bạn ngay lập tức bật lên và đá bay không cho nó cơ hội để lại gần.
 Bạn nhảy lên mỏm đá thì đã thấy cả chục con sói đợi sẵn.
 {{player_name}}: Wa, từ lúc nào mà chúng ta đã bị nhắm làm mồi cho tụi nó rồi. Xin lỗi nhưng món ăn duy nhất tụi bây có được hôm nay là nắm đấm của ta thôi.
-Bành Công: mọi người sẵn sằng đi, trèo lên và thiết lập đội hình phòng ngự - rút lui.
+Bành Công: mọi người sẵn sằng đi, trèo lên và thiết lập đội hình.
 # Battle start
-Bành Công: Không thể tin được, chỉ với nắm đấm thôi mà tên này có thể đả bại từng con sói một. Sức mạnh này vượt quá đẳng cấp của toàn bộ Gáp Phai thành phố này, có khi là ngang bằng những Gáp Phai top đầu lục địa này luôn.
+Bành Công: Không thể tin được, chỉ với nắm đấm thôi mà tên này có thể tiêu diệt từng con sói một với không một vết trầy nào. Sức mạnh này vượt quá đẳng cấp của toàn bộ Gáp Phai thành phố này, có khi là ngang bằng những Gáp Phai top đầu lục địa này luôn.
 Gáp Phai 3: Khoan đã, anh coi kìa, nguyên tố băng đang tràn ngập xung quanh tên đó. Cứ thế này thì nó bị đóng băng luôn.
 Gáp Phai 4: Bị luôn rồi kìa.
 ({{player_name}}): Ây da, không cựa quậy được luôn.
@@ -84,11 +84,12 @@ Bành Công: Không lẽ nó không biết \"điều khiển nguyên tố\" sao 
 Gáp Phai 2: Giờ sao đây anh, có nên rút không?
 Bành Công: Chậc,... Không, với sức mạnh nhóc đó, ta có thể đánh bại hết toàn bộ lũ sói quanh đây, Hoả Linh, em giúp tên nhóc đó đi.
 Hoả Linh [i]'Gáp Phai 3'[/i]: Em đã bảo từ đầu đừng dây dưa với đứa này rồi. Con mẹ nó, nếu bây giờ nhóm ta bị tấn công thì đừng có hối hận đấy.
-Hoả Linh: Cháy lên! Cơ thể
+Hoả Linh: Cơ Thể Bùng Cháy
 ({{player_name}}): Cử động được rồi, quẩy tiếp thôi.
 (Hoả Linh): Ặc, đông quá, không giữ được ngọn lửa lâu hơn nữa, cứ thế này thì tên này sẽ bị đóng băng tiếp mất.
 Hoả Linh: Rút về mau, ngươi không biết điều khiển nguyên tố thì không ăn được lũ này đâu.
-{{player_name}}: Không cần đâu, tôi đã tiếp nhận được ý chí của cô rồi."
+{{player_name}}: Không cần đâu, tôi đã tiếp nhận được ý chí của cô rồi.
+{{player_name}}: Cơ thể bùng cháy..."
 errors = [  ]
 titles = {
 "below_fog_mountain": "57",
@@ -605,8 +606,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "54",
 "replacements": [  ],
-"text": "Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Đầu anh giờ cứ như được bơm đầy hưng phấn vậy, nó bắt anh phải chấp nhận yêu cầu nhóc ấy.",
-"translation_key": "Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Đầu anh giờ cứ như được bơm đầy hưng phấn vậy, nó bắt anh phải chấp nhận yêu cầu nhóc ấy.",
+"text": "Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Máu nó cứ dồn lên não anh như tăng xông vậy, cái đầu bắt anh chấp nhận yêu cầu nhóc ấy.",
+"translation_key": "Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Máu nó cứ dồn lên não anh như tăng xông vậy, cái đầu bắt anh chấp nhận yêu cầu nhóc ấy.",
 "type": "dialogue"
 },
 "54": {
@@ -614,16 +615,16 @@ lines = {
 "character_replacements": [  ],
 "next_id": "55",
 "replacements": [  ],
-"text": "Nếu có gì xấu xảy ra thì ta chuồn luôn chứ lo gì!",
-"translation_key": "Nếu có gì xấu xảy ra thì ta chuồn luôn chứ lo gì!",
+"text": "Mà nếu có gì xấu xảy ra thì ta chuồn luôn chứ lo gì!",
+"translation_key": "Mà nếu có gì xấu xảy ra thì ta chuồn luôn chứ lo gì!",
 "type": "dialogue"
 },
 "55": {
 "character": "",
 "next_id": "",
 "replacements": [  ],
-"text": "Sau một hồi, cả tổ đội cùng với bạn bắt đầu lên đường đến núi Màn Sương Xám bên ngoài thành phố.",
-"translation_key": "Sau một hồi, cả tổ đội cùng với bạn bắt đầu lên đường đến núi Màn Sương Xám bên ngoài thành phố.",
+"text": "Sau một hồi bàn tán, cả tổ đội cùng với bạn bắt đầu lên đường đến núi Màn Sương Xám bên ngoài thành phố.",
+"translation_key": "Sau một hồi bàn tán, cả tổ đội cùng với bạn bắt đầu lên đường đến núi Màn Sương Xám bên ngoài thành phố.",
 "type": "dialogue"
 },
 "56": {
@@ -636,8 +637,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "58",
 "replacements": [  ],
-"text": "Bình thường thì tụi sói nó ở trên đỉnh nhưng một năm thì có vài ba lần tụi nó xuống núi kiếm thêm đồ ăn, đa phần là quái vật nhưng thật ra thì tụi nó ăn bất kể sinh vật sống nào không khiến tụi nó chết. Cùng với bản năng sát thủ đáng sợ, không ít tai nạn liên quan đến tụi nó đã xảy ra, kể cả những Gáp Phai cũng là nạn nhân.",
-"translation_key": "Bình thường thì tụi sói nó ở trên đỉnh nhưng một năm thì có vài ba lần tụi nó xuống núi kiếm thêm đồ ăn, đa phần là quái vật nhưng thật ra thì tụi nó ăn bất kể sinh vật sống nào không khiến tụi nó chết. Cùng với bản năng sát thủ đáng sợ, không ít tai nạn liên quan đến tụi nó đã xảy ra, kể cả những Gáp Phai cũng là nạn nhân.",
+"text": "Bình thường thì tụi sói nó ở trên đỉnh nhưng một năm thì có vài ba lần tụi nó xuống núi kiếm thêm đồ ăn, đa phần là quái vật nhưng đúng hơn thì tụi nó ăn bất kể sinh vật sống nào không khiến tụi nó chết. Cùng với bản năng sát thủ đáng sợ, không ít tai nạn liên quan đến tụi nó đã xảy ra, kể cả những Gáp Phai cũng là nạn nhân.",
+"translation_key": "Bình thường thì tụi sói nó ở trên đỉnh nhưng một năm thì có vài ba lần tụi nó xuống núi kiếm thêm đồ ăn, đa phần là quái vật nhưng đúng hơn thì tụi nó ăn bất kể sinh vật sống nào không khiến tụi nó chết. Cùng với bản năng sát thủ đáng sợ, không ít tai nạn liên quan đến tụi nó đã xảy ra, kể cả những Gáp Phai cũng là nạn nhân.",
 "type": "dialogue"
 },
 "58": {
@@ -714,8 +715,8 @@ lines = {
 } ],
 "next_id": "63",
 "replacements": [  ],
-"text": "Xời, chuẩn bị nhìn bầy sói này biến thành bàn tiệc bảy món này.",
-"translation_key": "Xời, chuẩn bị nhìn bầy sói này biến thành bàn tiệc bảy món này.",
+"text": "Xời, mấy người chuẩn bị nhìn bầy sói này biến thành bàn tiệc bảy món này.",
+"translation_key": "Xời, mấy người chuẩn bị nhìn bầy sói này biến thành bàn tiệc bảy món này.",
 "type": "dialogue"
 },
 "63": {
@@ -767,8 +768,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "70",
 "replacements": [  ],
-"text": "mọi người sẵn sằng đi, trèo lên và thiết lập đội hình phòng ngự - rút lui.",
-"translation_key": "mọi người sẵn sằng đi, trèo lên và thiết lập đội hình phòng ngự - rút lui.",
+"text": "mọi người sẵn sằng đi, trèo lên và thiết lập đội hình.",
+"translation_key": "mọi người sẵn sằng đi, trèo lên và thiết lập đội hình.",
 "type": "dialogue"
 },
 "7": {
@@ -781,8 +782,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "71",
 "replacements": [  ],
-"text": "Không thể tin được, chỉ với nắm đấm thôi mà tên này có thể đả bại từng con sói một. Sức mạnh này vượt quá đẳng cấp của toàn bộ Gáp Phai thành phố này, có khi là ngang bằng những Gáp Phai top đầu lục địa này luôn.",
-"translation_key": "Không thể tin được, chỉ với nắm đấm thôi mà tên này có thể đả bại từng con sói một. Sức mạnh này vượt quá đẳng cấp của toàn bộ Gáp Phai thành phố này, có khi là ngang bằng những Gáp Phai top đầu lục địa này luôn.",
+"text": "Không thể tin được, chỉ với nắm đấm thôi mà tên này có thể tiêu diệt từng con sói một với không một vết trầy nào. Sức mạnh này vượt quá đẳng cấp của toàn bộ Gáp Phai thành phố này, có khi là ngang bằng những Gáp Phai top đầu lục địa này luôn.",
+"translation_key": "Không thể tin được, chỉ với nắm đấm thôi mà tên này có thể tiêu diệt từng con sói một với không một vết trầy nào. Sức mạnh này vượt quá đẳng cấp của toàn bộ Gáp Phai thành phố này, có khi là ngang bằng những Gáp Phai top đầu lục địa này luôn.",
 "type": "dialogue"
 },
 "71": {
@@ -859,8 +860,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "79",
 "replacements": [  ],
-"text": "Cháy lên! Cơ thể",
-"translation_key": "Cháy lên! Cơ thể",
+"text": "Cơ Thể Bùng Cháy",
+"translation_key": "Cơ Thể Bùng Cháy",
 "type": "dialogue"
 },
 "79": {
@@ -913,10 +914,25 @@ lines = {
 } ],
 "value_in_text": "{{player_name}}"
 } ],
-"next_id": "",
+"next_id": "83",
 "replacements": [  ],
 "text": "Không cần đâu, tôi đã tiếp nhận được ý chí của cô rồi.",
 "translation_key": "Không cần đâu, tôi đã tiếp nhận được ý chí của cô rồi.",
+"type": "dialogue"
+},
+"83": {
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "",
+"replacements": [  ],
+"text": "Cơ thể bùng cháy...",
+"translation_key": "Cơ thể bùng cháy...",
 "type": "dialogue"
 }
 }

@@ -4,9 +4,10 @@ class_name Entity
 
 enum DamageType { PHYSIC, MAGIC, TRUE, PIERCE, HEAL }
 enum BaseClass { FIGHTER, DEFENDER, PALADIN, ARCHER, MAGE, HEALER }
-enum State { IDLE, RUNNING, KNOCKBACKED, LOAD_AA, SHOOT, DEATH, STUN }
+enum State { IDLE, RUNNING, KNOCKBACKED, LOAD_AA, SHOOT, DEATH, CC_ED }
 enum MultipilerType { SAME, PHYSIC, MAGIC, HP }
 enum StatChange { PHYSIC, MAGIC, P_DEFENSE, M_ARMOR, CRIT_C, CRIT_DMG, SPEED, DMG_MOD, TP_MOD }
+enum StatusName  { IMMUNE, CURSE, SILENT, STUN, FREEZE, SHOCK }
 
 signal hp_changed(new_hp, pos)
 signal set_max_hp(max_hp, pos)
@@ -19,7 +20,7 @@ var ins_projectile = preload("res://components/battle/Projectile.tscn")
 
 onready var stats : CharacterStats = $Stats as CharacterStats
 onready var skill : CharacterSkill = $Skill as CharacterSkill
-onready var effects : EffectMachine = $Effect as EffectMachine
+onready var effectMachine : EffectMachine = $Effect as EffectMachine
 onready var _hpBar : ProgressBar = $HPBar
 onready var hurtBox : HurtBox = $HurtBox as HurtBox
 onready var battleSprite : Sprite = $InBattle as Sprite
@@ -31,9 +32,9 @@ onready var _col2 := $CollisionBody
 
 export var c_name: String
 export var is_party : bool = true
-export var level : int = 1
+export var level : int = 10
 
-var collisionDamage : DamageMachine
+var collisionDamage : DamageMachine = DamageMachine.new()
 var attack_range : AttackRange
 
 #?gameplay section
@@ -43,7 +44,7 @@ var idle_time := 80
 var state : State
 var state_factory : StateFactory = StateFactory.new()
 var pos : int
-var is_stunned := 0
+var is_stunned := 0 
 
 var movement_speed : int = 0 setget set_movement ,get_movement
 var party_direction : int = -1
@@ -59,7 +60,6 @@ var ub_position := 0
 #! Ready Set GO
 func _ready() -> void:
 	set_resource()
-	collisionDamage = DamageMachine.new()
 	collisionDamage.setter(self, stats.get_physic(), DamageType.PHYSIC, true)
 	ub.ub_set(is_party, stats, skill, self)
 	hurtBox.init(is_party)
@@ -82,16 +82,16 @@ func check_death_status() -> bool:
 
 func set_resource() ->  void:
 	var startStats = load("res://game_script/character_stats/resources/" + c_name + ".tres")
-	var baseSkill = load("res://game_script/skills/resources/" + c_name + ".tres")
+	if not skill.has_no_skill:
+		var baseSkill = load("res://game_script/skills/resources/" + c_name + ".tres")
+		skill.init(baseSkill, level)
 
 	stats.init(startStats, level)
 	emit_signal("set_max_hp", stats.max_hp, pos)
 	_hpBar.max_value = stats.max_hp
 	_hpBar.value = stats.max_hp
 	create_attack_range()
-
-	skill.init(baseSkill, level)
-	effects.setter(self, is_party, pos, stats)
+	effectMachine.setter(self, is_party, pos, stats)
 	
 	if is_party:
 		scale = Vector2(-1, 1)
@@ -132,18 +132,11 @@ func set_movement(num: int) -> void:
 func get_movement() -> int:
 	return movement_speed
 
-func set_stun_status(value: bool) -> void:
-	if value:
-		is_stunned += 1
-	else:
-		is_stunned -= 1
-	if is_stunned == 0:
-		remove_idle_animation()
-		if state.s_name != State.KNOCKBACKED:
-			change_state(State.RUNNING)
-
 func get_stun_status() -> bool:
 	return bool(is_stunned)
+
+func check_has_status(name: int) -> bool:
+	return effectMachine.affected_status.has(name)
 
 #* Battle Gameplay Mechanic
 func _on_Stats_stat_changed(name: int):
@@ -207,13 +200,22 @@ func shot_normal() -> void:
 func _on_Movement_toggle(move: bool) -> void:
 	can_range_move = move
 
+func can_go_next_state(new_state_name: int) -> bool:
+	if not get_stun_status():
+		return true
+	if new_state_name == State.DEATH || new_state_name == State.CC_ED:
+		return true
+	if new_state_name == State.KNOCKBACKED:
+		if check_has_status(StatusName.FREEZE):
+			return false
+		return true
+	return false
+
 func change_state(new_state_name: int) -> void:
 	if is_over:
 		return
 	if state != null:
-		if  state.s_name == State.STUN && ( \
-			new_state_name != State.KNOCKBACKED || \
-			new_state_name != State.DEATH):
+		if not can_go_next_state(new_state_name):
 			return
 		if check_death_status():
 			return #// If alive then process to next state
@@ -247,10 +249,21 @@ func showDamageNumber(damage: Dictionary) -> void:
 	text.damage = damage
 	add_child(text)
 
+func set_stun_state(value: bool) -> void:
+	if value:
+		is_stunned += 1
+		change_state(State.CC_ED)
+	else:
+		is_stunned -= 1
+	if is_stunned == 0:
+		remove_idle_animation()
+		if state.s_name == State.CC_ED:
+			change_state(State.RUNNING)
+
 func _on_CC_status_applied(status_name: int, is_increase: bool) -> void:
-	set_stun_status(is_increase)
-	change_state(State.STUN)
-	state.set_status_name(status_name)
+	effectMachine.add_affected_status_to_Arr(status_name, is_increase)
+	if status_name >= StatusName.STUN:
+		set_stun_state(is_increase)
 
 func _on_Stats_hp_depleted():
 	_col1.set_deferred("disabled", true)
@@ -278,4 +291,4 @@ func _on_end_Transform() -> void:
 	battleSprite.visible = true
 
 func get_added_effect(new_effect) -> void:
-	effects.add_effect_to_Body(new_effect)
+	effectMachine.add_effect_to_Body(new_effect)

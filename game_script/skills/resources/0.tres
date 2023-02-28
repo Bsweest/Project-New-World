@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource( 1 )
-skill_name = "Tường lửa"
-skill_description = "Gây sát thương toàn bộ kẻ địch"
-base_dmg = 210
-side_dmg = 30
-type = 1
+skill_name = "0"
+skill_description = "toàn bộ mọi chiêu thức"
+base_dmg = 200
+side_dmg = 100
+type = 0
 multipiler_type = 0

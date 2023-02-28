@@ -19,9 +19,6 @@ func _physics_process(_delta) -> void:
 	movement_control()
 
 
-func set_status_name(_status_name: int) -> void:
-	pass
-
 func setup(_change_state: FuncRef, _ani_player: AnimationPlayer, body) -> void:
 	self.change_state = _change_state
 	self.ani_player = _ani_player

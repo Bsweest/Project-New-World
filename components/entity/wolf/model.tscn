@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://components/entity/BaseModel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/sprite/wolf/idle.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/wolf/wolf.png" type="Texture" id=3]
+[ext_resource path="res://game_script/battle/NodeUB.gd" type="Script" id=4]
+
+[node name="Entity" instance=ExtResource( 1 )]
+c_name = null
+is_party = null
+level = null
+
+[node name="Idle" parent="." index="3"]
+position = Vector2( 4, 1 )
+texture = ExtResource( 2 )
+
+[node name="InBattle" parent="." index="4"]
+position = Vector2( 1, 0 )
+texture = ExtResource( 3 )
+
+[node name="Skill" parent="." index="7"]
+has_no_skill = true
+
+[node name="NodeUB" type="Node2D" parent="." index="9"]
+script = ExtResource( 4 )

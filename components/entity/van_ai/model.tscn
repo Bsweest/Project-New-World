@@ -18,6 +18,9 @@ texture = ExtResource( 5 )
 position = Vector2( -7, 3 )
 texture = ExtResource( 6 )
 
+[node name="Skill" parent="." index="7"]
+need_choose = true
+
 [node name="NodeUB" type="Node2D" parent="." index="8"]
 script = ExtResource( 7 )
 

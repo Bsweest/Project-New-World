@@ -283,6 +283,9 @@ script = ExtResource( 2 )
 [node name="Effect" type="Node" parent="."]
 script = ExtResource( 4 )
 
+[connection signal="area_entered" from="HurtBox" to="HurtBox" method="_on_Area_enter"]
+[connection signal="body_entered" from="HurtBox" to="HurtBox" method="_on_Body_enter"]
+[connection signal="body_exited" from="HurtBox" to="HurtBox" method="_on_HurtBox_body_exited"]
 [connection signal="hp_changed" from="Stats" to="." method="_on_Stats_hp_changed"]
 [connection signal="hp_depleted" from="Stats" to="." method="_on_Stats_hp_depleted"]
 [connection signal="stat_changed" from="Stats" to="." method="_on_Stats_stat_changed"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/ui/effect_icon/stat_effect.png" type="Texture" id=1]
 [ext_resource path="res://game_script/buff/StatusIcon.gd" type="Script" id=2]
+[ext_resource path="res://assets/ui/effect_icon/status.png" type="Texture" id=3]
 
 [node name="StatusEffectIcon" type="Control"]
 rect_min_size = Vector2( 16, 16 )
@@ -10,9 +11,20 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="Status" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 3 )
+centered = false
+hframes = 6
+
 [node name="Stat" type="Sprite" parent="."]
+visible = false
 scale = Vector2( 0.64, 0.64 )
 texture = ExtResource( 1 )
 centered = false
 hframes = 9
 vframes = 2
+
+[node name="DOT" type="Sprite" parent="."]
+visible = false
+centered = false

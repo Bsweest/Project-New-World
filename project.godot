@@ -59,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game_script/skills/base_node/CharacterTransform.gd"
 }, {
+"base": "State",
+"class": "CrowdControledState",
+"language": "GDScript",
+"path": "res://game_script/entities/states/basic_state/CCedState.gd"
+}, {
 "base": "Reference",
 "class": "DamageMachine",
 "language": "GDScript",
@@ -169,11 +174,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game_script/buff/StatusIcon.gd"
 }, {
-"base": "State",
-"class": "StunState",
-"language": "GDScript",
-"path": "res://game_script/entities/states/status_state/StunState.gd"
-}, {
 "base": "CanvasLayer",
 "class": "UBLayer",
 "language": "GDScript",
@@ -200,6 +200,7 @@ _global_script_class_icons={
 "CharacterSkill": "",
 "CharacterStats": "",
 "CharacterTransform": "",
+"CrowdControledState": "",
 "DamageMachine": "",
 "DamageNumber": "",
 "DeathState": "",
@@ -222,7 +223,6 @@ _global_script_class_icons={
 "State": "",
 "StateFactory": "",
 "StatusEffectIcon": "",
-"StunState": "",
 "UBLayer": "",
 "UIControl": "",
 "UISelectArea": ""

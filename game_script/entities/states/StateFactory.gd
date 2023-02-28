@@ -1,6 +1,6 @@
 class_name StateFactory
 
-enum { IDLE, RUNNING, KNOCKBACKED, LOAD_AA, SHOOT, DEATH, STUN }
+enum { IDLE, RUNNING, KNOCKBACKED, LOAD_AA, SHOOT, DEATH, CC_ED }
 
 var states
 
@@ -12,7 +12,7 @@ func _init():
         LOAD_AA: LoadingState,
         SHOOT: ShootState,
         DEATH: DeathState,
-        STUN: StunState,
+        CC_ED: CrowdControledState,
     }
 
 func get_state(state_name):
