@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-skill_name = "0"
+skill_name = "Bom Ánh Sáng"
 skill_description = "toàn bộ mọi chiêu thức"
 base_dmg = 200
 side_dmg = 100

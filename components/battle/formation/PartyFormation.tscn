@@ -23,4 +23,7 @@ position = Vector2( 120, 250 )
 [node name="mem5" type="Position2D" parent="Members"]
 position = Vector2( 150, 250 )
 
+[node name="mem6" type="Position2D" parent="Members"]
+position = Vector2( 180, 250 )
+
 [node name="UBLayer" parent="." instance=ExtResource( 2 )]

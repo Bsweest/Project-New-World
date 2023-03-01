@@ -23,4 +23,13 @@ position = Vector2( 520, 250 )
 [node name="Enemy5" type="Position2D" parent="Members"]
 position = Vector2( 490, 250 )
 
+[node name="Enemy6" type="Position2D" parent="Members"]
+position = Vector2( 460, 250 )
+
+[node name="Enemy7" type="Position2D" parent="Members"]
+position = Vector2( 430, 250 )
+
+[node name="Enemy8" type="Position2D" parent="Members"]
+position = Vector2( 400, 250 )
+
 [node name="UBLayer" parent="." instance=ExtResource( 2 )]

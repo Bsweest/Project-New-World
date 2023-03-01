@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-skill_name = "Dời non lấp bể"
+skill_name = "Dời Non Lấp Bể"
 skill_description = "Gây sát thương lên phía trước và tăng giáp cho bản thân"
 base_dmg = 180
 side_dmg = 0

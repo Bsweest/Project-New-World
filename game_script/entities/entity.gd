@@ -32,7 +32,7 @@ onready var _col2 := $CollisionBody
 
 export var c_name: String
 export var is_party : bool = true
-export var level : int = 10
+var level : int = 10
 
 var collisionDamage : DamageMachine = DamageMachine.new()
 var attack_range : AttackRange

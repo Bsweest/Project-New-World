@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://components/entity/BaseModel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game_script/battle/NodeUB.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprite/0/idle.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/0/inbattle.png" type="Texture" id=4]
 
 [node name="Entity" instance=ExtResource( 1 )]
+
+[node name="Idle" parent="." index="3"]
+position = Vector2( -2, 2 )
+texture = ExtResource( 3 )
+
+[node name="InBattle" parent="." index="4"]
+texture = ExtResource( 4 )
 
 [node name="NodeUB" type="Node2D" parent="." index="9"]
 script = ExtResource( 2 )

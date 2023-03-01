@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-skill_name = "3 phát bắn"
+skill_name = "Ba Phát Bắn"
 skill_description = ""
 base_dmg = 110
 side_dmg = 0

@@ -21,13 +21,13 @@ var timer = Timer.new()
 func _ready():
 	var ally = [
 		{
-			"name": "van_ai",
+			"name": "0",
 		},
 		{ 
 			"name": "hoa_linh",
 		},
 		{ 
-			"name": "mezuna_ryuji",
+			"name": "thanh_dung",
 		}
 		]
 	var enemy = [
@@ -51,7 +51,7 @@ func _ready():
 	add_child(timer)
 
 func initEnemiesFormation() -> void:
-	enemy_formation = load("res://components/battle/formation/5EnemiesFormation.tscn").instance()
+	enemy_formation = load("res://components/battle/formation/NormalEnemyFormation.tscn").instance()
 	enemy_formation.connect("team_out", self, "_on_Formation_team_out")
 	party_formation.connect("team_out", self, "_on_Formation_team_out")
 	battleScene.add_child(enemy_formation)

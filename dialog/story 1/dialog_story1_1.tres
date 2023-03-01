@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 14
+resource_version = 22
 syntax_version = 2
 raw_text = "~ story_begin
 Ông chú: Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.
@@ -59,7 +59,7 @@ Anh ta đưa tay ra, bạn bắt tay lại.
 {{player_name}}: {{player_name}}. À, mà nói trước cho mọi người khỏi phải đắn đo suy nghĩ, nếu mọi người quyết định không chia tiền theo giao kèo thì cứ xác định đi. Tôi sẽ săn mấy anh chị bất kể có trốn đến đâu đi chăng nữa. Giờ đi luôn cho nóng nhỉ ?
 Bạn đe doạ xong liền đi ra khỏi ngõ, tổ đội kia vẫn còn ở lại bàn tán.
 Gáp Phai 3: Này đại ca, em biết mọi quyền quyết định đều ở anh, nhưng anh không thấy đứa này nó không nên dây dưa vào sao?
-Bành Công: Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Máu nó cứ dồn lên não anh như tăng xông vậy, cái đầu bắt anh chấp nhận yêu cầu nhóc ấy.
+Bành Công: Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Máu nó cứ dồn lên não anh như tăng xông vậy, cả cơ thể anh nó muốn anh phải chấp nhận yêu cầu của hắn.
 Bành Công: Mà nếu có gì xấu xảy ra thì ta chuồn luôn chứ lo gì!
 Sau một hồi bàn tán, cả tổ đội cùng với bạn bắt đầu lên đường đến núi Màn Sương Xám bên ngoài thành phố.
 ~ below_fog_mountain
@@ -84,12 +84,60 @@ Bành Công: Không lẽ nó không biết \"điều khiển nguyên tố\" sao 
 Gáp Phai 2: Giờ sao đây anh, có nên rút không?
 Bành Công: Chậc,... Không, với sức mạnh nhóc đó, ta có thể đánh bại hết toàn bộ lũ sói quanh đây, Hoả Linh, em giúp tên nhóc đó đi.
 Hoả Linh [i]'Gáp Phai 3'[/i]: Em đã bảo từ đầu đừng dây dưa với đứa này rồi. Con mẹ nó, nếu bây giờ nhóm ta bị tấn công thì đừng có hối hận đấy.
-Hoả Linh: Cơ Thể Bùng Cháy
-({{player_name}}): Cử động được rồi, quẩy tiếp thôi.
+Hoả Linh: Bùng Cháy Lên.
+({{player_name}}): Cử động được rồi, vậy đây là quà tặng ở thế giới này sao.
 (Hoả Linh): Ặc, đông quá, không giữ được ngọn lửa lâu hơn nữa, cứ thế này thì tên này sẽ bị đóng băng tiếp mất.
 Hoả Linh: Rút về mau, ngươi không biết điều khiển nguyên tố thì không ăn được lũ này đâu.
 {{player_name}}: Không cần đâu, tôi đã tiếp nhận được ý chí của cô rồi.
-{{player_name}}: Cơ thể bùng cháy..."
+{{player_name}}: Bùng Cháy Lên!
+Gáp Phai 4: Đại ca, anh nhận ra đúng không?
+Bành Công: Ừ, ngọn lửa của tên nhóc ấy, nó giống hệt như của Linh... Không, đúng hơn thì nó chính là ngọn lửa của Linh.
+Hoả Linh: Làm sao có thể?! chuyện đéo gì thế này...
+{{player_name}}: Đừng ngẩn người ra thế, tụi sói không có tự chết được đâu.
+# End wave 1
+{{player_name}}: Thấy chưa, tôi đã nói là làm được, từng này chắc vẵn chưa đủ số lượng nhỉ, đi tiếp thôi.
+Bành Công: Khoan đã, làm sao mà ngươi dùng ngọn lửa được của Hoả Linh lúc nãy. Rốt cuộc ngươi là cái quái gì?
+{{player_name}}: Lửa nào chả giống lửa nào, anh trai cứ làm quá lên thế.
+Bành Công: Cùng nguyên tố, nhưng hình thái và cách sử dụng không thể nào giống nhau đến thế.
+{{player_name}}: Vậy sao, thôi thì chuyện này hơi khó giải thich, cứ làm xong nhiệm vụ đi đã, khi nào về em bịa được cái gì đó thuyết phục rồi kể mọi người sau.
+Bạn cảm nhận được sự nghi ngờ, cẩn trọng và cả sợ hãi liên tiếp hiện lên xung quanh họ. Mọi người tiếp tục di chuyển đến địa điểm hang động trong tờ nhiệm vụ.
+{{player_name}}: mọi người muốn đi vào cùng không, có khi nó an toàn hơn đây, tôi có thể cản được lũ sói trong khi mọi người tự bảo vệ bản thân. Chứ ở ngoài thì lỡ tụi nó đánh úp tiếp thì nguy lắm.
+Bành Công: Như vậy cũng được. Chuẩn bị tiến vào trong, anh em sẵn sàng hết cả đi.
+...
+{{player_name}}: Sao lạ vậy nhỉ, chúng ta đã đi xa như vậy mà không gặp con sói nào cả.
+...
+Bành Công: Chuyện lồn gì đây... Phong, em xác định thử đi.
+Phong [i]Gáp Phai 2[/i]: OK anh... Nhìn vào xương, nanh, độ lớn thì đây đúng là xác của sói dạ tuyết rồi.
+{{player_name}}: Vậy là có người đến hoàn thành nhiệm vụ trước rồi sao, mong họ vẫn tính tiền mấy con sói ta giết trước.
+Phong: Không, bọn này bị cào xé chết ngay tức khắc, khả năng cao là bị giết bởi quái vật, để làm được điều này thì ở núi này chỉ có thể là... một con yeti.
+Bành Công: Nhưng yeti cấp độ cũng chỉ bằng một con sói thôi, thêm nữa tụi nó không đi theo bầy đàn, làm sao mà yeti có thể giết sạch cả đàn thế này chứ.
+{{player_name}}: Nếu cả quái vật cũng dùng được nguyên tố thì tụi nó cũng được ban phước nhỉ. Nếu thế thì tôi cảm nhận được một sức mạnh cực kì khổng lồ gần đây đấy. Có khi có thể quét sạch cả đội ta trong thoáng chốc ấy.
+Gáp Phai 4: Đường về của ta bị chặn rồi kìa, triệt để luôn, thậm chí có là chuột gián gì cũng không thoát được.
+Một bức tường băng được tạo ra từ khi nào chắn hết đường lui. Còn phía trước, một con yeti khổng lồ kéo những hòn đá xung quanh ra, dần bước đến.
+Phong: Làm sao mà một con yeti có thể to đến như vậy, nó đã sống bao nhiêu năm rồi mà sao không hề có một thông tin nào cả.
+{{player_name}}: Mọi người cứ lùi lại đi, để tôi lo...
+Bạn chưa kịp ra hiệu cho mọi người thì nó đã ném những quả cầu tuyết vào người của tổ đội kia. Cả đội không thể phản ứng trước những cú ném ấy, sau khi bị trúng, họ thậm chí không thể gượng dậy được. 
+Chỉ có Bành Công được Hoả Linh bảo vệ bởi ngọn lửa còn có thể đứng được nhưng cũng thương tích đầy mình.
+Bành Công: Lên đi, anh mày tự có thể bảo vệ đồng đội của mình, không cần nhóc phải quan tâm.
+Bạn cảm nhận được sự kiên định, vững vàng như một bức tường có thể dựa vào từ người anh ấy.
+{{player_name}}: OK anh trai, tôi bung hết sức đây, bảo vệ mọi người cẩn thận nha, chứ lỡ có người chết vì tôi thì đây suy sụp chết luôn mất.
+({{player_name}}): Ngươi nhạy cảm quá đấy, chưa gì đã sắp đặt một chướng ngại cho ta rồi.
+# Battle wave 2
+({{player_name}}): Chậc, cơ thể này vẫn chưa đủ khoẻ, chỉ sức mạnh thể chất thôi không xuyên qua lớp thịt của con quái này. Ây dà, dù không muốn gây chú ý nhưng phải dùng đến nó thôi.
+{{player_name}}: Bom Ánh Sáng.
+Chỉ trong chớp sáng, không một tiếng nổ, không một dư chấn, những tia sáng kết hợp lại thành một quả cầu và biến mất. Để lại một cái xác của con yeti khổng lồ bất động đầy vết xước.
+Bành Công: Vừa rồi, cái quái gì...?!
+Công nhìn thẳng vào bạn, bạn cũng quay lại nhìn, nháy mắt, cười và đưa ngọn trỏ lên miệng ra dấu hiệu giữ bí mật.
+Bành Công: Thôi! Địt mẹ, đáng ra tau nên nghe lời mấy đứa em không nên dính dáng đến mày. Lại đây giúp tau sử dụng thuốc hồi phục cho tụi này cái.
+Bạn đi đến chỗ họ, bôi thảo dược và cho họ uống thuốc. Sau khoảng nửa tiếng nghỉ ngơi, cả đội đã đủ sức để tự di chuyển. Công không có vẻ gì sẽ nhắc đến chuyện vừa rồi. Mọi người bắt đầu thu dọn và nhặt xương, lông của những con quái để trở về để làm bằng chứng hoàn thành nhiệm vụ.
+Khí hậu ở ngọn núi này rất thất thường, khi đi thời tiết vẫn có thể gọi là đẹp, không mây mưa, có nắng, nhưng trên đường về lại xảy ra bão tuyết. Bạn không mang vác đồ gì cả nên đi trước dò đường. Đột nhiên bạn nhìn thấy một thứ gì đó ở xa xa và khựng lại một chút rồi tiếp tục di chuyển. Cùng lúc đó Bành Công chạy nhanh như cắt đến vị trí bạn vừa để ý trong sự ngạc nhiên của mọi người trong đội.
+Phong: ĐẠI CA, anh chạy đi đâu thế?!
+Gáp Phai 4: Đưa đại ca về đi, lúc nãy anh ấy dành hết thảo dược cho ta mà không dùng tí thuốc nào cả. Cứ để vết thương như thế mà chạy trong bão tuyết thế nào thì nguy to.
+Cả đội chạy theo Công, còn bạn vẫn đứng nguyên tại chỗ và nhìn về phía họ. Ở đó là một con sói dạ tuyết bị thương do một vết cào và một cậu bé. Nó ne răng nanh và chuẩn bị nhảy bổ vào cậu bé, may thay Công đến vừa kịp lúc lấy thân ôm lấy cậu, đỡ một phát cắn từ nó. 
+Đồng đội cũng đến ngay sau Công, họ sử dụng hết mọi chiêu thức của mình để tiêu diệt con sói. Cậu bé vẫn an toàn nhưng Công thì đang trong tình trạng bất tỉnh cũng như mất máu nhiều.
+Hoả Linh: [b]Thành, làm gì đó đi[/b]
+Thành [i]Gáp Phai 4[/i]: Đang niệm phép đâu, phải cầm máu cái đã. Xé tau mấy miếng vải.
+Thành và đồng đội xé áo của mình để cầm tạm vết thương cho Công. Họ cõng Công và cậu bé kia lên và nhanh chóng tiến về thành phố."
 errors = [  ]
 titles = {
 "below_fog_mountain": "57",
@@ -121,6 +169,113 @@ lines = {
 "translation_key": "Xin chào bạn, bạn đến bang hội Trống Sét để làm gì, treo tiền thưởng, sử dụng ngân hàng hay gì khác.",
 "type": "dialogue"
 },
+"100": {
+"character": "Bành Công",
+"character_replacements": [  ],
+"next_id": "101",
+"replacements": [  ],
+"text": "Chuyện lồn gì đây... Phong, em xác định thử đi.",
+"translation_key": "Chuyện lồn gì đây... Phong, em xác định thử đi.",
+"type": "dialogue"
+},
+"101": {
+"character": "Phong [i]Gáp Phai 2[/i]",
+"character_replacements": [  ],
+"next_id": "102",
+"replacements": [  ],
+"text": "OK anh... Nhìn vào xương, nanh, độ lớn thì đây đúng là xác của sói dạ tuyết rồi.",
+"translation_key": "OK anh... Nhìn vào xương, nanh, độ lớn thì đây đúng là xác của sói dạ tuyết rồi.",
+"type": "dialogue"
+},
+"102": {
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "103",
+"replacements": [  ],
+"text": "Vậy là có người đến hoàn thành nhiệm vụ trước rồi sao, mong họ vẫn tính tiền mấy con sói ta giết trước.",
+"translation_key": "Vậy là có người đến hoàn thành nhiệm vụ trước rồi sao, mong họ vẫn tính tiền mấy con sói ta giết trước.",
+"type": "dialogue"
+},
+"103": {
+"character": "Phong",
+"character_replacements": [  ],
+"next_id": "104",
+"replacements": [  ],
+"text": "Không, bọn này bị cào xé chết ngay tức khắc, khả năng cao là bị giết bởi quái vật, để làm được điều này thì ở núi này chỉ có thể là... một con yeti.",
+"translation_key": "Không, bọn này bị cào xé chết ngay tức khắc, khả năng cao là bị giết bởi quái vật, để làm được điều này thì ở núi này chỉ có thể là... một con yeti.",
+"type": "dialogue"
+},
+"104": {
+"character": "Bành Công",
+"character_replacements": [  ],
+"next_id": "105",
+"replacements": [  ],
+"text": "Nhưng yeti cấp độ cũng chỉ bằng một con sói thôi, thêm nữa tụi nó không đi theo bầy đàn, làm sao mà yeti có thể giết sạch cả đàn thế này chứ.",
+"translation_key": "Nhưng yeti cấp độ cũng chỉ bằng một con sói thôi, thêm nữa tụi nó không đi theo bầy đàn, làm sao mà yeti có thể giết sạch cả đàn thế này chứ.",
+"type": "dialogue"
+},
+"105": {
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "106",
+"replacements": [  ],
+"text": "Nếu cả quái vật cũng dùng được nguyên tố thì tụi nó cũng được ban phước nhỉ. Nếu thế thì tôi cảm nhận được một sức mạnh cực kì khổng lồ gần đây đấy. Có khi có thể quét sạch cả đội ta trong thoáng chốc ấy.",
+"translation_key": "Nếu cả quái vật cũng dùng được nguyên tố thì tụi nó cũng được ban phước nhỉ. Nếu thế thì tôi cảm nhận được một sức mạnh cực kì khổng lồ gần đây đấy. Có khi có thể quét sạch cả đội ta trong thoáng chốc ấy.",
+"type": "dialogue"
+},
+"106": {
+"character": "Gáp Phai 4",
+"character_replacements": [  ],
+"next_id": "107",
+"replacements": [  ],
+"text": "Đường về của ta bị chặn rồi kìa, triệt để luôn, thậm chí có là chuột gián gì cũng không thoát được.",
+"translation_key": "Đường về của ta bị chặn rồi kìa, triệt để luôn, thậm chí có là chuột gián gì cũng không thoát được.",
+"type": "dialogue"
+},
+"107": {
+"character": "",
+"next_id": "108",
+"replacements": [  ],
+"text": "Một bức tường băng được tạo ra từ khi nào chắn hết đường lui. Còn phía trước, một con yeti khổng lồ kéo những hòn đá xung quanh ra, dần bước đến.",
+"translation_key": "Một bức tường băng được tạo ra từ khi nào chắn hết đường lui. Còn phía trước, một con yeti khổng lồ kéo những hòn đá xung quanh ra, dần bước đến.",
+"type": "dialogue"
+},
+"108": {
+"character": "Phong",
+"character_replacements": [  ],
+"next_id": "109",
+"replacements": [  ],
+"text": "Làm sao mà một con yeti có thể to đến như vậy, nó đã sống bao nhiêu năm rồi mà sao không hề có một thông tin nào cả.",
+"translation_key": "Làm sao mà một con yeti có thể to đến như vậy, nó đã sống bao nhiêu năm rồi mà sao không hề có một thông tin nào cả.",
+"type": "dialogue"
+},
+"109": {
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "110",
+"replacements": [  ],
+"text": "Mọi người cứ lùi lại đi, để tôi lo...",
+"translation_key": "Mọi người cứ lùi lại đi, để tôi lo...",
+"type": "dialogue"
+},
 "11": {
 "character": "{{player_name}}",
 "character_replacements": [ {
@@ -136,6 +291,107 @@ lines = {
 "translation_key": "À, mình muốn xin làm người giải quyết mấy cái nhiệm vụ ấy, không biết có được không...?",
 "type": "dialogue"
 },
+"110": {
+"character": "",
+"next_id": "111",
+"replacements": [  ],
+"text": "Bạn chưa kịp ra hiệu cho mọi người thì nó đã ném những quả cầu tuyết vào người của tổ đội kia. Cả đội không thể phản ứng trước những cú ném ấy, sau khi bị trúng, họ thậm chí không thể gượng dậy được.",
+"translation_key": "Bạn chưa kịp ra hiệu cho mọi người thì nó đã ném những quả cầu tuyết vào người của tổ đội kia. Cả đội không thể phản ứng trước những cú ném ấy, sau khi bị trúng, họ thậm chí không thể gượng dậy được.",
+"type": "dialogue"
+},
+"111": {
+"character": "",
+"next_id": "112",
+"replacements": [  ],
+"text": "Chỉ có Bành Công được Hoả Linh bảo vệ bởi ngọn lửa còn có thể đứng được nhưng cũng thương tích đầy mình.",
+"translation_key": "Chỉ có Bành Công được Hoả Linh bảo vệ bởi ngọn lửa còn có thể đứng được nhưng cũng thương tích đầy mình.",
+"type": "dialogue"
+},
+"112": {
+"character": "Bành Công",
+"character_replacements": [  ],
+"next_id": "113",
+"replacements": [  ],
+"text": "Lên đi, anh mày tự có thể bảo vệ đồng đội của mình, không cần nhóc phải quan tâm.",
+"translation_key": "Lên đi, anh mày tự có thể bảo vệ đồng đội của mình, không cần nhóc phải quan tâm.",
+"type": "dialogue"
+},
+"113": {
+"character": "",
+"next_id": "114",
+"replacements": [  ],
+"text": "Bạn cảm nhận được sự kiên định, vững vàng như một bức tường có thể dựa vào từ người anh ấy.",
+"translation_key": "Bạn cảm nhận được sự kiên định, vững vàng như một bức tường có thể dựa vào từ người anh ấy.",
+"type": "dialogue"
+},
+"114": {
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "115",
+"replacements": [  ],
+"text": "OK anh trai, tôi bung hết sức đây, bảo vệ mọi người cẩn thận nha, chứ lỡ có người chết vì tôi thì đây suy sụp chết luôn mất.",
+"translation_key": "OK anh trai, tôi bung hết sức đây, bảo vệ mọi người cẩn thận nha, chứ lỡ có người chết vì tôi thì đây suy sụp chết luôn mất.",
+"type": "dialogue"
+},
+"115": {
+"character": "({{player_name}})",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "117",
+"replacements": [  ],
+"text": "Ngươi nhạy cảm quá đấy, chưa gì đã sắp đặt một chướng ngại cho ta rồi.",
+"translation_key": "Ngươi nhạy cảm quá đấy, chưa gì đã sắp đặt một chướng ngại cho ta rồi.",
+"type": "dialogue"
+},
+"117": {
+"character": "({{player_name}})",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "118",
+"replacements": [  ],
+"text": "Chậc, cơ thể này vẫn chưa đủ khoẻ, chỉ sức mạnh thể chất thôi không xuyên qua lớp thịt của con quái này. Ây dà, dù không muốn gây chú ý nhưng phải dùng đến nó thôi.",
+"translation_key": "Chậc, cơ thể này vẫn chưa đủ khoẻ, chỉ sức mạnh thể chất thôi không xuyên qua lớp thịt của con quái này. Ây dà, dù không muốn gây chú ý nhưng phải dùng đến nó thôi.",
+"type": "dialogue"
+},
+"118": {
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "119",
+"replacements": [  ],
+"text": "Bom Ánh Sáng.",
+"translation_key": "Bom Ánh Sáng.",
+"type": "dialogue"
+},
+"119": {
+"character": "",
+"next_id": "120",
+"replacements": [  ],
+"text": "Chỉ trong chớp sáng, không một tiếng nổ, không một dư chấn, những tia sáng kết hợp lại thành một quả cầu và biến mất. Để lại một cái xác của con yeti khổng lồ bất động đầy vết xước.",
+"translation_key": "Chỉ trong chớp sáng, không một tiếng nổ, không một dư chấn, những tia sáng kết hợp lại thành một quả cầu và biến mất. Để lại một cái xác của con yeti khổng lồ bất động đầy vết xước.",
+"type": "dialogue"
+},
 "12": {
 "character": "Hàn Ngoc",
 "character_replacements": [  ],
@@ -143,6 +399,91 @@ lines = {
 "replacements": [  ],
 "text": "Ồ, tức là đăng ký làm \"Gáp Phai\". Đúng lúc bang hội chúng tôi đang thiếu người. Chắc bạn là người từ lục địa khác nhỉ, thủ tục cũng đơn giản thôi. Nhưng mà...",
 "translation_key": "Ồ, tức là đăng ký làm \"Gáp Phai\". Đúng lúc bang hội chúng tôi đang thiếu người. Chắc bạn là người từ lục địa khác nhỉ, thủ tục cũng đơn giản thôi. Nhưng mà...",
+"type": "dialogue"
+},
+"120": {
+"character": "Bành Công",
+"character_replacements": [  ],
+"next_id": "121",
+"replacements": [  ],
+"text": "Vừa rồi, cái quái gì...?!",
+"translation_key": "Vừa rồi, cái quái gì...?!",
+"type": "dialogue"
+},
+"121": {
+"character": "",
+"next_id": "122",
+"replacements": [  ],
+"text": "Công nhìn thẳng vào bạn, bạn cũng quay lại nhìn, nháy mắt, cười và đưa ngọn trỏ lên miệng ra dấu hiệu giữ bí mật.",
+"translation_key": "Công nhìn thẳng vào bạn, bạn cũng quay lại nhìn, nháy mắt, cười và đưa ngọn trỏ lên miệng ra dấu hiệu giữ bí mật.",
+"type": "dialogue"
+},
+"122": {
+"character": "Bành Công",
+"character_replacements": [  ],
+"next_id": "123",
+"replacements": [  ],
+"text": "Thôi! Địt mẹ, đáng ra tau nên nghe lời mấy đứa em không nên dính dáng đến mày. Lại đây giúp tau sử dụng thuốc hồi phục cho tụi này cái.",
+"translation_key": "Thôi! Địt mẹ, đáng ra tau nên nghe lời mấy đứa em không nên dính dáng đến mày. Lại đây giúp tau sử dụng thuốc hồi phục cho tụi này cái.",
+"type": "dialogue"
+},
+"123": {
+"character": "",
+"next_id": "124",
+"replacements": [  ],
+"text": "Bạn đi đến chỗ họ, bôi thảo dược và cho họ uống thuốc. Sau khoảng nửa tiếng nghỉ ngơi, cả đội đã đủ sức để tự di chuyển. Công không có vẻ gì sẽ nhắc đến chuyện vừa rồi. Mọi người bắt đầu thu dọn và nhặt xương, lông của những con quái để trở về để làm bằng chứng hoàn thành nhiệm vụ.",
+"translation_key": "Bạn đi đến chỗ họ, bôi thảo dược và cho họ uống thuốc. Sau khoảng nửa tiếng nghỉ ngơi, cả đội đã đủ sức để tự di chuyển. Công không có vẻ gì sẽ nhắc đến chuyện vừa rồi. Mọi người bắt đầu thu dọn và nhặt xương, lông của những con quái để trở về để làm bằng chứng hoàn thành nhiệm vụ.",
+"type": "dialogue"
+},
+"124": {
+"character": "",
+"next_id": "125",
+"replacements": [  ],
+"text": "Khí hậu ở ngọn núi này rất thất thường, khi đi thời tiết vẫn có thể gọi là đẹp, không mây mưa, có nắng, nhưng trên đường về lại xảy ra bão tuyết. Bạn không mang vác đồ gì cả nên đi trước dò đường. Đột nhiên bạn nhìn thấy một thứ gì đó ở xa xa và khựng lại một chút rồi tiếp tục di chuyển. Cùng lúc đó Bành Công chạy nhanh như cắt đến vị trí bạn vừa để ý trong sự ngạc nhiên của mọi người trong đội.",
+"translation_key": "Khí hậu ở ngọn núi này rất thất thường, khi đi thời tiết vẫn có thể gọi là đẹp, không mây mưa, có nắng, nhưng trên đường về lại xảy ra bão tuyết. Bạn không mang vác đồ gì cả nên đi trước dò đường. Đột nhiên bạn nhìn thấy một thứ gì đó ở xa xa và khựng lại một chút rồi tiếp tục di chuyển. Cùng lúc đó Bành Công chạy nhanh như cắt đến vị trí bạn vừa để ý trong sự ngạc nhiên của mọi người trong đội.",
+"type": "dialogue"
+},
+"125": {
+"character": "Phong",
+"character_replacements": [  ],
+"next_id": "126",
+"replacements": [  ],
+"text": "ĐẠI CA, anh chạy đi đâu thế?!",
+"translation_key": "ĐẠI CA, anh chạy đi đâu thế?!",
+"type": "dialogue"
+},
+"126": {
+"character": "Gáp Phai 4",
+"character_replacements": [  ],
+"next_id": "127",
+"replacements": [  ],
+"text": "Đưa đại ca về đi, lúc nãy anh ấy dành hết thảo dược cho ta mà không dùng tí thuốc nào cả. Cứ để vết thương như thế mà chạy trong bão tuyết thế nào thì nguy to.",
+"translation_key": "Đưa đại ca về đi, lúc nãy anh ấy dành hết thảo dược cho ta mà không dùng tí thuốc nào cả. Cứ để vết thương như thế mà chạy trong bão tuyết thế nào thì nguy to.",
+"type": "dialogue"
+},
+"127": {
+"character": "",
+"next_id": "128",
+"replacements": [  ],
+"text": "Cả đội chạy theo Công, còn bạn vẫn đứng nguyên tại chỗ và nhìn về phía họ. Ở đó là một con sói dạ tuyết bị thương do một vết cào và một cậu bé. Nó ne răng nanh và chuẩn bị nhảy bổ vào cậu bé, may thay Công đến vừa kịp lúc lấy thân ôm lấy cậu, đỡ một phát cắn từ nó.",
+"translation_key": "Cả đội chạy theo Công, còn bạn vẫn đứng nguyên tại chỗ và nhìn về phía họ. Ở đó là một con sói dạ tuyết bị thương do một vết cào và một cậu bé. Nó ne răng nanh và chuẩn bị nhảy bổ vào cậu bé, may thay Công đến vừa kịp lúc lấy thân ôm lấy cậu, đỡ một phát cắn từ nó.",
+"type": "dialogue"
+},
+"128": {
+"character": "",
+"next_id": "129",
+"replacements": [  ],
+"text": "Đồng đội cũng đến ngay sau Công, họ sử dụng hết mọi chiêu thức của mình để tiêu diệt con sói. Cậu bé vẫn an toàn nhưng Công thì đang trong tình trạng bất tỉnh cũng như mất máu nhiều.",
+"translation_key": "Đồng đội cũng đến ngay sau Công, họ sử dụng hết mọi chiêu thức của mình để tiêu diệt con sói. Cậu bé vẫn an toàn nhưng Công thì đang trong tình trạng bất tỉnh cũng như mất máu nhiều.",
+"type": "dialogue"
+},
+"129": {
+"character": "Hoả Linh",
+"character_replacements": [  ],
+"next_id": "130",
+"replacements": [  ],
+"text": "[b]Thành, làm gì đó đi[/b]",
+"translation_key": "[b]Thành, làm gì đó đi[/b]",
 "type": "dialogue"
 },
 "13": {
@@ -158,6 +499,23 @@ lines = {
 "replacements": [  ],
 "text": "Ừ, cũng dạng dạng đó, mà sao vậy bạn?",
 "translation_key": "Ừ, cũng dạng dạng đó, mà sao vậy bạn?",
+"type": "dialogue"
+},
+"130": {
+"character": "Thành [i]Gáp Phai 4[/i]",
+"character_replacements": [  ],
+"next_id": "131",
+"replacements": [  ],
+"text": "Đang niệm phép đâu, phải cầm máu cái đã. Xé tau mấy miếng vải.",
+"translation_key": "Đang niệm phép đâu, phải cầm máu cái đã. Xé tau mấy miếng vải.",
+"type": "dialogue"
+},
+"131": {
+"character": "",
+"next_id": "",
+"replacements": [  ],
+"text": "Thành và đồng đội xé áo của mình để cầm tạm vết thương cho Công. Họ cõng Công và cậu bé kia lên và nhanh chóng tiến về thành phố.",
+"translation_key": "Thành và đồng đội xé áo của mình để cầm tạm vết thương cho Công. Họ cõng Công và cậu bé kia lên và nhanh chóng tiến về thành phố.",
 "type": "dialogue"
 },
 "14": {
@@ -606,8 +964,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "54",
 "replacements": [  ],
-"text": "Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Máu nó cứ dồn lên não anh như tăng xông vậy, cái đầu bắt anh chấp nhận yêu cầu nhóc ấy.",
-"translation_key": "Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Máu nó cứ dồn lên não anh như tăng xông vậy, cái đầu bắt anh chấp nhận yêu cầu nhóc ấy.",
+"text": "Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Máu nó cứ dồn lên não anh như tăng xông vậy, cả cơ thể anh nó muốn anh phải chấp nhận yêu cầu của hắn.",
+"translation_key": "Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Máu nó cứ dồn lên não anh như tăng xông vậy, cả cơ thể anh nó muốn anh phải chấp nhận yêu cầu của hắn.",
 "type": "dialogue"
 },
 "54": {
@@ -860,8 +1218,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "79",
 "replacements": [  ],
-"text": "Cơ Thể Bùng Cháy",
-"translation_key": "Cơ Thể Bùng Cháy",
+"text": "Bùng Cháy Lên.",
+"translation_key": "Bùng Cháy Lên.",
 "type": "dialogue"
 },
 "79": {
@@ -875,8 +1233,8 @@ lines = {
 } ],
 "next_id": "80",
 "replacements": [  ],
-"text": "Cử động được rồi, quẩy tiếp thôi.",
-"translation_key": "Cử động được rồi, quẩy tiếp thôi.",
+"text": "Cử động được rồi, vậy đây là quà tặng ở thế giới này sao.",
+"translation_key": "Cử động được rồi, vậy đây là quà tặng ở thế giới này sao.",
 "type": "dialogue"
 },
 "8": {
@@ -929,10 +1287,178 @@ lines = {
 } ],
 "value_in_text": "{{player_name}}"
 } ],
-"next_id": "",
+"next_id": "84",
 "replacements": [  ],
-"text": "Cơ thể bùng cháy...",
-"translation_key": "Cơ thể bùng cháy...",
+"text": "Bùng Cháy Lên!",
+"translation_key": "Bùng Cháy Lên!",
+"type": "dialogue"
+},
+"84": {
+"character": "Gáp Phai 4",
+"character_replacements": [  ],
+"next_id": "85",
+"replacements": [  ],
+"text": "Đại ca, anh nhận ra đúng không?",
+"translation_key": "Đại ca, anh nhận ra đúng không?",
+"type": "dialogue"
+},
+"85": {
+"character": "Bành Công",
+"character_replacements": [  ],
+"next_id": "86",
+"replacements": [  ],
+"text": "Ừ, ngọn lửa của tên nhóc ấy, nó giống hệt như của Linh... Không, đúng hơn thì nó chính là ngọn lửa của Linh.",
+"translation_key": "Ừ, ngọn lửa của tên nhóc ấy, nó giống hệt như của Linh... Không, đúng hơn thì nó chính là ngọn lửa của Linh.",
+"type": "dialogue"
+},
+"86": {
+"character": "Hoả Linh",
+"character_replacements": [  ],
+"next_id": "87",
+"replacements": [  ],
+"text": "Làm sao có thể?! chuyện đéo gì thế này...",
+"translation_key": "Làm sao có thể?! chuyện đéo gì thế này...",
+"type": "dialogue"
+},
+"87": {
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "89",
+"replacements": [  ],
+"text": "Đừng ngẩn người ra thế, tụi sói không có tự chết được đâu.",
+"translation_key": "Đừng ngẩn người ra thế, tụi sói không có tự chết được đâu.",
+"type": "dialogue"
+},
+"89": {
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "90",
+"replacements": [  ],
+"text": "Thấy chưa, tôi đã nói là làm được, từng này chắc vẵn chưa đủ số lượng nhỉ, đi tiếp thôi.",
+"translation_key": "Thấy chưa, tôi đã nói là làm được, từng này chắc vẵn chưa đủ số lượng nhỉ, đi tiếp thôi.",
+"type": "dialogue"
+},
+"90": {
+"character": "Bành Công",
+"character_replacements": [  ],
+"next_id": "91",
+"replacements": [  ],
+"text": "Khoan đã, làm sao mà ngươi dùng ngọn lửa được của Hoả Linh lúc nãy. Rốt cuộc ngươi là cái quái gì?",
+"translation_key": "Khoan đã, làm sao mà ngươi dùng ngọn lửa được của Hoả Linh lúc nãy. Rốt cuộc ngươi là cái quái gì?",
+"type": "dialogue"
+},
+"91": {
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "92",
+"replacements": [  ],
+"text": "Lửa nào chả giống lửa nào, anh trai cứ làm quá lên thế.",
+"translation_key": "Lửa nào chả giống lửa nào, anh trai cứ làm quá lên thế.",
+"type": "dialogue"
+},
+"92": {
+"character": "Bành Công",
+"character_replacements": [  ],
+"next_id": "93",
+"replacements": [  ],
+"text": "Cùng nguyên tố, nhưng hình thái và cách sử dụng không thể nào giống nhau đến thế.",
+"translation_key": "Cùng nguyên tố, nhưng hình thái và cách sử dụng không thể nào giống nhau đến thế.",
+"type": "dialogue"
+},
+"93": {
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "94",
+"replacements": [  ],
+"text": "Vậy sao, thôi thì chuyện này hơi khó giải thich, cứ làm xong nhiệm vụ đi đã, khi nào về em bịa được cái gì đó thuyết phục rồi kể mọi người sau.",
+"translation_key": "Vậy sao, thôi thì chuyện này hơi khó giải thich, cứ làm xong nhiệm vụ đi đã, khi nào về em bịa được cái gì đó thuyết phục rồi kể mọi người sau.",
+"type": "dialogue"
+},
+"94": {
+"character": "",
+"next_id": "95",
+"replacements": [  ],
+"text": "Bạn cảm nhận được sự nghi ngờ, cẩn trọng và cả sợ hãi liên tiếp hiện lên xung quanh họ. Mọi người tiếp tục di chuyển đến địa điểm hang động trong tờ nhiệm vụ.",
+"translation_key": "Bạn cảm nhận được sự nghi ngờ, cẩn trọng và cả sợ hãi liên tiếp hiện lên xung quanh họ. Mọi người tiếp tục di chuyển đến địa điểm hang động trong tờ nhiệm vụ.",
+"type": "dialogue"
+},
+"95": {
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "96",
+"replacements": [  ],
+"text": "mọi người muốn đi vào cùng không, có khi nó an toàn hơn đây, tôi có thể cản được lũ sói trong khi mọi người tự bảo vệ bản thân. Chứ ở ngoài thì lỡ tụi nó đánh úp tiếp thì nguy lắm.",
+"translation_key": "mọi người muốn đi vào cùng không, có khi nó an toàn hơn đây, tôi có thể cản được lũ sói trong khi mọi người tự bảo vệ bản thân. Chứ ở ngoài thì lỡ tụi nó đánh úp tiếp thì nguy lắm.",
+"type": "dialogue"
+},
+"96": {
+"character": "Bành Công",
+"character_replacements": [  ],
+"next_id": "97",
+"replacements": [  ],
+"text": "Như vậy cũng được. Chuẩn bị tiến vào trong, anh em sẵn sàng hết cả đi.",
+"translation_key": "Như vậy cũng được. Chuẩn bị tiến vào trong, anh em sẵn sàng hết cả đi.",
+"type": "dialogue"
+},
+"97": {
+"character": "",
+"next_id": "98",
+"replacements": [  ],
+"text": "...",
+"translation_key": "...",
+"type": "dialogue"
+},
+"98": {
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "99",
+"replacements": [  ],
+"text": "Sao lạ vậy nhỉ, chúng ta đã đi xa như vậy mà không gặp con sói nào cả.",
+"translation_key": "Sao lạ vậy nhỉ, chúng ta đã đi xa như vậy mà không gặp con sói nào cả.",
+"type": "dialogue"
+},
+"99": {
+"character": "",
+"next_id": "100",
+"replacements": [  ],
+"text": "...",
+"translation_key": "...",
 "type": "dialogue"
 }
 }

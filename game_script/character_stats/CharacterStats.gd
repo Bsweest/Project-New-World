@@ -61,8 +61,7 @@ func init(stats: BaseStats, lvl: int) -> void:
 	if c_class == BaseClass.ARCHER || c_class == BaseClass.MAGE || c_class == BaseClass.HEALER:
 		is_ranged = true
 	create_stat_dictionary(un_modified, stats, lvl)
-	create_stat_dictionary(current_stat, stats, lvl)
-	
+	create_stat_dictionary(current_stat, stats, lvl)	
 
 func _modify_stat(stat_name: int, flat: int, percent: float) -> void:
 	if stat_name  > 8 || stat_name < 0:

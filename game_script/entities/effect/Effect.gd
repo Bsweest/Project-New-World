@@ -120,4 +120,5 @@ func _notification(what):
 			emit_signal("status_apply", status_name, false)
 		if type == EffectType.STAT:
 			emit_signal("effect_apply", stat_name, -flat_value, -percent_value)
-		icon.queue_free()
+		if is_instance_valid(icon):
+			icon.queue_free()

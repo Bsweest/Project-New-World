@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-skill_name = "Cơ thể bùng cháy"
+skill_name = "Bùng Cháy Lên"
 skill_description = "Buff physic attack tất cả đồng minh 30% trong 4s, xoá hiệu ứng Đóng băng, và cho đồng minh kháng hiệu ứng 1s"
 base_dmg = 30
 side_dmg = 0

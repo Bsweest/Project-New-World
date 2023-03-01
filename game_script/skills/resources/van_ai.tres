@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-skill_name = "Truyền máu"
+skill_name = "Truyền Máu"
 skill_description = "Gây sát thương và hồi máu cho toàn đồng minh tương đương vói số kẻ địch bị đánh trúng"
 base_dmg = 100
 side_dmg = 100

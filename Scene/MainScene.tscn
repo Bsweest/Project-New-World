@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/main_screen/city_hall.png" type="Texture" id=1]
 [ext_resource path="res://game_script/Map/MapButton.tres" type="StyleBox" id=2]
+[ext_resource path="res://game_script/scene/MainScene.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
@@ -11,7 +12,8 @@
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
-[node name="StoryScene" type="Node"]
+[node name="MainScene" type="Node"]
+script = ExtResource( 3 )
 
 [node name="CityHall" type="TextureRect" parent="."]
 margin_right = 1280.0
@@ -26,6 +28,31 @@ anchor_bottom = 1.0
 [node name="ArenaButton" type="Button" parent="CityHall/Top Control"]
 margin_right = 288.0
 margin_bottom = 384.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
+
+[node name="GuildButton" type="Button" parent="CityHall/Top Control"]
+margin_left = 875.0
+margin_top = 47.0
+margin_right = 1275.0
+margin_bottom = 394.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
+
+[node name="ShopButton" type="Button" parent="CityHall/Top Control"]
+margin_left = 373.0
+margin_top = 199.0
+margin_right = 613.0
+margin_bottom = 373.0
+mouse_default_cursor_shape = 2
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )

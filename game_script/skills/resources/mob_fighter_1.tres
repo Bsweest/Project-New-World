@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-skill_name = "Đấm đá liên hoàn"
+skill_name = "Đấm Đá Liên Hoàn"
 skill_description = ""
 base_dmg = 150
 side_dmg = 0
