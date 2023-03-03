@@ -13,7 +13,7 @@ func _ready() -> void:
 	pass
 	
 func init(is_party: bool) -> void:
-	var mask  = 1
+	var mask = 1
 	if is_party:
 		mask = 2
 	set_collision_mask_bit(mask, true)
@@ -43,3 +43,5 @@ func _physics_process(_delta):
 				owner.change_state(2)
 				each.normal_hit_enemy(owner)
 				opponent_in_area[each] = 0
+
+func get_class() -> String: return "HurtBox"

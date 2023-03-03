@@ -12,6 +12,7 @@ extents = Vector2( 70, 30 )
 [node name="Entity" instance=ExtResource( 1 )]
 
 [node name="Idle" parent="." index="3"]
+position = Vector2( 4, 0 )
 texture = ExtResource( 5 )
 
 [node name="InBattle" parent="." index="4"]

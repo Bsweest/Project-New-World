@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://tutorial/TutorialCanvas.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/menu.png" type="Texture" id=2]
-[ext_resource path="res://assets/fonts/Foxes.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/ui/pointing_hand.svg" type="Texture" id=4]
 [ext_resource path="res://assets/fonts/font_menu.tres" type="DynamicFont" id=5]
 
@@ -46,7 +45,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -400, 0 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( -500, 0 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -69,11 +68,6 @@ tracks/0/keys = {
 atlas = ExtResource( 2 )
 region = Rect2( 885, 47, 119, 67 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 22
-use_filter = true
-font_data = ExtResource( 3 )
-
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
 region = Rect2( 750, 62, 115, 40 )
@@ -89,8 +83,9 @@ anims/new_quest = SubResource( 3 )
 anims/point_to = SubResource( 5 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-margin_left = -400.0
-margin_bottom = 65.0
+margin_left = -500.0
+margin_right = -16.0
+margin_bottom = 75.0
 texture = SubResource( 1 )
 region_rect = Rect2( 2, 0, 115, 63 )
 patch_margin_left = 17
@@ -101,12 +96,12 @@ patch_margin_bottom = 15
 [node name="QuestGuide" type="Label" parent="NinePatchRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
+margin_left = 27.0
 margin_top = 10.0
 margin_right = -30.0
-margin_bottom = 2.0
-custom_fonts/font = SubResource( 2 )
-text = "test"
+margin_bottom = -6.0
+custom_fonts/font = ExtResource( 5 )
+text = "đi đến"
 valign = 1
 
 [node name="Pointer" type="Control" parent="."]
@@ -144,6 +139,7 @@ align = 1
 valign = 1
 
 [node name="Sprite" type="Sprite" parent="Pointer"]
+position = Vector2( -400, 0 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 4 )
 centered = false

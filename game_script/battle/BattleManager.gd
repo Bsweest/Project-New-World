@@ -1,7 +1,5 @@
 extends Node2D
 
-class_name BattleManager
-
 signal end_game(boolean)
 
 onready var battleScene : Node2D = $FormationNode as Node2D
@@ -20,23 +18,23 @@ var timer = Timer.new()
 
 func _ready():
 	var ally = [
-		{
-			"name": "0",
-		},
-		{ 
-			"name": "hoa_linh",
-		},
+		# {
+		# 	"name": "0",
+		# },
 		{ 
 			"name": "thanh_dung",
+		},
+		{ 
+			"name": "van_ai",
 		}
 		]
 	var enemy = [
 		{
 			"name": "mob_shooter_1",
 		},
-		{ 
-			"name": "thanh_dung",
-		},
+		# { 
+		# 	"name": "thanh_dung",
+		# },
 		{ 
 			"name": "mob_fighter_1",
 		},

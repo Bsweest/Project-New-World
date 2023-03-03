@@ -3,7 +3,7 @@
 [ext_resource path="res://game_script/battle/AttackRange.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 10, 25 )
+extents = Vector2( 10, 50 )
 
 [node name="AttackRange" type="Area2D"]
 collision_layer = 0

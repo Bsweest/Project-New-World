@@ -1,13 +1,11 @@
-extends Node2D
+extends Control
 
 var dialog = preload("res://dialog/first_scene/dialog_first_scene.tres")
 
-onready var _rect : ColorRect = $CanvasLayer/ColorRect
 onready var _aniPlayer : AnimationPlayer = $AnimationPlayer
 onready var _sprite : Sprite = $Sprite
 
 func _ready():
-	_rect.modulate = Color(0, 0, 0, 0)
 	DialogueManager.show_dialogue(\
 		"first_scene_of_game", \
 		dialog

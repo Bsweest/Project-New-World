@@ -3,5 +3,6 @@
 [ext_resource path="res://addons/dialogue_manager/example_balloon/Open_Sans/OpenSans-Regular.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 25
+size = 28
+use_filter = true
 font_data = ExtResource( 1 )

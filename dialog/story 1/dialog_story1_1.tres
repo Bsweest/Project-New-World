@@ -4,62 +4,62 @@
 
 [resource]
 script = ExtResource( 1 )
-resource_version = 22
+resource_version = 27
 syntax_version = 2
 raw_text = "~ story_begin
-Ông chú: Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.
+Ông chú: Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông giàu giàu mà có cả tá vệ sĩ bên cạnh ấy thì có mà tránh nghe cháu.
 {{player_name}}: Dạ vâng ạ, chào chú nha.
 Bạn tạm biệt ông chú rồi đi lòng vòng tìm công việc để kiếm chút tiền sống qua ngày.
 [i]Đi đến Bang hội.[/i]
-# wait for click
+do click_guild_house()
 {{player_name}}: Ở thế giới này cũng có bang hội sao, nếu chỉ là săn mấy con quái vật thì chắc ez.
 ~ first_in_guild
-[i]Nói chuyện với lễ tân.[/i]
-# wait for click
+do click_on_recept()
 Hàn Ngọc: Xin chào bạn, bạn đến bang hội Trống Sét để làm gì, treo tiền thưởng, sử dụng ngân hàng hay gì khác.
 {{player_name}}: À, mình muốn xin làm người giải quyết mấy cái nhiệm vụ ấy, không biết có được không...?
-Hàn Ngoc: Ồ, tức là đăng ký làm \"Gáp Phai\". Đúng lúc bang hội chúng tôi đang thiếu người. Chắc bạn là người từ lục địa khác nhỉ, thủ tục cũng đơn giản thôi. Nhưng mà...
+Hàn Ngoc: Ồ, tức là bạn muốn đăng ký làm \"Gáp Phai\". Đúng lúc bang hội chúng tôi đang thiếu người. Chắc bạn là người từ lục địa khác nhỉ, thủ tục cũng đơn giản thôi. Nhưng mà...
 {{player_name}}: Ừ, cũng dạng dạng đó, mà sao vậy bạn?
 Hàn Ngọc: Không biết bạn có đủ tiền để làm thủ tục không, số tiền để đăng ký cũng khá lớn, khoảng 10.000 đồng. Và hiện tại bên mình cũng không nhận tiền của lục địa khác.
-({{player_name}} - hoảng loạn): [color=#A5B4B1]Chết con đĩ mẹ, một cắc bẻ đôi mình cũng không có.[/color]
+({{player_name}} - hoảng loạn): [color=#A5B4B1]Chết con đĩ mẹ, cần tiền luôn sao.[/color]
 {{player_name}}: Vậy sao, Mình tưởng như ở chỗ mình cứ đăng ký là được, hay có gì thì thể hiện sức mạnh.
 Hàn Ngọc: Xin lỗi nhưng bên mình không chấp nhận bất kì phương thức đăng ký nào khác. Điều này là để đảm bảo chất lượng đầu vào của các Gáp Phai, giúp thảm thiểu tai nạn không đáng có. Kể cho dù nếu họ không chiến đấu tốt đi chăng nữa thì cũng có thể cung cấp trang bị và vật phẩm cho các Gáp Phai khác.
-{{player_name}}: Ây dà, nói thật thì hiện tại mình không có nhiều tiền. Bang hội làm cả ngân hàng nữa mà đúng không, bạn có thể cho mình thế chấp một vài món đồ được không.
+{{player_name}}: Ây da, nói thật thì hiện tại mình không có nhiều tiền. Bang hội làm cả ngân hàng nữa mà đúng không, bạn có thể cho mình thế chấp một vài món đồ được không.
 Hàn Ngọc: Mình phải xin lỗi bạn thêm lần nữa nhưng bạn chỉ có thể vay tiền nếu bạn có thẻ nhận dạng của lục địa Thăng Long này. Kể cả không tính đến thẻ, bạn cần một mục đích chính đáng để vay tiền, và làm Gáp Phai không thuộc vào hạng mục đó.
 {{player_name}}: Thực sự không còn cách nào khác sao?
-Bỗng nhiên trong đầu của cô ấy hiện lên những suy nghĩ mờ ám, bạn cảm nhận được điều đó. Cô ấy đưa ra một tờ giấy.
+Bạn cảm nhận được trong đầu của cô ấy hiện lên sự lưỡng lự và những ý định mờ ám. Cô ấy đưa ra một tờ giấy.
 Hàn Ngọc: Vậy sao bạn không thử tìm cách kiếm tiền khác. Hiện tại khu đấu trường đang thiếu chiến binh thách đấu. Bạn không cần phải bỏ tiền để tham gia, và nếu bạn tự tin vào khả năng của mình thì hoàn toàn có thể chiến thắng giải thưởng lớn lên đến 100'000 đồng, mà cho dù thua cũng không mất gì cả.
 Bạn cầm tờ giấy lên và nhìn thẳng vào mắt của cô. Suy nghĩ một chút cùng lúc hóng hớt xung quanh.
 \"Gáp Phai 1\" : Chậc, hết nhiệm vụ dễ ăn rồi, hay là đánh liều đi giết bấy sói dạ tuyết đi.
 \"Gáp Phai 2\": Mày điên à, vài con còn được chứ cả bầy nó bu lại thì có mà ăn cám cả lũ.
-\"Gáp Phai 1\": Phải làm liều thì mới có tiền mà ăn chơi chứ, tổ đội của ta cũng toàn mấy thằng kinh nhiệm đầy mình, chơi đi sợ gì.
+\"Gáp Phai 1\": Phải làm liều thì mới có tiền mà ăn chơi chứ, cứ nghĩ về mấy ngày nằm phè phởn không cần phải vác thân đi làm đi. Nhóm ta cũng kinh nhiệm đầy mình rồi, chơi đi sợ gì.
 ...
 {{player_name}}: Thế thì chịu rồi, mình không có giỏi đánh nhau với người, đa phần mình toàn giết quái vật để kiếm cơm à. Thôi thì mình tạm xin kiếu, có gì gặp lại sau.
-Hàn Ngọc: Vậy thì tạm biệt bạn ạ.
+Hàn Ngọc: Vậy thì chào tạm biệt bạn ạ.
+do find_another_way()
 Bạn ra ngoài và đứng đợi trước cửa. Một lúc sau thì tổ đội lúc nãy bạn nghe ngóng bước ra. Bạn chạy đến bắt chuyện.
 {{player_name}}: Hey hey, mọi người đang trên đường làm nhiệm vụ sói dạ tuyết phải không vậy?
 Người trông có vẻ là đội trưởng của họ lên đáp.
 Gáp phai 1: thì sao hả nhóc?
 {{player_name}}: Chỉ là không biết mọi người có muốn hợp tác với tôi không? Tôi có thể một mình hoàn thành nhiệm vụ đó, chỉ cần chia cho tôi một phần tiền thưởng thôi.
-Gáp Phai: Vãi, tau có nghe nhầm không đấy bây. Nhóc này vừa nói cái gì vậy. Một bầy sói dạ tuyết đấy, một bầy. Địt mẹ chứ một con thôi chắc cũng cho mi mất xác.
+Gáp Phai: Vãi, tau có nghe nhầm không đấy bây. Tên nhóc này vừa nói cái gì vậy. Một bầy sói dạ tuyết đấy, một bầy. Địt mẹ chứ một con thôi chắc cũng cho mi mất xác.
 {{player_name}}: Mấy con này em làm thịt suốt, anh trai cứ tin em, hợp tác đôi bên cùng có lợi, rồi anh cũng mất gì đâu, còn được ngồi mát ăn bát vàng nữa.
 Anh ta đặt tay lên vai bạn, nhìn một lúc rồi cười phá lên.
 Gáp Phai 1: HA HA HA, mi có biết có bao nhiêu Gáp Phai đã làm bữa ăn cho mấy con sói này rồi không...
 Bạn cầm lấy tay của gã ấy, nhẹ nhàng nhấc bổng người hắn lên rồi lại tiếp tục đưa xuống một cách không một chút khó khăn nào. Bạn vừa bế anh ta vừa cười đáp.
-{{player_name}}: Anh trai thương em tí đi, em ở nơi khác mới đến giờ trên người còn không có tiền ăn. Rồi em lấy phần nhỏ thôi cũng được, em có bị sao thì mọi người cũng đâu liên can gì, nha nha?
+{{player_name}}: Anh trai thương người tí đi, em ở nơi khác mới đến giờ trên người còn không có tiền ăn. Rồi em lấy phần nhỏ thôi cũng được, em có bị sao thì mọi người cũng đâu liên can gì, nha nha?
 Bạn cẩn thận đặt anh ta xuống, vỗ vai và bắt tay nhau. Mọi người xung quanh chỉ im lặng không biết cách phản ứng như nào trước sức mạnh thể chất vượt trội mà họ vừa được chứng kiến.
 Gáp Phai 1: Đi theo tao. (anh ta ra hiệu cho mọi người đi về một ngõ vắng người)
 # background change
 Gáp Phai 1: Mày mạnh, anh công nhận. Nếu mày tự tin làm được mấy cái mày vừa khoe khoang thì ta có giao kèo.
 {{player_name}}: Tuyệt, vậy tổng tiền thưởng là bao nhiêu?
-Gáp Phai 1: 50.000 đồng. Nếu mày không biết giá nó đáng bao nhiêu thì từng đó ít nhất là 3 tháng lương của một người bình thường tại nơi này.
-{{player_name}}: Nhóm ta cũng đông nhỉ, một hai ba bốn năm sáu người. Vậy có lẽ đây lấy 10.000 thôi, cho đủ tiền làm giấy phép Gáp Phai.
-Gáp Phai 1: Được thôi, cho mày nhập nhóm cũng khiến bọn tau có thể gặp cả đống rắc rối, thậm chí là bị tước giấy phép. Coi như 40.000 còn lại là phí mạo hiểm. Anh đây là Bành Công.
+Gáp Phai 1: 50.000 đồng. Nếu mày không biết giá nó đáng bao nhiêu thì từng đó ít nhất là 5 tháng lương của một người bình thường tại nơi này.
+{{player_name}}: Nhóm ta cũng đông nhỉ, một hai ba bốn năm sáu người. Vậy có lẽ đây lấy 15.000 thôi, cho đủ tiền làm giấy phép Gáp Phai.
+Gáp Phai 1: Được thôi, cho mày nhập nhóm cũng khiến bọn tau có thể gặp cả đống rắc rối, thậm chí là bị tước giấy phép. Coi như 35.000 còn lại là phí mạo hiểm. Anh đây là Bành Công.
 Anh ta đưa tay ra, bạn bắt tay lại.
-{{player_name}}: {{player_name}}. À, mà nói trước cho mọi người khỏi phải đắn đo suy nghĩ, nếu mọi người quyết định không chia tiền theo giao kèo thì cứ xác định đi. Tôi sẽ săn mấy anh chị bất kể có trốn đến đâu đi chăng nữa. Giờ đi luôn cho nóng nhỉ ?
+{{player_name}}: {{player_name}}. À, mà nói trước cho mọi người khỏi phải đắn đo suy nghĩ, nếu mọi người quyết định không chia tiền theo giao kèo thì cứ xác định đi. Tôi sẽ săn mọi người bất kể có chạy đến đâu đi chăng nữa. Giờ đi luôn cho nóng nhỉ?
 Bạn đe doạ xong liền đi ra khỏi ngõ, tổ đội kia vẫn còn ở lại bàn tán.
-Gáp Phai 3: Này đại ca, em biết mọi quyền quyết định đều ở anh, nhưng anh không thấy đứa này nó không nên dây dưa vào sao?
-Bành Công: Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Máu nó cứ dồn lên não anh như tăng xông vậy, cả cơ thể anh nó muốn anh phải chấp nhận yêu cầu của hắn.
+Gáp Phai 3: Này đại ca, em biết mọi quyền quyết định đều ở anh, nhưng anh không thấy đứa này là đối tượng không nên dây dưa vào sao?
+Bành Công: Yeah, nhưng mà... không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Từ lúc nãy đến giờ, máu nó cứ dồn lên não anh như tăng xông vậy, cả cơ thể anh nó muốn anh phải chấp nhận yêu cầu của hắn.
 Bành Công: Mà nếu có gì xấu xảy ra thì ta chuồn luôn chứ lo gì!
 Sau một hồi bàn tán, cả tổ đội cùng với bạn bắt đầu lên đường đến núi Màn Sương Xám bên ngoài thành phố.
 ~ below_fog_mountain
@@ -156,17 +156,23 @@ lines = {
 "character_replacements": [  ],
 "next_id": "2",
 "replacements": [  ],
-"text": "Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.",
-"translation_key": "Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông tai to mặt lớn thì cố mà tránh.",
+"text": "Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông giàu giàu mà có cả tá vệ sĩ bên cạnh ấy thì có mà tránh nghe cháu.",
+"translation_key": "Vậy thôi chú đến kho đây. Cháu đi khám phá thành phố đi. Mà nhớ đi đứng cẩn thận đấy, lỡ gặp mấy ông giàu giàu mà có cả tá vệ sĩ bên cạnh ấy thì có mà tránh nghe cháu.",
 "type": "dialogue"
 },
 "10": {
-"character": "Hàn Ngọc",
-"character_replacements": [  ],
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
 "next_id": "11",
 "replacements": [  ],
-"text": "Xin chào bạn, bạn đến bang hội Trống Sét để làm gì, treo tiền thưởng, sử dụng ngân hàng hay gì khác.",
-"translation_key": "Xin chào bạn, bạn đến bang hội Trống Sét để làm gì, treo tiền thưởng, sử dụng ngân hàng hay gì khác.",
+"text": "À, mình muốn xin làm người giải quyết mấy cái nhiệm vụ ấy, không biết có được không...?",
+"translation_key": "À, mình muốn xin làm người giải quyết mấy cái nhiệm vụ ấy, không biết có được không...?",
 "type": "dialogue"
 },
 "100": {
@@ -277,18 +283,12 @@ lines = {
 "type": "dialogue"
 },
 "11": {
-"character": "{{player_name}}",
-"character_replacements": [ {
-"expression": [ {
-"type": "variable",
-"value": "player_name"
-} ],
-"value_in_text": "{{player_name}}"
-} ],
+"character": "Hàn Ngoc",
+"character_replacements": [  ],
 "next_id": "12",
 "replacements": [  ],
-"text": "À, mình muốn xin làm người giải quyết mấy cái nhiệm vụ ấy, không biết có được không...?",
-"translation_key": "À, mình muốn xin làm người giải quyết mấy cái nhiệm vụ ấy, không biết có được không...?",
+"text": "Ồ, tức là bạn muốn đăng ký làm \"Gáp Phai\". Đúng lúc bang hội chúng tôi đang thiếu người. Chắc bạn là người từ lục địa khác nhỉ, thủ tục cũng đơn giản thôi. Nhưng mà...",
+"translation_key": "Ồ, tức là bạn muốn đăng ký làm \"Gáp Phai\". Đúng lúc bang hội chúng tôi đang thiếu người. Chắc bạn là người từ lục địa khác nhỉ, thủ tục cũng đơn giản thôi. Nhưng mà...",
 "type": "dialogue"
 },
 "110": {
@@ -393,12 +393,18 @@ lines = {
 "type": "dialogue"
 },
 "12": {
-"character": "Hàn Ngoc",
-"character_replacements": [  ],
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
 "next_id": "13",
 "replacements": [  ],
-"text": "Ồ, tức là đăng ký làm \"Gáp Phai\". Đúng lúc bang hội chúng tôi đang thiếu người. Chắc bạn là người từ lục địa khác nhỉ, thủ tục cũng đơn giản thôi. Nhưng mà...",
-"translation_key": "Ồ, tức là đăng ký làm \"Gáp Phai\". Đúng lúc bang hội chúng tôi đang thiếu người. Chắc bạn là người từ lục địa khác nhỉ, thủ tục cũng đơn giản thôi. Nhưng mà...",
+"text": "Ừ, cũng dạng dạng đó, mà sao vậy bạn?",
+"translation_key": "Ừ, cũng dạng dạng đó, mà sao vậy bạn?",
 "type": "dialogue"
 },
 "120": {
@@ -487,18 +493,12 @@ lines = {
 "type": "dialogue"
 },
 "13": {
-"character": "{{player_name}}",
-"character_replacements": [ {
-"expression": [ {
-"type": "variable",
-"value": "player_name"
-} ],
-"value_in_text": "{{player_name}}"
-} ],
+"character": "Hàn Ngọc",
+"character_replacements": [  ],
 "next_id": "14",
 "replacements": [  ],
-"text": "Ừ, cũng dạng dạng đó, mà sao vậy bạn?",
-"translation_key": "Ừ, cũng dạng dạng đó, mà sao vậy bạn?",
+"text": "Không biết bạn có đủ tiền để làm thủ tục không, số tiền để đăng ký cũng khá lớn, khoảng 10.000 đồng. Và hiện tại bên mình cũng không nhận tiền của lục địa khác.",
+"translation_key": "Không biết bạn có đủ tiền để làm thủ tục không, số tiền để đăng ký cũng khá lớn, khoảng 10.000 đồng. Và hiện tại bên mình cũng không nhận tiền của lục địa khác.",
 "type": "dialogue"
 },
 "130": {
@@ -519,16 +519,22 @@ lines = {
 "type": "dialogue"
 },
 "14": {
-"character": "Hàn Ngọc",
-"character_replacements": [  ],
+"character": "({{player_name}} - hoảng loạn)",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
 "next_id": "15",
 "replacements": [  ],
-"text": "Không biết bạn có đủ tiền để làm thủ tục không, số tiền để đăng ký cũng khá lớn, khoảng 10.000 đồng. Và hiện tại bên mình cũng không nhận tiền của lục địa khác.",
-"translation_key": "Không biết bạn có đủ tiền để làm thủ tục không, số tiền để đăng ký cũng khá lớn, khoảng 10.000 đồng. Và hiện tại bên mình cũng không nhận tiền của lục địa khác.",
+"text": "[color=#A5B4B1]Chết con đĩ mẹ, cần tiền luôn sao.[/color]",
+"translation_key": "[color=#A5B4B1]Chết con đĩ mẹ, cần tiền luôn sao.[/color]",
 "type": "dialogue"
 },
 "15": {
-"character": "({{player_name}} - hoảng loạn)",
+"character": "{{player_name}}",
 "character_replacements": [ {
 "expression": [ {
 "type": "variable",
@@ -538,35 +544,20 @@ lines = {
 } ],
 "next_id": "16",
 "replacements": [  ],
-"text": "[color=#A5B4B1]Chết con đĩ mẹ, một cắc bẻ đôi mình cũng không có.[/color]",
-"translation_key": "[color=#A5B4B1]Chết con đĩ mẹ, một cắc bẻ đôi mình cũng không có.[/color]",
-"type": "dialogue"
-},
-"16": {
-"character": "{{player_name}}",
-"character_replacements": [ {
-"expression": [ {
-"type": "variable",
-"value": "player_name"
-} ],
-"value_in_text": "{{player_name}}"
-} ],
-"next_id": "17",
-"replacements": [  ],
 "text": "Vậy sao, Mình tưởng như ở chỗ mình cứ đăng ký là được, hay có gì thì thể hiện sức mạnh.",
 "translation_key": "Vậy sao, Mình tưởng như ở chỗ mình cứ đăng ký là được, hay có gì thì thể hiện sức mạnh.",
 "type": "dialogue"
 },
-"17": {
+"16": {
 "character": "Hàn Ngọc",
 "character_replacements": [  ],
-"next_id": "18",
+"next_id": "17",
 "replacements": [  ],
 "text": "Xin lỗi nhưng bên mình không chấp nhận bất kì phương thức đăng ký nào khác. Điều này là để đảm bảo chất lượng đầu vào của các Gáp Phai, giúp thảm thiểu tai nạn không đáng có. Kể cho dù nếu họ không chiến đấu tốt đi chăng nữa thì cũng có thể cung cấp trang bị và vật phẩm cho các Gáp Phai khác.",
 "translation_key": "Xin lỗi nhưng bên mình không chấp nhận bất kì phương thức đăng ký nào khác. Điều này là để đảm bảo chất lượng đầu vào của các Gáp Phai, giúp thảm thiểu tai nạn không đáng có. Kể cho dù nếu họ không chiến đấu tốt đi chăng nữa thì cũng có thể cung cấp trang bị và vật phẩm cho các Gáp Phai khác.",
 "type": "dialogue"
 },
-"18": {
+"17": {
 "character": "{{player_name}}",
 "character_replacements": [ {
 "expression": [ {
@@ -575,19 +566,34 @@ lines = {
 } ],
 "value_in_text": "{{player_name}}"
 } ],
-"next_id": "19",
+"next_id": "18",
 "replacements": [  ],
-"text": "Ây dà, nói thật thì hiện tại mình không có nhiều tiền. Bang hội làm cả ngân hàng nữa mà đúng không, bạn có thể cho mình thế chấp một vài món đồ được không.",
-"translation_key": "Ây dà, nói thật thì hiện tại mình không có nhiều tiền. Bang hội làm cả ngân hàng nữa mà đúng không, bạn có thể cho mình thế chấp một vài món đồ được không.",
+"text": "Ây da, nói thật thì hiện tại mình không có nhiều tiền. Bang hội làm cả ngân hàng nữa mà đúng không, bạn có thể cho mình thế chấp một vài món đồ được không.",
+"translation_key": "Ây da, nói thật thì hiện tại mình không có nhiều tiền. Bang hội làm cả ngân hàng nữa mà đúng không, bạn có thể cho mình thế chấp một vài món đồ được không.",
 "type": "dialogue"
 },
-"19": {
+"18": {
 "character": "Hàn Ngọc",
 "character_replacements": [  ],
-"next_id": "20",
+"next_id": "19",
 "replacements": [  ],
 "text": "Mình phải xin lỗi bạn thêm lần nữa nhưng bạn chỉ có thể vay tiền nếu bạn có thẻ nhận dạng của lục địa Thăng Long này. Kể cả không tính đến thẻ, bạn cần một mục đích chính đáng để vay tiền, và làm Gáp Phai không thuộc vào hạng mục đó.",
 "translation_key": "Mình phải xin lỗi bạn thêm lần nữa nhưng bạn chỉ có thể vay tiền nếu bạn có thẻ nhận dạng của lục địa Thăng Long này. Kể cả không tính đến thẻ, bạn cần một mục đích chính đáng để vay tiền, và làm Gáp Phai không thuộc vào hạng mục đó.",
+"type": "dialogue"
+},
+"19": {
+"character": "{{player_name}}",
+"character_replacements": [ {
+"expression": [ {
+"type": "variable",
+"value": "player_name"
+} ],
+"value_in_text": "{{player_name}}"
+} ],
+"next_id": "20",
+"replacements": [  ],
+"text": "Thực sự không còn cách nào khác sao?",
+"translation_key": "Thực sự không còn cách nào khác sao?",
 "type": "dialogue"
 },
 "2": {
@@ -606,81 +612,66 @@ lines = {
 "type": "dialogue"
 },
 "20": {
-"character": "{{player_name}}",
-"character_replacements": [ {
-"expression": [ {
-"type": "variable",
-"value": "player_name"
-} ],
-"value_in_text": "{{player_name}}"
-} ],
+"character": "",
 "next_id": "21",
 "replacements": [  ],
-"text": "Thực sự không còn cách nào khác sao?",
-"translation_key": "Thực sự không còn cách nào khác sao?",
+"text": "Bạn cảm nhận được trong đầu của cô ấy hiện lên sự lưỡng lự và những ý định mờ ám. Cô ấy đưa ra một tờ giấy.",
+"translation_key": "Bạn cảm nhận được trong đầu của cô ấy hiện lên sự lưỡng lự và những ý định mờ ám. Cô ấy đưa ra một tờ giấy.",
 "type": "dialogue"
 },
 "21": {
-"character": "",
-"next_id": "22",
-"replacements": [  ],
-"text": "Bỗng nhiên trong đầu của cô ấy hiện lên những suy nghĩ mờ ám, bạn cảm nhận được điều đó. Cô ấy đưa ra một tờ giấy.",
-"translation_key": "Bỗng nhiên trong đầu của cô ấy hiện lên những suy nghĩ mờ ám, bạn cảm nhận được điều đó. Cô ấy đưa ra một tờ giấy.",
-"type": "dialogue"
-},
-"22": {
 "character": "Hàn Ngọc",
 "character_replacements": [  ],
-"next_id": "23",
+"next_id": "22",
 "replacements": [  ],
 "text": "Vậy sao bạn không thử tìm cách kiếm tiền khác. Hiện tại khu đấu trường đang thiếu chiến binh thách đấu. Bạn không cần phải bỏ tiền để tham gia, và nếu bạn tự tin vào khả năng của mình thì hoàn toàn có thể chiến thắng giải thưởng lớn lên đến 100'000 đồng, mà cho dù thua cũng không mất gì cả.",
 "translation_key": "Vậy sao bạn không thử tìm cách kiếm tiền khác. Hiện tại khu đấu trường đang thiếu chiến binh thách đấu. Bạn không cần phải bỏ tiền để tham gia, và nếu bạn tự tin vào khả năng của mình thì hoàn toàn có thể chiến thắng giải thưởng lớn lên đến 100'000 đồng, mà cho dù thua cũng không mất gì cả.",
 "type": "dialogue"
 },
-"23": {
+"22": {
 "character": "",
-"next_id": "24",
+"next_id": "23",
 "replacements": [  ],
 "text": "Bạn cầm tờ giấy lên và nhìn thẳng vào mắt của cô. Suy nghĩ một chút cùng lúc hóng hớt xung quanh.",
 "translation_key": "Bạn cầm tờ giấy lên và nhìn thẳng vào mắt của cô. Suy nghĩ một chút cùng lúc hóng hớt xung quanh.",
 "type": "dialogue"
 },
-"24": {
+"23": {
 "character": "\"Gáp Phai 1\" ",
 "character_replacements": [  ],
-"next_id": "25",
+"next_id": "24",
 "replacements": [  ],
 "text": "Chậc, hết nhiệm vụ dễ ăn rồi, hay là đánh liều đi giết bấy sói dạ tuyết đi.",
 "translation_key": "Chậc, hết nhiệm vụ dễ ăn rồi, hay là đánh liều đi giết bấy sói dạ tuyết đi.",
 "type": "dialogue"
 },
-"25": {
+"24": {
 "character": "\"Gáp Phai 2\"",
 "character_replacements": [  ],
-"next_id": "26",
+"next_id": "25",
 "replacements": [  ],
 "text": "Mày điên à, vài con còn được chứ cả bầy nó bu lại thì có mà ăn cám cả lũ.",
 "translation_key": "Mày điên à, vài con còn được chứ cả bầy nó bu lại thì có mà ăn cám cả lũ.",
 "type": "dialogue"
 },
-"26": {
+"25": {
 "character": "\"Gáp Phai 1\"",
 "character_replacements": [  ],
-"next_id": "27",
+"next_id": "26",
 "replacements": [  ],
-"text": "Phải làm liều thì mới có tiền mà ăn chơi chứ, tổ đội của ta cũng toàn mấy thằng kinh nhiệm đầy mình, chơi đi sợ gì.",
-"translation_key": "Phải làm liều thì mới có tiền mà ăn chơi chứ, tổ đội của ta cũng toàn mấy thằng kinh nhiệm đầy mình, chơi đi sợ gì.",
+"text": "Phải làm liều thì mới có tiền mà ăn chơi chứ, cứ nghĩ về mấy ngày nằm phè phởn không cần phải vác thân đi làm đi. Nhóm ta cũng kinh nhiệm đầy mình rồi, chơi đi sợ gì.",
+"translation_key": "Phải làm liều thì mới có tiền mà ăn chơi chứ, cứ nghĩ về mấy ngày nằm phè phởn không cần phải vác thân đi làm đi. Nhóm ta cũng kinh nhiệm đầy mình rồi, chơi đi sợ gì.",
 "type": "dialogue"
 },
-"27": {
+"26": {
 "character": "",
-"next_id": "28",
+"next_id": "27",
 "replacements": [  ],
 "text": "...",
 "translation_key": "...",
 "type": "dialogue"
 },
-"28": {
+"27": {
 "character": "{{player_name}}",
 "character_replacements": [ {
 "expression": [ {
@@ -689,20 +680,31 @@ lines = {
 } ],
 "value_in_text": "{{player_name}}"
 } ],
-"next_id": "29",
+"next_id": "28",
 "replacements": [  ],
 "text": "Thế thì chịu rồi, mình không có giỏi đánh nhau với người, đa phần mình toàn giết quái vật để kiếm cơm à. Thôi thì mình tạm xin kiếu, có gì gặp lại sau.",
 "translation_key": "Thế thì chịu rồi, mình không có giỏi đánh nhau với người, đa phần mình toàn giết quái vật để kiếm cơm à. Thôi thì mình tạm xin kiếu, có gì gặp lại sau.",
 "type": "dialogue"
 },
-"29": {
+"28": {
 "character": "Hàn Ngọc",
 "character_replacements": [  ],
-"next_id": "30",
+"next_id": "29",
 "replacements": [  ],
-"text": "Vậy thì tạm biệt bạn ạ.",
-"translation_key": "Vậy thì tạm biệt bạn ạ.",
+"text": "Vậy thì chào tạm biệt bạn ạ.",
+"translation_key": "Vậy thì chào tạm biệt bạn ạ.",
 "type": "dialogue"
+},
+"29": {
+"mutation": {
+"expression": [ {
+"function": "find_another_way",
+"type": "function",
+"value": [  ]
+} ]
+},
+"next_id": "30",
+"type": "mutation"
 },
 "3": {
 "character": "",
@@ -772,8 +774,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "36",
 "replacements": [  ],
-"text": "Vãi, tau có nghe nhầm không đấy bây. Nhóc này vừa nói cái gì vậy. Một bầy sói dạ tuyết đấy, một bầy. Địt mẹ chứ một con thôi chắc cũng cho mi mất xác.",
-"translation_key": "Vãi, tau có nghe nhầm không đấy bây. Nhóc này vừa nói cái gì vậy. Một bầy sói dạ tuyết đấy, một bầy. Địt mẹ chứ một con thôi chắc cũng cho mi mất xác.",
+"text": "Vãi, tau có nghe nhầm không đấy bây. Tên nhóc này vừa nói cái gì vậy. Một bầy sói dạ tuyết đấy, một bầy. Địt mẹ chứ một con thôi chắc cũng cho mi mất xác.",
+"translation_key": "Vãi, tau có nghe nhầm không đấy bây. Tên nhóc này vừa nói cái gì vậy. Một bầy sói dạ tuyết đấy, một bầy. Địt mẹ chứ một con thôi chắc cũng cho mi mất xác.",
 "type": "dialogue"
 },
 "36": {
@@ -818,7 +820,7 @@ lines = {
 },
 "4": {
 "character": "",
-"next_id": "6",
+"next_id": "5",
 "replacements": [  ],
 "text": "[i]Đi đến Bang hội.[/i]",
 "translation_key": "[i]Đi đến Bang hội.[/i]",
@@ -835,8 +837,8 @@ lines = {
 } ],
 "next_id": "41",
 "replacements": [  ],
-"text": "Anh trai thương em tí đi, em ở nơi khác mới đến giờ trên người còn không có tiền ăn. Rồi em lấy phần nhỏ thôi cũng được, em có bị sao thì mọi người cũng đâu liên can gì, nha nha?",
-"translation_key": "Anh trai thương em tí đi, em ở nơi khác mới đến giờ trên người còn không có tiền ăn. Rồi em lấy phần nhỏ thôi cũng được, em có bị sao thì mọi người cũng đâu liên can gì, nha nha?",
+"text": "Anh trai thương người tí đi, em ở nơi khác mới đến giờ trên người còn không có tiền ăn. Rồi em lấy phần nhỏ thôi cũng được, em có bị sao thì mọi người cũng đâu liên can gì, nha nha?",
+"translation_key": "Anh trai thương người tí đi, em ở nơi khác mới đến giờ trên người còn không có tiền ăn. Rồi em lấy phần nhỏ thôi cũng được, em có bị sao thì mọi người cũng đâu liên can gì, nha nha?",
 "type": "dialogue"
 },
 "41": {
@@ -885,8 +887,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "47",
 "replacements": [  ],
-"text": "50.000 đồng. Nếu mày không biết giá nó đáng bao nhiêu thì từng đó ít nhất là 3 tháng lương của một người bình thường tại nơi này.",
-"translation_key": "50.000 đồng. Nếu mày không biết giá nó đáng bao nhiêu thì từng đó ít nhất là 3 tháng lương của một người bình thường tại nơi này.",
+"text": "50.000 đồng. Nếu mày không biết giá nó đáng bao nhiêu thì từng đó ít nhất là 5 tháng lương của một người bình thường tại nơi này.",
+"translation_key": "50.000 đồng. Nếu mày không biết giá nó đáng bao nhiêu thì từng đó ít nhất là 5 tháng lương của một người bình thường tại nơi này.",
 "type": "dialogue"
 },
 "47": {
@@ -900,8 +902,8 @@ lines = {
 } ],
 "next_id": "48",
 "replacements": [  ],
-"text": "Nhóm ta cũng đông nhỉ, một hai ba bốn năm sáu người. Vậy có lẽ đây lấy 10.000 thôi, cho đủ tiền làm giấy phép Gáp Phai.",
-"translation_key": "Nhóm ta cũng đông nhỉ, một hai ba bốn năm sáu người. Vậy có lẽ đây lấy 10.000 thôi, cho đủ tiền làm giấy phép Gáp Phai.",
+"text": "Nhóm ta cũng đông nhỉ, một hai ba bốn năm sáu người. Vậy có lẽ đây lấy 15.000 thôi, cho đủ tiền làm giấy phép Gáp Phai.",
+"translation_key": "Nhóm ta cũng đông nhỉ, một hai ba bốn năm sáu người. Vậy có lẽ đây lấy 15.000 thôi, cho đủ tiền làm giấy phép Gáp Phai.",
 "type": "dialogue"
 },
 "48": {
@@ -909,8 +911,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "49",
 "replacements": [  ],
-"text": "Được thôi, cho mày nhập nhóm cũng khiến bọn tau có thể gặp cả đống rắc rối, thậm chí là bị tước giấy phép. Coi như 40.000 còn lại là phí mạo hiểm. Anh đây là Bành Công.",
-"translation_key": "Được thôi, cho mày nhập nhóm cũng khiến bọn tau có thể gặp cả đống rắc rối, thậm chí là bị tước giấy phép. Coi như 40.000 còn lại là phí mạo hiểm. Anh đây là Bành Công.",
+"text": "Được thôi, cho mày nhập nhóm cũng khiến bọn tau có thể gặp cả đống rắc rối, thậm chí là bị tước giấy phép. Coi như 35.000 còn lại là phí mạo hiểm. Anh đây là Bành Công.",
+"translation_key": "Được thôi, cho mày nhập nhóm cũng khiến bọn tau có thể gặp cả đống rắc rối, thậm chí là bị tước giấy phép. Coi như 35.000 còn lại là phí mạo hiểm. Anh đây là Bành Công.",
 "type": "dialogue"
 },
 "49": {
@@ -920,6 +922,17 @@ lines = {
 "text": "Anh ta đưa tay ra, bạn bắt tay lại.",
 "translation_key": "Anh ta đưa tay ra, bạn bắt tay lại.",
 "type": "dialogue"
+},
+"5": {
+"mutation": {
+"expression": [ {
+"function": "click_guild_house",
+"type": "function",
+"value": [  ]
+} ]
+},
+"next_id": "6",
+"type": "mutation"
 },
 "50": {
 "character": "{{player_name}}",
@@ -938,8 +951,8 @@ lines = {
 } ],
 "value_in_text": "{{player_name}}"
 } ],
-"text": "{{player_name}}. À, mà nói trước cho mọi người khỏi phải đắn đo suy nghĩ, nếu mọi người quyết định không chia tiền theo giao kèo thì cứ xác định đi. Tôi sẽ săn mấy anh chị bất kể có trốn đến đâu đi chăng nữa. Giờ đi luôn cho nóng nhỉ ?",
-"translation_key": "{{player_name}}. À, mà nói trước cho mọi người khỏi phải đắn đo suy nghĩ, nếu mọi người quyết định không chia tiền theo giao kèo thì cứ xác định đi. Tôi sẽ săn mấy anh chị bất kể có trốn đến đâu đi chăng nữa. Giờ đi luôn cho nóng nhỉ ?",
+"text": "{{player_name}}. À, mà nói trước cho mọi người khỏi phải đắn đo suy nghĩ, nếu mọi người quyết định không chia tiền theo giao kèo thì cứ xác định đi. Tôi sẽ săn mọi người bất kể có chạy đến đâu đi chăng nữa. Giờ đi luôn cho nóng nhỉ?",
+"translation_key": "{{player_name}}. À, mà nói trước cho mọi người khỏi phải đắn đo suy nghĩ, nếu mọi người quyết định không chia tiền theo giao kèo thì cứ xác định đi. Tôi sẽ săn mọi người bất kể có chạy đến đâu đi chăng nữa. Giờ đi luôn cho nóng nhỉ?",
 "type": "dialogue"
 },
 "51": {
@@ -955,8 +968,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "53",
 "replacements": [  ],
-"text": "Này đại ca, em biết mọi quyền quyết định đều ở anh, nhưng anh không thấy đứa này nó không nên dây dưa vào sao?",
-"translation_key": "Này đại ca, em biết mọi quyền quyết định đều ở anh, nhưng anh không thấy đứa này nó không nên dây dưa vào sao?",
+"text": "Này đại ca, em biết mọi quyền quyết định đều ở anh, nhưng anh không thấy đứa này là đối tượng không nên dây dưa vào sao?",
+"translation_key": "Này đại ca, em biết mọi quyền quyết định đều ở anh, nhưng anh không thấy đứa này là đối tượng không nên dây dưa vào sao?",
 "type": "dialogue"
 },
 "53": {
@@ -964,8 +977,8 @@ lines = {
 "character_replacements": [  ],
 "next_id": "54",
 "replacements": [  ],
-"text": "Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Máu nó cứ dồn lên não anh như tăng xông vậy, cả cơ thể anh nó muốn anh phải chấp nhận yêu cầu của hắn.",
-"translation_key": "Không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Máu nó cứ dồn lên não anh như tăng xông vậy, cả cơ thể anh nó muốn anh phải chấp nhận yêu cầu của hắn.",
+"text": "Yeah, nhưng mà... không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Từ lúc nãy đến giờ, máu nó cứ dồn lên não anh như tăng xông vậy, cả cơ thể anh nó muốn anh phải chấp nhận yêu cầu của hắn.",
+"translation_key": "Yeah, nhưng mà... không hiểu sao anh muốn thấy tên này chiến đấu ra sao. Từ lúc nãy đến giờ, máu nó cứ dồn lên não anh như tăng xông vậy, cả cơ thể anh nó muốn anh phải chấp nhận yêu cầu của hắn.",
 "type": "dialogue"
 },
 "54": {
@@ -1238,12 +1251,15 @@ lines = {
 "type": "dialogue"
 },
 "8": {
-"character": "",
-"next_id": "10",
-"replacements": [  ],
-"text": "[i]Nói chuyện với lễ tân.[/i]",
-"translation_key": "[i]Nói chuyện với lễ tân.[/i]",
-"type": "dialogue"
+"mutation": {
+"expression": [ {
+"function": "click_on_recept",
+"type": "function",
+"value": [  ]
+} ]
+},
+"next_id": "9",
+"type": "mutation"
 },
 "80": {
 "character": "(Hoả Linh)",
@@ -1348,6 +1364,15 @@ lines = {
 "replacements": [  ],
 "text": "Thấy chưa, tôi đã nói là làm được, từng này chắc vẵn chưa đủ số lượng nhỉ, đi tiếp thôi.",
 "translation_key": "Thấy chưa, tôi đã nói là làm được, từng này chắc vẵn chưa đủ số lượng nhỉ, đi tiếp thôi.",
+"type": "dialogue"
+},
+"9": {
+"character": "Hàn Ngọc",
+"character_replacements": [  ],
+"next_id": "10",
+"replacements": [  ],
+"text": "Xin chào bạn, bạn đến bang hội Trống Sét để làm gì, treo tiền thưởng, sử dụng ngân hàng hay gì khác.",
+"translation_key": "Xin chào bạn, bạn đến bang hội Trống Sét để làm gì, treo tiền thưởng, sử dụng ngân hàng hay gì khác.",
 "type": "dialogue"
 },
 "90": {

@@ -2,6 +2,7 @@ extends Area2D
 
 class_name HitBox
 
+
 onready var _collision : CollisionShape2D = $CollisionShape2D
 
 var dmgMachine: DamageMachine

@@ -4,6 +4,7 @@ var num_enemy := 0
 var healMachine = DamageMachine.new()
 
 func _ready():
+	_hitbox.is_kb = false
 	healMachine.setter(owner, 0, 4, false)
 
 func activeUB(ub_postion: int) -> void:
