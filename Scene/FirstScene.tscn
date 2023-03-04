@@ -156,10 +156,10 @@ tracks/2/keys = {
 script = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -174.0
+margin_left = -175.0
 margin_top = 1.0
-margin_right = 2352.0
-margin_bottom = 1384.0
+margin_right = 2350.0
+margin_bottom = 1191.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 5

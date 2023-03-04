@@ -42,9 +42,13 @@ func _set_hitbox() -> void:
 func _set_side_effect() -> void:
 	pass
 
-func setup_formation(_members: Array, _opponents: Array) -> void:
-	members = _members
-	opponents = _opponents
+func setup_formation(ally: Array, enemy: Array) -> void:
+	if is_party:
+		members = ally
+		opponents = enemy
+	else:
+		members = enemy
+		opponents = ally
 
 func calc_skill_damage() -> int:
 	var dmg : int = 0

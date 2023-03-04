@@ -7,4 +7,4 @@
 script = ExtResource( 2 )
 
 [node name="D_Area" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 275 )
+position = Vector2( 0, 245 )

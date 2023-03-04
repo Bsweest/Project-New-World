@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game_script/character_stats/BaseStats.gd"
 }, {
+"base": "Node2D",
+"class": "BattleManager",
+"language": "GDScript",
+"path": "res://game_script/battle/BattleManager.gd"
+}, {
 "base": "CanvasLayer",
 "class": "BattleUI",
 "language": "GDScript",
@@ -98,6 +103,11 @@ _global_script_classes=[ {
 "class": "Formation",
 "language": "GDScript",
 "path": "res://game_script/battle/Formation.gd"
+}, {
+"base": "Node",
+"class": "GameScene",
+"language": "GDScript",
+"path": "res://game_script/battle/GameScene.gd"
 }, {
 "base": "Area2D",
 "class": "HitBox",
@@ -199,6 +209,7 @@ _global_script_class_icons={
 "AttackRange": "",
 "BaseSkill": "",
 "BaseStats": "",
+"BattleManager": "",
 "BattleUI": "",
 "ButtonUB": "",
 "CharacterSkill": "",
@@ -213,6 +224,7 @@ _global_script_class_icons={
 "EffectMachine": "",
 "Entity": "",
 "Formation": "",
+"GameScene": "",
 "HitBox": "",
 "HurtBox": "",
 "IdleState": "",

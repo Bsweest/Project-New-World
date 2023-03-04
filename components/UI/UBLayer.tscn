@@ -13,4 +13,4 @@ modulate = Color( 0, 0, 0, 0.690196 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Members" type="Node2D" parent="."]
+[node name="Animations" type="Node2D" parent="."]

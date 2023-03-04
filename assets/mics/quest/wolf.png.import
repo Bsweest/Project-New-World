@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/illustration.png-c9a22eec70feedf5dee60f97169771b0.stex"
+path="res://.import/wolf.png-726670b634454049d1a77c94342248b9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/thanh_dung/illustration.png"
-dest_files=[ "res://.import/illustration.png-c9a22eec70feedf5dee60f97169771b0.stex" ]
+source_file="res://assets/mics/quest/wolf.png"
+dest_files=[ "res://.import/wolf.png-726670b634454049d1a77c94342248b9.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -29,7 +29,7 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 process/normal_map_invert_y=false
-stream=0
+stream=false
 size_limit=0
 detect_3d=false
 svg/scale=1.0

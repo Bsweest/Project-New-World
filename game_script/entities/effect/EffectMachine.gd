@@ -18,6 +18,10 @@ func setter(body, isParty: bool, index: int, eStat: CharacterStats) -> void:
     pos = index
     stats = eStat
 
+func reset_effect_machine() -> void:
+    for each in get_children():
+        each.queue_free()
+
 func add_effect_to_Body(effect: Effect) -> void:
     if effect.type == 0:
         effect.connect("status_apply", _body, "_on_CC_status_applied")

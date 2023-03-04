@@ -2,23 +2,22 @@ extends CanvasLayer
 
 class_name UBLayer
 
-onready var members = $Members
+onready var animations = $Animations
 
-func setter(is_member: bool, arr: Array) -> void:
-	for i in len(arr):
-		var path = "res://components/entity/" + arr[i]["name"] + "/ub_ani.tscn"
-		var directory = Directory.new()
-		if directory.file_exists(path):
-			var baseSkill : BaseSkill = load("res://game_script/skills/resources/" + arr[i]["name"] + ".tres")
-			var ani : AnimationUB = load(path).instance()
-			if is_member: 
-				ani.scale = Vector2(-1, 1)
-			ani.pos = i
-			ani.is_party = is_member
-			ani.skill_name = baseSkill.skill_name
-			ani.connect("finish_ub", get_parent(), "_on_UB_animation_finished")
-			members.add_child(ani)
+var arrAni : Array
+
+func setter(arr: Array) -> void:
+	arrAni = arr
+	for each in arr:
+		each.connect("finish_ub", get_parent(), "_on_UB_animation_finished")
+		animations.add_child(each)
+
+func remove_ani() -> void:
+	for n in animations.get_children():
+		animations.remove_child(n)
 
 func run_ub_ani(pos: int, _position: Vector2, ub_hitbox_position: int = -1) -> void:
-	members.get_child(pos).start_ub_ani(_position, ub_hitbox_position)
+	if arrAni[pos] == null:
+		return
+	arrAni[pos].start_ub_ani(_position, ub_hitbox_position)
 	get_tree().paused = true

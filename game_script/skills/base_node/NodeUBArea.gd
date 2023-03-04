@@ -18,7 +18,7 @@ func _set_hitbox() -> void:
 
 func activeUB(ub_postion: int) -> void:
 	if ub_postion != 0:
-		_hitbox.global_position = Vector2(ub_postion, 250)
+		_hitbox.global_position = Vector2(ub_postion, 220)
 	if !first_use:
 		first_use = true
 		_hitbox.scale = Vector2(1, 1)

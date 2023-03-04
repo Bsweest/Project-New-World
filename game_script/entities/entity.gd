@@ -33,6 +33,7 @@ onready var _col2 := $CollisionBody
 export var c_name: String
 export var is_party : bool = true
 var level : int = 10
+var has_initiate := false
 
 var collisionDamage : DamageMachine = DamageMachine.new()
 var attack_range : AttackRange
@@ -43,7 +44,7 @@ var idle_time := 80
 
 var state : State
 var state_factory : StateFactory = StateFactory.new()
-var pos : int
+var pos : int = -1
 var is_stunned := 0 
 
 var movement_speed : int = 0 setget set_movement ,get_movement
@@ -59,16 +60,22 @@ var ub_position := 0
 
 #! Ready Set GO
 func _ready() -> void:
-	set_resource()
+	if not has_initiate:
+		ready_initiate()
 	collisionDamage.setter(self, stats.get_physic(), DamageType.PHYSIC, true)
-	ub.ub_set(is_party, stats, skill, self)
-	hurtBox.init(is_party)
 	change_state(State.IDLE)
 	_hpBar.visible = false
 	is_over = false
 
+func ready_initiate() -> void:
+	set_resource()
+	ub.ub_set(is_party, stats, skill, self)
+	hurtBox.init(is_party)
+	has_initiate = true
+
 func out_of_game_loop() -> void:
 	is_over = true
+	effectMachine.reset_effect_machine()
 	_col1.set_deferred("disabled", true)
 	_col2.set_deferred("disabled", true)
 	animationPlayer.play("idle")
@@ -85,18 +92,19 @@ func set_resource() ->  void:
 	if not skill.has_no_skill:
 		var baseSkill = load("res://game_script/skills/resources/" + c_name + ".tres")
 		skill.init(baseSkill, level)
-
+	# stat manager
 	stats.init(startStats, level)
-	emit_signal("set_max_hp", stats.max_hp, pos)
 	_hpBar.max_value = stats.max_hp
 	_hpBar.value = stats.max_hp
 	create_attack_range()
 	effectMachine.setter(self, is_party, pos, stats)
-	
+	# set direction
 	if is_party:
 		scale = Vector2(-1, 1)
 		_hpBar.rect_scale = Vector2(-1, 1)
 		party_direction = 1
+		emit_signal("set_max_hp", stats.max_hp, pos)
+		emit_signal("hp_changed", stats.current_hp, pos)
 	set_movement(stats.get_speed())
 
 func create_attack_range() -> void:
@@ -269,6 +277,7 @@ func _on_Stats_hp_depleted():
 	_col1.set_deferred("disabled", true)
 	_col2.set_deferred("disabled", true)
 	ub._on_character_death()
+	effectMachine.reset_effect_machine()
 	change_state(State.DEATH)
 	emit_signal("hp_depleted")
 

@@ -7,6 +7,7 @@ onready var quest_guide : Label = $NinePatchRect/QuestGuide
 onready var pointer : Control = $Pointer
 onready var bar = $Pointer/Bar
 onready var click_guide : Label = $Pointer/Bar/ClickGuide
+onready var second_canvas : TextureRect = $SecondaryCanvas
 
 var _txt_guide : String = "" setget set_text_guide
 
@@ -27,4 +28,6 @@ func point_to_this(to_position: Vector2, new_guide: String = "") -> void:
 	click_guide.text = new_guide
 	ani_player.play("point_to")
 
-
+func add_new_secondary_scene(txt: Texture) -> void:
+	second_canvas.texture = txt
+	ani_player.play("add_scene")

@@ -5,7 +5,8 @@ class_name Formation
 signal select_area(pos)
 signal team_out(is_party)
 
-onready var members = $Members
+onready var members : Node2D = $Members
+onready var _positions : Position2D = $Position
 onready var ubLayer : UBLayer = $UBLayer
 
 var is_party : bool
@@ -14,33 +15,34 @@ var count_death := 0
 
 var arrChar := []
 
-func ready_set(is_member: bool, arr: Array) -> Array:
+func ready_set(is_member: bool, arr: Array, animations: Array) -> void:
 	is_party = is_member
-	ubLayer.setter(is_party, arr)
-
+	arrChar = arr.duplicate()
+	ubLayer.setter(animations)
 	for i in len(arr):
-		var init_position = members.get_child(i)
-		var newEntity : Entity = load("res://components/entity/" + arr[i]["name"] + "/model.tscn").instance()
-		newEntity.c_name = arr[i]["name"]
-		newEntity.is_party = is_party
-		newEntity.position = init_position.position
-		newEntity.pos = i
-		if is_party:
-			newEntity.connect("set_max_hp", owner, "_on_set_MAX_HP")
-			newEntity.connect("hp_changed", owner, "_on_Char_hp_changed")
-			newEntity.connect("tp_changed", owner, "_on_Char_tp_changed")
-			newEntity.set_collision_layer_bit(1, true)
-			newEntity.set_collision_mask_bit(2, true)
-		else:
-			newEntity.set_collision_layer_bit(2, true)
-			newEntity.set_collision_mask_bit(1, true)
-		newEntity.connect("hp_depleted", self, "_on_Char_hp_depleted")
-		arrChar.append(newEntity)
-	
-	for each in arrChar:
-		members.add_child(each)
-	count_member = len(arrChar)
-	return arrChar
+		var init_position = _positions.get_child(count_member).position
+		add_character_to_formation(arrChar[i], init_position)
+
+func remove_member_in_Formation() -> void:
+	for n in members.get_children():
+		members.remove_child(n)
+	arrChar = []
+	ubLayer.remove_ani()
+
+func add_character_to_formation(entity: Entity, c_position: Vector2) -> void:
+	count_member += 1
+	entity.position = c_position
+	if is_party:
+		entity.connect("set_max_hp", owner, "_on_set_MAX_HP")
+		entity.connect("hp_changed", owner, "_on_Char_hp_changed")
+		entity.connect("tp_changed", owner, "_on_Char_tp_changed")
+		entity.set_collision_layer_bit(1, true)
+		entity.set_collision_mask_bit(2, true)
+	else:
+		entity.set_collision_layer_bit(2, true)
+		entity.set_collision_mask_bit(1, true)
+	entity.connect("hp_depleted", self, "_on_Char_hp_depleted")
+	members.add_child(entity)
 
 func get_character(pos: int) -> Entity:
 	return arrChar[pos]

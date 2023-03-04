@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/illustration.png-c9a22eec70feedf5dee60f97169771b0.stex"
+path="res://.import/TownRoad_DayTime.png-8e7ddf363a8abb265cfc23852b4d6c12.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/thanh_dung/illustration.png"
-dest_files=[ "res://.import/illustration.png-c9a22eec70feedf5dee60f97169771b0.stex" ]
+source_file="res://assets/mics/secondary_canvas/TownRoad_DayTime.png"
+dest_files=[ "res://.import/TownRoad_DayTime.png-8e7ddf363a8abb265cfc23852b4d6c12.stex" ]
 
 [params]
 
@@ -29,7 +29,7 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 process/normal_map_invert_y=false
-stream=0
+stream=false
 size_limit=0
 detect_3d=false
 svg/scale=1.0

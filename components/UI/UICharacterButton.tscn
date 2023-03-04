@@ -1,26 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://game_script/battle/UI/UICharacterButton.gd" type="Script" id=2]
 [ext_resource path="res://assets/ui/menu.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.827451, 0.827451, 0.827451, 1 )
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 1, 1, 1, 0 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0.180392, 0.368627, 0.388235, 1 )
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 0.117647, 0.117647, 1 )
@@ -29,24 +17,22 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.8, 0.8, 0.8, 0 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-anti_aliasing_size = 0.5
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.298039, 0.129412, 0.0431373, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color( 0.690196, 0.501961, 0.2, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-anti_aliasing_size = 0.5
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 3 )
@@ -54,80 +40,83 @@ region = Rect2( 18, 38, 32, 12 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
-region = Rect2( 53, 41, 28, 6 )
+region = Rect2( 51, 39, 36, 10 )
 
 [node name="UIChacterButton" type="Control"]
-margin_right = 50.0
-margin_bottom = 90.0
+margin_right = 120.0
+margin_bottom = 200.0
 script = ExtResource( 2 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 14.0
-margin_top = -2.0
-margin_right = 34.0
-margin_bottom = 18.0
-expand = true
-
-[node name="UImain" type="Control" parent="."]
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -17.0
-margin_bottom = 33.0
-
-[node name="Panel" type="Panel" parent="UImain"]
+[node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 39.0
+margin_bottom = -41.0
 rect_clip_content = true
 custom_styles/panel = SubResource( 1 )
 
-[node name="TextureRect" type="TextureRect" parent="UImain/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 3.0
-margin_top = 3.0
-margin_right = -3.0
-margin_bottom = -3.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = -7.0
+margin_bottom = -7.0
+
+[node name="Illustration" type="TextureRect" parent="Panel/MarginContainer"]
+margin_right = 106.0
+margin_bottom = 106.0
 expand = true
 stretch_mode = 1
 
-[node name="Panel2" type="Panel" parent="UImain"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 2 )
-
-[node name="Button" type="Button" parent="UImain"]
-modulate = Color( 1, 1, 1, 0 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_default_cursor_shape = 2
-
 [node name="HPBar" type="ProgressBar" parent="."]
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_top = -11.0
+margin_left = -60.0
+margin_top = -36.0
+margin_right = 60.0
+margin_bottom = -4.0
+rect_min_size = Vector2( 0, 32 )
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 max_value = 0.0
 percent_visible = false
 
 [node name="TPBar" type="TextureProgress" parent="."]
-margin_left = 8.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -45.0
 margin_top = 15.0
-margin_right = 40.0
-margin_bottom = 27.0
+margin_right = 45.0
+margin_bottom = 35.0
 max_value = 0.0
 texture_under = SubResource( 8 )
 texture_progress = SubResource( 9 )
-texture_progress_offset = Vector2( 2, 3 )
+nine_patch_stretch = true
+
+[node name="SkillIcon" type="TextureRect" parent="TPBar"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -25.0
+margin_top = -50.0
+margin_right = 25.0
+expand = true
 
 [node name="EffectContainer" type="GridContainer" parent="."]
-margin_top = -14.0
-margin_right = 50.0
-margin_bottom = -4.0
+anchor_right = 1.0
+margin_top = -40.0
+margin_bottom = -40.0
 grow_vertical = 0
 rect_pivot_offset = Vector2( -65, -1 )
 columns = 4
 
-[connection signal="pressed" from="UImain/Button" to="." method="_on_Button_pressed"]
+[node name="Button" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -35.0
+margin_right = 120.0
+margin_bottom = 159.0
+mouse_default_cursor_shape = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

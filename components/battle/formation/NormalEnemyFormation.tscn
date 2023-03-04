@@ -8,28 +8,30 @@ script = ExtResource( 1 )
 
 [node name="Members" type="Node2D" parent="."]
 
-[node name="Enemy1" type="Position2D" parent="Members"]
-position = Vector2( 610, 250 )
+[node name="Position" type="Position2D" parent="."]
 
-[node name="Enemy2" type="Position2D" parent="Members"]
-position = Vector2( 580, 250 )
+[node name="Enemy1" type="Position2D" parent="Position"]
+position = Vector2( 610, 220 )
 
-[node name="Enemy3" type="Position2D" parent="Members"]
-position = Vector2( 550, 250 )
+[node name="Enemy2" type="Position2D" parent="Position"]
+position = Vector2( 580, 220 )
 
-[node name="Enemy4" type="Position2D" parent="Members"]
-position = Vector2( 520, 250 )
+[node name="Enemy3" type="Position2D" parent="Position"]
+position = Vector2( 550, 220 )
 
-[node name="Enemy5" type="Position2D" parent="Members"]
-position = Vector2( 490, 250 )
+[node name="Enemy4" type="Position2D" parent="Position"]
+position = Vector2( 520, 220 )
 
-[node name="Enemy6" type="Position2D" parent="Members"]
-position = Vector2( 460, 250 )
+[node name="Enemy5" type="Position2D" parent="Position"]
+position = Vector2( 490, 220 )
 
-[node name="Enemy7" type="Position2D" parent="Members"]
-position = Vector2( 430, 250 )
+[node name="Enemy6" type="Position2D" parent="Position"]
+position = Vector2( 460, 220 )
 
-[node name="Enemy8" type="Position2D" parent="Members"]
-position = Vector2( 400, 250 )
+[node name="Enemy7" type="Position2D" parent="Position"]
+position = Vector2( 430, 220 )
+
+[node name="Enemy8" type="Position2D" parent="Position"]
+position = Vector2( 400, 220 )
 
 [node name="UBLayer" parent="." instance=ExtResource( 2 )]
